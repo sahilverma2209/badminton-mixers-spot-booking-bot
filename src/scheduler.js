@@ -3,7 +3,7 @@ const { run, CONFIG } = require('./booking.js');
 const fs = require('fs');
 const path = require('path');
 
-const OUTPUT_DIR = path.join(__dirname, 'output');
+const OUTPUT_DIR = path.join(__dirname, '..', 'output');
 if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 const LOG_FILE = path.join(OUTPUT_DIR, 'booking.log');
 
@@ -44,7 +44,9 @@ async function runCheck() {
 const cronExpr = `*/${intervalMinutes} * * * *`;
 log(`🏸 Mixer Booking Scheduler started!`);
 log(`Checking every ${intervalMinutes} minutes (cron: ${cronExpr})`);
-log(`Preferred days: ${CONFIG.preferredDays.join(', ')}`);
+for (const [id, days] of Object.entries(CONFIG.eventConfigs)) {
+  log(`Event type ${id}: ${days.join(', ')}`);
+}
 log(`Dry run: ${CONFIG.dryRun}`);
 
 // Run immediately on start

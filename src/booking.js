@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs');
-require('dotenv').config();
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 // ─── Configuration ───────────────────────────────────────────────
 // Parse EVENT_CONFIGS (new format: "19756:tuesday,thursday;54834:monday,wednesday,friday")
@@ -40,7 +40,7 @@ const CONFIG = {
 };
 
 const BASE_URL = 'https://events.courtreserve.com';
-const OUTPUT_DIR = path.join(__dirname, 'output');
+const OUTPUT_DIR = path.join(__dirname, '..', 'output');
 if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 const STATE_FILE = path.join(OUTPUT_DIR, 'auth-state.json');
 const LOG_FILE = path.join(OUTPUT_DIR, 'booking.log');

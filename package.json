@@ -1,13 +1,13 @@
 {
   "name": "mixers-booking-script",
   "version": "1.0.0",
-  "main": "booking.js",
+  "main": "src/booking.js",
   "scripts": {
-    "check": "node booking.js",
-    "start": "node scheduler.js",
-    "debug": "HEADLESS=false node booking.js",
-    "dry-run": "HEADLESS=false node booking.js --dry-run",
-    "dry-run:headless": "node booking.js --dry-run"
+    "check": "node src/booking.js",
+    "start": "node src/scheduler.js",
+    "debug": "HEADLESS=false node src/booking.js",
+    "dry-run": "HEADLESS=false node src/booking.js --dry-run",
+    "dry-run:headless": "node src/booking.js --dry-run"
   },
   "keywords": [
     "badminton",
