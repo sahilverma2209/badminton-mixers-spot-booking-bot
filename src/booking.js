@@ -37,7 +37,7 @@ const CONFIG = {
   eventConfigs: parseEventConfigs(), // { eventTypeId: [days] }
   headless: process.env.HEADLESS !== 'false',
   enableNotifications: process.env.ENABLE_NOTIFICATIONS !== 'false',
-  maxWeeksAhead: parseInt(process.env.MAX_WEEKS_AHEAD || '4', 10),
+  maxWeeksAhead: parseInt(process.env.MAX_WEEKS_AHEAD || '8', 10),
   dryRun: process.argv.includes('--dry-run'),
 };
 

@@ -522,7 +522,7 @@ mixers-booking-script@1.0.0
 | `EVENT_TYPE_IDS` | No | `54834` | *(Legacy fallback)* Comma-separated event type IDs. Used only if `EVENT_CONFIGS` is not set. |
 | `PREFERRED_DAYS` | No | `monday` | *(Legacy fallback)* Comma-separated day names. Used only if `EVENT_CONFIGS` is not set. |
 | `CHECK_INTERVAL_MINUTES` | No | `5` | Minutes between scheduler checks (used by deprecated `scheduler.js` only; GitHub Actions uses the cron expression in `booking.yml`) |
-| `MAX_WEEKS_AHEAD` | No | `4` | Max weeks into the future to book |
+| `MAX_WEEKS_AHEAD` | No | `8` | Max weeks into the future to book |
 | `HEADLESS` | No | `true` | Run browser without GUI |
 | `ENABLE_NOTIFICATIONS` | No | `true` | Enable email + macOS notifications |
 | `NOTIFY_EMAIL_USER` | No | — | Gmail address for sending notifications |

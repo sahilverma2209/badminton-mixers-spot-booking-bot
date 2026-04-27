@@ -80,7 +80,7 @@ If you need to override defaults, go to **Settings** → **Secrets and variables
 | `USER_ID` | `5384796` | Your CourtReserve User ID |
 | `MEMBERSHIP_ID` | `2346339` | Your Membership ID |
 | `EVENT_CONFIGS` | `19756:tuesday` | Event types & days (format: `19756:tuesday,thursday;54834:monday`) |
-| `MAX_WEEKS_AHEAD` | `4` | How far ahead to look for events |
+| `MAX_WEEKS_AHEAD` | `8` | How far ahead to look for events |
 
 > 💡 **Secrets vs Variables**: Use **Secrets** for sensitive values (passwords, emails). Use **Variables** for non-sensitive configuration. Variables are visible in logs; Secrets are always masked.
 
