@@ -19,8 +19,8 @@ function parseEventConfigs() {
     return configs;
   }
   // Legacy fallback
-  const ids = (process.env.EVENT_TYPE_IDS || '19756').split(',').map(s => s.trim());
-  const days = (process.env.PREFERRED_DAYS || 'tuesday').split(',').map(s => s.trim().toLowerCase());
+  const ids = (process.env.EVENT_TYPE_IDS || '54834').split(',').map(s => s.trim());
+  const days = (process.env.PREFERRED_DAYS || 'monday').split(',').map(s => s.trim().toLowerCase());
   const configs = {};
   ids.forEach(id => { configs[id] = days; });
   return configs;
