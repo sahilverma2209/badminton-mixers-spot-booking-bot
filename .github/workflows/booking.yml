@@ -12,7 +12,7 @@ on:
   # GitHub Actions cron uses UTC timezone
   # Adjust the interval as needed (note: GitHub may delay scheduled runs by a few minutes)
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/20 * * * *'
 
   # Manual trigger - lets you run it on-demand from the Actions tab
   workflow_dispatch:
