@@ -1,5 +1,6 @@
 // Optional scheduler.js 
 // Currently not used; scheduling is done via github workflows: .github/workflows/booking.yml
+// more info here: https://github.com/sahilverma2209/badminton-mixers-spot-booking-bot/blob/master/docs/GITHUB_ACTIONS_SETUP.md
 // Leaving this in case needed in the future
 const cron = require('node-cron');
 const { run, CONFIG } = require('./booking.js');
