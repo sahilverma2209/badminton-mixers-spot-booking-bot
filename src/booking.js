@@ -4,6 +4,8 @@ const fs = require('fs');
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 // ─── Configuration ───────────────────────────────────────────────
+// Redmond: 54834
+// Renton: 19756
 // Parse EVENT_CONFIGS (new format: "19756:tuesday,thursday;54834:monday,wednesday,friday")
 // Falls back to legacy EVENT_TYPE_IDS + PREFERRED_DAYS if EVENT_CONFIGS is not set
 function parseEventConfigs() {
