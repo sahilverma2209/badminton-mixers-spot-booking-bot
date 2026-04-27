@@ -1,0 +1,27 @@
+{
+  "name": "mixers-booking-script",
+  "version": "1.0.0",
+  "main": "booking.js",
+  "scripts": {
+    "check": "node booking.js",
+    "start": "node scheduler.js",
+    "debug": "HEADLESS=false node booking.js",
+    "dry-run": "HEADLESS=false node booking.js --dry-run",
+    "dry-run:headless": "node booking.js --dry-run"
+  },
+  "keywords": [
+    "badminton",
+    "courtreserve",
+    "booking",
+    "automation"
+  ],
+  "author": "Sahil Verma",
+  "license": "ISC",
+  "description": "Automated booking script for Bellevue Badminton Club Mixers on CourtReserve",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^8.0.6",
+    "playwright": "^1.59.1"
+  }
+}

@@ -1,0 +1,1084 @@
+{
+  "requests": [
+    {
+      "timestamp": "2026-04-26T23:07:32.431Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+      "headers": {
+        "referer": "https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138?resId=45283241&tab=dates",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\""
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:32.954Z",
+      "method": "POST",
+      "url": "https://events.courtreserve.com/cdn-cgi/rum?",
+      "headers": {
+        "x-newrelic-id": "VwMDWVRTDBABVFBXAgAPXl0F",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138?resId=45283241&tab=dates",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM1NDgyMDQiLCJhcCI6IjExMDMyMTUzNDAiLCJpZCI6ImJhMjg4NzFlMTlhMDY4ZDIiLCJ0ciI6ImQ4ODljMzNlNDcyZmEwNDg1ZmJkYjA3ZjBiYTIwYzdmIiwidGkiOjE3NzcyNDQ4NTI5NTB9fQ==",
+        "traceparent": "00-d889c33e472fa0485fbdb07f0ba20c7f-ba28871e19a068d2-01",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "content-type": "application/json",
+        "tracestate": "3548204@nr=0-1-3548204-1103215340-ba28871e19a068d2----1777244852950"
+      },
+      "postData": "{\"referrer\":\"\",\"eventType\":3,\"versions\":{\"js\":\"2026.2.0\",\"fl\":\"2024.11.0\"},\"pageloadId\":\"2684815e-dcf0-4525-9dca-e45fde6e3b33\",\"location\":\"https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138\",\"landingPath\":\"/Online/Events/Details/7031/FF4P3TK7031138\",\"startTime\":1777244846061.6,\"nt\":\"navigate\",\"siteToken\":\"bf28f7ef2a604a24ab22c9b05cadbe62\",\"lcp\":{\"value\":2040,\"path\":\"/Online/Events/Details/7031/FF4P3TK7031138\",\"element\":\"\",\"size\":80850,\"url\":\"https://events.courtreserve.com/Content/img/LoadingIcon.gif\",\"rld\":0,\"rlt\":0,\"erd\":1454.199999988079},\"fid\":{\"value\":1.2000000178813934,\"path\":\"/Online/Events/Details/7031/FF4P3TK7031138\",\"element\":\"a.btn.btn-block.fn-disable.btn-org.m-auto.minw-200.fn-btn-disabled.d-inline-flex.d-flex-inherit\",\"name\":\"pointerdown\"},\"cls\":{\"value\":0.09999693446755409,\"path\":\"/Online/Events/Details/7031/FF4P3TK7031138\",\"element\":\"#footer-container>section.footer_one.home5\",\"currentRect\":{\"x\":0,\"y\":600.6640625,\"width\":1280,\"height\":199.3359375,\"top\":600.6640625,\"right\":1280,\"bottom\":800,\"left\":0},\"previousRect\":{\"x\":0,\"y\":445,\"width\":1280,\"height\":296.2578125,\"top\":445,\"right\":1280,\"bottom\":741.2578125,\"left\":0}},\"fcp\":{\"value\":692,\"path\":\"/Online/Events/Details/7031/FF4P3TK7031138\"},\"ttfb\":{\"value\":585.8000000119209,\"path\":\"/Online/Events/Details/7031/FF4P3TK7031138\"},\"inp\":{\"value\":56,\"path\":\"/Online/Events/Details/7031/FF4P3TK7031138\",\"element\":\"a.btn.btn-block.fn-disable.btn-org.m-auto.minw-200.fn-btn-disabled.d-inline-flex.d-flex-inherit\",\"name\":\"click\"},\"timingsV2\":{\"nextHopProtocol\":\"h2\",\"transferSize\":42235,\"decodedBodySize\":176997},\"dt\":\"\",\"st\":2}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:32.954Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcIFBAUVxcRg%3D%3D&rst=6890&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138&ptid=fd959bad21722ca8&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "bel.6;e,'lcp,1ko,e;6,'timeToFirstByte,585.8000000119209;6,'resourceLoadDelay,0.;6,'resourceLoadDuration,0.;6,'resourceLoadTime,0.;6,'elementRenderDelay,1454.199999988079;6,'size,80850.;5,'eid;5,'elUrl,'https://events.courtreserve.com/Content/img/LoadingIcon.gif;5,'pageUrl,'https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138;5,'net-etype,'4g;6,'net-rtt,50.;6,'net-dlink,10.;6,'cls,0.09999693446755409;7,'webdriverDetected;e,'unload,5bc,6;5,a,b;5,c,d;6,e,50.;6,f,10.;6,g,0.09999693446755409;7,h;e,'fi,4ve,9;5,'type,'pointerdown;5,'eventTarget,'a.btn.btn-block.fn-disable.btn-org.m-auto.minw-200.fn-btn-disabled.d-inline-flex.d-flex-inherit;5,'loadState,'complete;5,a,b;5,c,d;6,e,50.;6,f,10.;6,g,0.09999693446755409;7,h;e,g,2r,a;5,'metricId,'v4-1777244847373-1362896533082;5,'largestShiftTarget,'#footer-container>section.footer_one.home5;6,'largestShiftTime,1998.300000011921;6,'largestShiftValue,0.05396556854248047;5,o,p;5,a,b;5,c,d;6,e,50.;6,f,10.;7,h;e,'pageHide,5bd,6;5,a,b;5,c,d;6,e,50.;6,f,10.;6,g,0.09999693446755409;7,h;e,'inp,1k,h;5,q,'v4-1777244847372-3995296546801;5,m,n;6,'eventTime,6314.199999988079;5,'interactionTarget,n;6,'interactionTime,6314.199999988079;5,'interactionType,'pointer;6,'inputDelay,1.2000000178813934;6,'nextPaintTime,6370.199999988079;6,'processingDuration,9.099999994039536;6,'presentationDelay,45.69999998807907;5,o,p;5,a,b;5,c,d;6,e,50.;6,f,10.;6,g,0.09999693446755409;7,h"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:32.954Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/jserrors/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcIFBAUVxcRg%3D%3D&rst=6890&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138&ptid=fd959bad21722ca8&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "{\"sm\":[{\"params\":{\"name\":\"Generic/LoaderType/spa/Detected\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"Generic/DistMethod/CDN/Detected\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"Generic/Runtime/Browser/Detected\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"Framework/Jquery/Detected\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"Generic/WebDriver/Detected\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"API/logging/info/called\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"SoftNav/Interaction/InitialPageLoad/Duration/Ms\"},\"stats\":{\"t\":1279}},{\"params\":{\"name\":\"Ajax/Events/Excluded/Agent\"},\"stats\":{\"c\":7}},{\"params\":{\"name\":\"session_trace/Harvest/Early/Seen\"},\"stats\":{\"t\":16051}},{\"params\":{\"name\":\"Generic/IFrame/Added\"},\"stats\":{\"t\":1}},{\"params\":{\"name\":\"audit/page_view/hasReplay/true/negative\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"audit/page_view/hasTrace/true/positive\"},\"stats\":{\"c\":1}}]}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:32.954Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/jserrors/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcIFBAUVxcRg%3D%3D&rst=6890&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138&ptid=fd959bad21722ca8&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "{\"xhr\":[{\"params\":{\"method\":\"POST\",\"hostname\":\"bam.nr-data.net\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"bam.nr-data.net:443\",\"pathname\":\"/events/1/NRJS-9c7fecf7b5bd202ed21\",\"status\":200},\"metrics\":{\"count\":3,\"txSize\":{\"t\":738,\"min\":137,\"max\":381,\"sos\":212330,\"c\":3},\"rxSize\":{\"t\":72,\"min\":24,\"max\":24,\"sos\":1728,\"c\":3},\"duration\":{\"t\":412,\"min\":125,\"max\":149,\"sos\":56870,\"c\":3},\"cbTime\":{\"t\":0,\"min\":0,\"max\":0,\"sos\":0,\"c\":3},\"time\":{\"t\":4357,\"min\":1452,\"max\":1453,\"sos\":6327817,\"c\":3}}},{\"params\":{\"method\":\"POST\",\"hostname\":\"bam.nr-data.net\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"bam.nr-data.net:443\",\"pathname\":\"/browser/blobs\",\"status\":200},\"metrics\":{\"count\":2,\"txSize\":{\"t\":27358,\"min\":11129,\"max\":16229,\"sos\":387235082,\"c\":2},\"rxSize\":{\"t\":48,\"min\":24,\"max\":24,\"sos\":1152,\"c\":2},\"duration\":{\"t\":263,\"min\":125,\"max\":138,\"sos\":34669,\"c\":2},\"cbTime\":{\"t\":0,\"min\":0,\"max\":0,\"sos\":0,\"c\":2},\"time\":{\"t\":2904,\"min\":1451,\"max\":1453,\"sos\":4216610,\"c\":2}}},{\"params\":{\"method\":\"POST\",\"hostname\":\"bam.nr-data.net\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"bam.nr-data.net:443\",\"pathname\":\"/jserrors/1/NRJS-9c7fecf7b5bd202ed21\",\"status\":200},\"metrics\":{\"count\":1,\"txSize\":{\"t\":567},\"rxSize\":{\"t\":24},\"duration\":{\"t\":130},\"cbTime\":{\"t\":0},\"time\":{\"t\":1452}}},{\"params\":{\"method\":\"GET\",\"hostname\":\"events.courtreserve.com\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"events.courtreserve.com:443\",\"pathname\":\"/Online/EventsApi/ApiDetails\",\"status\":200},\"metrics\":{\"count\":1,\"rxSize\":{\"t\":39723},\"duration\":{\"t\":722},\"cbTime\":{\"t\":5},\"time\":{\"t\":1274}}},{\"params\":{\"method\":\"GET\",\"hostname\":\"api2.courtreserve.com\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"api2.courtreserve.com:443\",\"pathname\":\"/Online/Utils/Member_GetDashboardData\",\"status\":200},\"metrics\":{\"count\":1,\"rxSize\":{\"t\":260},\"duration\":{\"t\":96},\"cbTime\":{\"t\":1},\"time\":{\"t\":2200}}},{\"params\":{\"method\":\"GET\",\"hostname\":\"events.courtreserve.com\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"events.courtreserve.com:443\",\"pathname\":\"/Online/EventsApi/Event_GetAdditionalDates\",\"status\":200},\"metrics\":{\"count\":1,\"rxSize\":{\"t\":49122},\"duration\":{\"t\":381},\"cbTime\":{\"t\":1},\"time\":{\"t\":1997}}}]}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:32.954Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcIFBAUVxcRg%3D%3D&rst=6890&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138&ptid=fd959bad21722ca8&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "bel.7;2,,ze,jx,,,'GET,5k,'events.courtreserve.com:443,'/Online/EventsApi/ApiDetails,,unf,,'0,'6c360a42134a125c,'a49ef5307417542ee611e06fcbbb2230,mogdp0rt;2,,pq,2n,,,0,5k,'api2.courtreserve.com:443,'/Online/Utils/Member_GetDashboardData,,78,,3,!!!;2,,k3,ak,,,0,5k,1,'/Online/EventsApi/Event_GetAdditionalDates,,11wi,,3,'68fde43c1d6f5b89,'3e07a20c9e28a819787f5812822014c8,mogdp1bw"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:32.954Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/browser/blobs?browser_monitoring_key=NRJS-9c7fecf7b5bd202ed21&type=BrowserSessionChunk&app_id=1015518894&protocol_version=0&timestamp=1777244846182&attributes=entityGuid%3DMzU0ODIwNHxCUk9XU0VSfEFQUExJQ0FUSU9OfDExMDMyMTUzNDA%26harvestId%3Dfd5de99999d3b2f6_fd959bad21722ca8_3%26trace.firstTimestamp%3D1777244846182%26trace.lastTimestamp%3D1777244853015%26trace.nodes%3D48%26trace.originTimestamp%3D1777244846126%26agentVersion%3D1.313.1%26ptid%3Dfd959bad21722ca8%26session%3Dfd5de99999d3b2f6%26currentUrl%3Dhttps://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "[{\"n\":\"load\",\"s\":1577,\"e\":1577,\"o\":\"200 POST: bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1577,\"e\":1577,\"o\":\"200 POST: bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"load\",\"s\":1578,\"e\":1578,\"o\":\"200 POST: bam.nr-data.net:443/browser/blobs\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1578,\"e\":1578,\"o\":\"200 POST: bam.nr-data.net:443/browser/blobs\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":1452,\"e\":1577,\"o\":\"https://bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"resource\"},{\"n\":\"xmlhttprequest\",\"s\":1453,\"e\":1577,\"o\":\"https://bam.nr-data.net:443/browser/blobs\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":1582,\"e\":1582,\"o\":\"200 POST: bam.nr-data.net:443/jserrors/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1582,\"e\":1582,\"o\":\"200 POST: bam.nr-data.net:443/jserrors/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":1452,\"e\":1582,\"o\":\"https://bam.nr-data.net:443/jserrors/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":1589,\"e\":1589,\"o\":\"200 POST: bam.nr-data.net:443/browser/blobs\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1589,\"e\":1589,\"o\":\"200 POST: bam.nr-data.net:443/browser/blobs\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":1451,\"e\":1589,\"o\":\"https://bam.nr-data.net:443/browser/blobs\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":1591,\"e\":1591,\"o\":\"200 POST: bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1591,\"e\":1591,\"o\":\"200 POST: bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":1453,\"e\":1591,\"o\":\"https://bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":1600,\"e\":1601,\"o\":\"200 POST: bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1601,\"e\":1601,\"o\":\"200 POST: bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":1452,\"e\":1600,\"o\":\"https://bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"resource\"},{\"n\":\"iframe\",\"s\":1649,\"e\":1689,\"o\":\"https://js.stripe.com:443/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html\",\"t\":\"resource\"},{\"n\":\"message\",\"s\":1720,\"e\":1720,\"o\":\"window\",\"t\":\"event\"},{\"n\":\"load\",\"s\":1991,\"e\":1991,\"o\":\"200 GET: events.courtreserve.com:443/Online/EventsApi/ApiDetails\",\"t\":\"event\"},{\"n\":\"Ajax\",\"s\":1274,\"e\":1996,\"o\":\"200 GET: events.courtreserve.com:443/Online/EventsApi/ApiDetails\",\"t\":\"ajax\"},{\"n\":\"xmlhttprequest\",\"s\":1275,\"e\":1990,\"o\":\"https://events.courtreserve.com:443/Online/EventsApi/ApiDetails\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":1994,\"e\":2016,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/fonts/font/Flaticon.woff2\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":1994,\"e\":2019,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/fonts/font/flaticon01.ttf\",\"t\":\"resource\"},{\"n\":\"img\",\"s\":1997,\"e\":2021,\"o\":\"https://events.courtreserve.com:443/Content/img/LoadingIcon.gif\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":2295,\"e\":2295,\"o\":\"200 GET: api2.courtreserve.com:443/Online/Utils/Member_GetDashboardData\",\"t\":\"event\"},{\"n\":\"Ajax\",\"s\":2200,\"e\":2296,\"o\":\"200 GET: api2.courtreserve.com:443/Online/Utils/Member_GetDashboardData\",\"t\":\"ajax\"},{\"n\":\"xmlhttprequest\",\"s\":2200,\"e\":2295,\"o\":\"https://api2.courtreserve.com:443/Online/Utils/Member_GetDashboardData\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":2377,\"e\":2377,\"o\":\"200 GET: events.courtreserve.com:443/Online/EventsApi/Event_GetAdditionalDates\",\"t\":\"event\"},{\"n\":\"Ajax\",\"s\":1997,\"e\":2378,\"o\":\"200 GET: events.courtreserve.com:443/Online/EventsApi/Event_GetAdditionalDates\",\"t\":\"ajax\"},{\"n\":\"xmlhttprequest\",\"s\":1997,\"e\":2377,\"o\":\"https://events.courtreserve.com:443/Online/EventsApi/Event_GetAdditionalDates\",\"t\":\"resource\"},{\"n\":\"mousing\",\"s\":6314,\"e\":6315,\"o\":\"a.btn.btn-block.fn-disable.btn-org.m-auto.minw-200\",\"t\":\"event\"},{\"n\":\"pointerdown\",\"s\":6315,\"e\":6315,\"o\":\"a.btn.btn-block.fn-disable.btn-org.m-auto.minw-200\",\"t\":\"event\"},{\"n\":\"focus\",\"s\":6315,\"e\":6316,\"o\":\"a.btn.btn-block.fn-disable.btn-org.m-auto.minw-200\",\"t\":\"event\"},{\"n\":\"pointerup\",\"s\":6316,\"e\":6316,\"o\":\"a.btn.btn-block.fn-disable.btn-org.m-auto.minw-200\",\"t\":\"event\"},{\"n\":\"click\",\"s\":6316,\"e\":6316,\"o\":\"a.btn.btn-block.fn-disable.btn-org.m-auto.minw-200\",\"t\":\"event\"},{\"n\":\"beforeunload\",\"s\":6324,\"e\":6324,\"o\":\"window\",\"t\":\"event\"},{\"n\":\"mousing\",\"s\":6351,\"e\":6351,\"o\":\"a.btn.btn-block.fn-disable.btn-org.m-auto.minw-200.fn-btn-disabled.d-inline-flex.d-flex-inherit\",\"t\":\"event\"},{\"n\":\"mousing\",\"s\":6352,\"e\":6352,\"o\":\"span.btn-active-spinner\",\"t\":\"event\"},{\"n\":\"scrolling\",\"s\":6352,\"e\":6352,\"o\":\"window\",\"t\":\"event\"},{\"n\":\"lcp\",\"s\":2040,\"e\":2040,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"unload\",\"s\":6888,\"e\":6888,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"fi\",\"s\":6314,\"e\":6314,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"visibilitychange\",\"s\":6889,\"e\":6889,\"o\":\"window\",\"t\":\"event\"},{\"n\":\"cls\",\"s\":100,\"e\":100,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"pageHide\",\"s\":6889,\"e\":6889,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"inp\",\"s\":56,\"e\":56,\"o\":\"document\",\"t\":\"timing\"}]"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:32.955Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/ins/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcIFBAUVxcRg%3D%3D&rst=6890&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138&ptid=fd959bad21722ca8&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "{\"ins\":[{\"timestamp\":1777244852440,\"pageUrl\":\"https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138\",\"currentUrl\":\"https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138\",\"eventType\":\"UserAction\",\"action\":\"click\",\"actionCount\":1,\"actionDuration\":0,\"actionMs\":\"[0]\",\"target\":\"html>body#member-portal-body>div#mm-0>div#render-body-container>div#layout-body>div>div>div#ev-details-wrapper>div>div>div>div#page-inner>div#event-details-container>div>div>div>div>div#EventDetailsTabStrip-events>div#event_additionaldates_wrapper>div>div>div>span>a:nth-of-type(1)\",\"targetClass\":\"btn btn-block fn-disable btn-org m-auto minw-200 fn-btn-disabled d-inline-flex d-flex-inherit\",\"targetTag\":\"A\",\"nearestId\":\"event_additionaldates_wrapper\",\"nearestClass\":\"btn btn-block fn-disable btn-org m-auto minw-200\",\"nearestTag\":\"A\"},{\"timestamp\":1777244852438,\"pageUrl\":\"https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138\",\"currentUrl\":\"https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138\",\"eventType\":\"UserAction\",\"action\":\"scrollend\",\"actionCount\":1,\"actionDuration\":0,\"actionMs\":\"[0]\",\"target\":\"document\"}]}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:32.978Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/memberportal/lib/font-awesome/webfonts/fa-solid-900.woff2",
+      "headers": {
+        "origin": "https://events.courtreserve.com",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:32.978Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/memberportal/lib/font-awesome/webfonts/fa-regular-400.woff2",
+      "headers": {
+        "origin": "https://events.courtreserve.com",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:32.978Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/memberportal/lib/font-awesome/webfonts/fa-duotone-900.woff2",
+      "headers": {
+        "origin": "https://events.courtreserve.com",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:32.978Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/bundles/headerScripts?v=N-7CHN8Lwi12Oy3RICc_-spVWiEBuFVXGBIW3W9trTY1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.009Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/MemberPortal/lib/font-awesome/webfonts/fa-light-300.woff2",
+      "headers": {
+        "referer": ""
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.009Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/MemberPortal/lib/font-awesome/webfonts/fa-regular-400.woff2",
+      "headers": {
+        "referer": ""
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.009Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/MemberPortal/lib/font-awesome/webfonts/fa-solid-900.woff2",
+      "headers": {
+        "referer": ""
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.010Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/MemberPortal/lib/font-awesome/webfonts/fa-thin-100.woff2",
+      "headers": {
+        "referer": ""
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.011Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/bundles/kendoScripts?v=7Yh7PuYSTnag1tOLG0WizdnWTy6dQ-4Z5siN3sRp3VQ1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.114Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/MemberPortal/fonts/font/flaticon01.ttf?a03bb3fe787c2cb89dc234a205be100b",
+      "headers": {
+        "origin": "https://events.courtreserve.com",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Content/MemberPortal/fonts/font/flaticon.css",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.137Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/signalr/hubs",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.137Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/bundles/footerScripts?v=",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.261Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Online/EventsApi/EventApi_SignUpToEvent_Get?id=7031&uiCulture=en-US&eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170&ajaxCall=False&isLoginRedirect=False&isFullEventReg=False&checkedMembers=&hostEnv=https://app.courtreserve.com/&isMobileLayout=False&requestData=SVtXlVuPvpnXO5nnRKOxzcTcYY9TzotlauPP%2fCBlLvnwXLectu6zf%2brYsKwBsDiqeUCHE0fjR947xkWACtcZV1veqHWxsGrnNC4BH1JTO%2fjr97n8p32Nqsd%2baYkMm0%2fVTO0XBm8h3Ng%3d",
+      "headers": {
+        "x-newrelic-id": "VwMDWVRTDBABVFBXAgAPXl0F",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM1NDgyMDQiLCJhcCI6IjExMDMyMTUzNDAiLCJpZCI6IjU5MGY5NjY1NDIzOGQ1ZWEiLCJ0ciI6ImFjZDQ3Yjc1ZDU2N2Y5ZmU2OTUxYWE4NmZkY2JkZDg0IiwidGkiOjE3NzcyNDQ4NTMyNDh9fQ==",
+        "traceparent": "00-acd47b75d567f9fe6951aa86fdcbdd84-590f96654238d5ea-01",
+        "x-requested-with": "XMLHttpRequest",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "accept": "*/*",
+        "tracestate": "3548204@nr=0-1-3548204-1103215340-590f96654238d5ea----1777244853248"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.261Z",
+      "method": "POST",
+      "url": "https://events.courtreserve.com/cdn-cgi/rum?",
+      "headers": {
+        "x-newrelic-id": "VwMDWVRTDBABVFBXAgAPXl0F",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM1NDgyMDQiLCJhcCI6IjExMDMyMTUzNDAiLCJpZCI6IjRmYmYzYzFlYzJlN2NkOTMiLCJ0ciI6ImM5Y2E5NWJkOGFiZTI1ZDZjYzQxNzA2ODc3ZTBiNjA0IiwidGkiOjE3NzcyNDQ4NTMyNDl9fQ==",
+        "traceparent": "00-c9ca95bd8abe25d6cc41706877e0b604-4fbf3c1ec2e7cd93-01",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "content-type": "application/json",
+        "tracestate": "3548204@nr=0-1-3548204-1103215340-4fbf3c1ec2e7cd93----1777244853249"
+      },
+      "postData": "{\"memory\":{\"totalJSHeapSize\":111422887,\"usedJSHeapSize\":87474151,\"jsHeapSizeLimit\":4294967296},\"resources\":[],\"referrer\":\"https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138?resId=45283241&tab=dates\",\"eventType\":1,\"firstPaint\":732,\"firstContentfulPaint\":732,\"startTime\":1777244852386.1,\"versions\":{\"fl\":\"2024.11.0\",\"js\":\"2026.2.0\",\"timings\":2},\"pageloadId\":\"19feece3-1c79-428d-9b54-65379c2261d5\",\"location\":\"https://events.courtreserve.com/Online/Events/SignUpToEvent/7031\",\"nt\":\"navigate\",\"timingsV2\":{\"nextHopProtocol\":\"h2\",\"domainLookupStart\":45.19999998807907,\"domainLookupEnd\":45.19999998807907,\"connectStart\":45.19999998807907,\"connectEnd\":45.19999998807907,\"requestStart\":45.80000001192093,\"responseStart\":563,\"responseEnd\":579.6999999880791,\"domInteractive\":841.6999999880791,\"domComplete\":842.1999999880791,\"loadEventStart\":842.1999999880791,\"loadEventEnd\":842.9000000059605,\"finalResponseHeadersStart\":563,\"firstInterimResponseStart\":0,\"transferSize\":41064,\"decodedBodySize\":175084},\"dt\":\"\",\"siteToken\":\"bf28f7ef2a604a24ab22c9b05cadbe62\",\"st\":2}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.261Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=870&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1&af=err,spa,xhr,stn,ins&ap=425&be=563&fe=280&dc=279&fsh=0&perf=%7B%22timing%22:%7B%22of%22:1777244852386,%22n%22:0,%22u%22:566,%22ue%22:566,%22f%22:45,%22dn%22:45,%22dne%22:45,%22c%22:45,%22s%22:45,%22ce%22:45,%22rq%22:46,%22rp%22:563,%22rpe%22:580,%22di%22:842,%22ds%22:842,%22de%22:842,%22dc%22:842,%22l%22:842,%22le%22:843%7D,%22navigation%22:%7B%7D%7D&fp=732&fcp=732&timestamp=1777244853321",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "{\"ja\":{\"webdriverDetected\":true}}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.408Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/browser/blobs?browser_monitoring_key=NRJS-9c7fecf7b5bd202ed21&type=BrowserSessionChunk&app_id=1015518894&protocol_version=0&timestamp=1777244852451&attributes=entityGuid%3DMzU0ODIwNHxCUk9XU0VSfEFQUExJQ0FUSU9OfDExMDMyMTUzNDA%26harvestId%3Dfd5de99999d3b2f6_9205d729f4a67f60_1%26trace.firstTimestamp%3D1777244852451%26trace.lastTimestamp%3D1777244853314%26trace.nodes%3D179%26trace.originTimestamp%3D1777244852451%26agentVersion%3D1.313.1%26ptid%3D9205d729f4a67f60%26session%3Dfd5de99999d3b2f6%26currentUrl%3Dhttps://events.courtreserve.com/Online/Events/SignUpToEvent/7031",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "[{\"n\":\"unloadEventStart\",\"s\":566,\"e\":566,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"unloadEventEnd\",\"s\":566,\"e\":566,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"domInteractive\",\"s\":842,\"e\":842,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"domContentLoadedEventStart\",\"s\":842,\"e\":842,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"domContentLoadedEventEnd\",\"s\":842,\"e\":842,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"domComplete\",\"s\":842,\"e\":842,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"loadEventStart\",\"s\":842,\"e\":842,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"loadEventEnd\",\"s\":843,\"e\":843,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"redirectCount\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"criticalCHRestart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"activationStart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"workerStart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"redirectStart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"redirectEnd\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"fetchStart\",\"s\":45,\"e\":45,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"domainLookupStart\",\"s\":45,\"e\":45,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"domainLookupEnd\",\"s\":45,\"e\":45,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"connectStart\",\"s\":45,\"e\":45,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"connectEnd\",\"s\":45,\"e\":45,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"secureConnectionStart\",\"s\":45,\"e\":45,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"requestStart\",\"s\":46,\"e\":46,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"responseStart\",\"s\":563,\"e\":563,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"responseEnd\",\"s\":580,\"e\":580,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"finalResponseHeadersStart\",\"s\":563,\"e\":563,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"firstInterimResponseStart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"workerRouterEvaluationStart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"workerCacheLookupStart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"startTime\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"duration\",\"s\":843,\"e\":843,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"load\",\"s\":587,\"e\":587,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"load\",\"s\":588,\"e\":588,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"load\",\"s\":596,\"e\":596,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"click\",\"s\":599,\"e\":599,\"o\":\"span\",\"t\":\"event\"},{\"n\":\"load\",\"s\":617,\"e\":617,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"load\",\"s\":617,\"e\":617,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"load\",\"s\":621,\"e\":621,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"load\",\"s\":622,\"e\":622,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"link\",\"s\":587,\"e\":588,\"o\":\"https://events.courtreserve.com:443/Content/memberportal/lib/font-awesome/webfonts/fa-solid-900.woff2\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":587,\"e\":588,\"o\":\"https://events.courtreserve.com:443/Content/memberportal/lib/font-awesome/webfonts/fa-duotone-900.woff2\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":587,\"e\":609,\"o\":\"https://events.courtreserve.com:443/Content/memberportal/lib/font-awesome/webfonts/fa-regular-400.woff2\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":587,\"e\":587,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/font-awesome/css/all.min.css\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":587,\"e\":587,\"o\":\"https://events.courtreserve.com:443/Scripts/reactapp.js\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":587,\"e\":587,\"o\":\"https://fonts.googleapis.com:443/css2\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":588,\"e\":588,\"o\":\"https://events.courtreserve.com:443/Scripts/root.js\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":588,\"e\":588,\"o\":\"https://events.courtreserve.com:443/ClientApp/bundle.css\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":588,\"e\":588,\"o\":\"https://events.courtreserve.com:443/bundles/headerScripts\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":594,\"e\":594,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/font-awesome/webfonts/fa-light-300.woff2\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":594,\"e\":594,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/font-awesome/webfonts/fa-regular-400.woff2\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":594,\"e\":594,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/font-awesome/webfonts/fa-solid-900.woff2\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":594,\"e\":594,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/font-awesome/webfonts/fa-thin-100.woff2\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":594,\"e\":594,\"o\":\"https://fonts.gstatic.com:443/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":596,\"e\":596,\"o\":\"https://events.courtreserve.com:443/bundles/kendoScripts\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":617,\"e\":617,\"o\":\"https://events.courtreserve.com:443/Scripts/kendo/2022.1.301/cultures/kendo.culture.en-US.min.js\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":617,\"e\":617,\"o\":\"https://js.stripe.com:443/v3/\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":621,\"e\":621,\"o\":\"https://cdnjs.cloudflare.com:443/ajax/libs/pdf.js/2.2.2/pdf.js\",\"t\":\"resource\"},{\"n\":\"mousing\",\"s\":717,\"e\":726,\"o\":\"body#member-portal-body.mm-wrapper\",\"t\":\"event\"},{\"n\":\"load\",\"s\":723,\"e\":723,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"mousing\",\"s\":726,\"e\":726,\"o\":\"div.body-container\",\"t\":\"event\"},{\"n\":\"css\",\"s\":643,\"e\":643,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/bootstrap.min.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":643,\"e\":643,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/jquery-ui.min.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":643,\"e\":643,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/bootstrap-select.min.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":643,\"e\":643,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/simplebar.min.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":644,\"e\":644,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/progressbar.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":644,\"e\":644,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/fonts/font/flaticon.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":644,\"e\":644,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/animate.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":644,\"e\":644,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/slider.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":644,\"e\":644,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/fancyBox.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":644,\"e\":644,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/owl.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":645,\"e\":645,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/timecounter.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":645,\"e\":645,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/sweetalert2/sweetalert2.min.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":645,\"e\":645,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":650,\"e\":650,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/theme.css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":650,\"e\":650,\"o\":\"https://events.courtreserve.com:443/fonts/axiforma/stylesheet.css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":651,\"e\":651,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"img\",\"s\":651,\"e\":651,\"o\":\"https://tgcstorage.blob.core.windows.net:443/court-reserve-7031/c0c48284-438e-4bae-9f1f-f62e2df2fc7e.jpg\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":715,\"e\":715,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/fonts/font/flaticon01.ttf\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":716,\"e\":716,\"o\":\"https://fonts.gstatic.com:443/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":723,\"e\":723,\"o\":\"https://events.courtreserve.com:443/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":724,\"e\":724,\"o\":\"https://events.courtreserve.com:443/bundles/footerScripts\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":724,\"e\":724,\"o\":\"https://static.cloudflareinsights.com:443/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":840,\"e\":840,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"script\",\"s\":723,\"e\":839,\"o\":\"https://events.courtreserve.com:443/signalr/hubs\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":840,\"e\":840,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"load\",\"s\":842,\"e\":842,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"DOMContentLoaded\",\"s\":842,\"e\":842,\"o\":\"document\",\"t\":\"event\"},{\"n\":\"pageshow\",\"s\":842,\"e\":842,\"o\":\"window\",\"t\":\"event\"},{\"n\":\"readystatechange\",\"s\":863,\"e\":863,\"o\":\"204 POST: events.courtreserve.com:443/cdn-cgi/rum\",\"t\":\"event\"},{\"n\":\"script\",\"s\":842,\"e\":842,\"o\":\"https://js-agent.newrelic.com:443/nr-spa-1.313.1.min.js\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":847,\"e\":847,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":847,\"e\":847,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":847,\"e\":847,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":848,\"e\":848,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":849,\"e\":849,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":850,\"e\":850,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":851,\"e\":851,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"}]"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.408Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=1022&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "bel.6;e,'fp,kc,6;5,'pageUrl,'https://events.courtreserve.com/Online/Events/SignUpToEvent/7031;5,'net-etype,'4g;6,'net-rtt,50.;6,'net-dlink,10.;6,'cls,0.;7,'webdriverDetected;e,'fcp,kc,9;6,'timeToFirstByte,563.;6,'firstByteToFCP,169.;5,'loadState,'loading;5,1,2;5,3,4;6,5,50.;6,6,10.;6,7,0.;7,8;e,'load,ne,6;5,1,2;5,3,4;6,5,50.;6,6,10.;6,7,0.;7,8"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.408Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/jserrors/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=1022&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "{\"xhr\":[{\"params\":{\"method\":\"POST\",\"hostname\":\"events.courtreserve.com\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"events.courtreserve.com:443\",\"pathname\":\"/cdn-cgi/rum\",\"status\":204},\"metrics\":{\"count\":1,\"txSize\":{\"t\":1077},\"duration\":{\"t\":18},\"cbTime\":{\"t\":0},\"time\":{\"t\":863}}},{\"params\":{\"method\":\"POST\",\"hostname\":\"bam.nr-data.net\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"bam.nr-data.net:443\",\"pathname\":\"/1/NRJS-9c7fecf7b5bd202ed21\",\"status\":200},\"metrics\":{\"count\":1,\"txSize\":{\"t\":33},\"rxSize\":{\"t\":199},\"duration\":{\"t\":148},\"cbTime\":{\"t\":0},\"time\":{\"t\":870}}}]}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.408Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=1022&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "bel.7;1,1,,ne,,,'initialPageLoad,'https://events.courtreserve.com/Online/Events/SignUpToEvent/7031,'https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138,1,,,,bt,!!'29c28a3d-146d-4d0b-9c9e-305daa8a1d04,'1,kc,kc;7,'webdriverDetected;b,fq,!,!-eh,,,,,,1,ed,h,!7a,,,,,1"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.409Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=1022&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "bel.7;2,,nz,i,,,'POST,5o,'events.courtreserve.com:443,'/cdn-cgi/rum,tx,,,'0,'4fbf3c1ec2e7cd93,'c9ca95bd8abe25d6cc41706877e0b604,mogdp5c2"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.409Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/browser/blobs?browser_monitoring_key=NRJS-9c7fecf7b5bd202ed21&type=BrowserSessionChunk&app_id=1015518894&protocol_version=0&timestamp=1777244853183&attributes=entityGuid%3DMzU0ODIwNHxCUk9XU0VSfEFQUExJQ0FUSU9OfDExMDMyMTUzNDA%26harvestId%3Dfd5de99999d3b2f6_9205d729f4a67f60_2%26trace.firstTimestamp%3D1777244853183%26trace.lastTimestamp%3D1777244853469%26trace.nodes%3D129%26trace.originTimestamp%3D1777244852451%26agentVersion%3D1.313.1%26ptid%3D9205d729f4a67f60%26session%3Dfd5de99999d3b2f6%26currentUrl%3Dhttps://events.courtreserve.com/Online/Events/SignUpToEvent/7031",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "[{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":852,\"e\":852,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":853,\"e\":853,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":854,\"e\":854,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":855,\"e\":855,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":856,\"e\":856,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":857,\"e\":857,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":858,\"e\":858,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"mousing\",\"s\":867,\"e\":867,\"o\":\"div.body-container\",\"t\":\"event\"},{\"n\":\"mousing\",\"s\":867,\"e\":867,\"o\":\"div.spinner-container.w-100.h-300.active\",\"t\":\"event\"},{\"n\":\"other\",\"s\":863,\"e\":863,\"o\":\"https://events.courtreserve.com:443/favicon.ico\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":869,\"e\":869,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"other\",\"s\":868,\"e\":868,\"o\":\"https://events.courtreserve.com:443/favicon.ico\",\"t\":\"resource\"},{\"n\":\"readystatechange\",\"s\":870,\"e\":870,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"readystatechange\",\"s\":881,\"e\":881,\"o\":\"204 POST: events.courtreserve.com:443/cdn-cgi/rum\",\"t\":\"event\"},{\"n\":\"readystatechange\",\"s\":881,\"e\":881,\"o\":\"204 POST: events.courtreserve.com:443/cdn-cgi/rum\",\"t\":\"event\"},{\"n\":\"load\",\"s\":881,\"e\":881,\"o\":\"204 POST: events.courtreserve.com:443/cdn-cgi/rum\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":863,\"e\":881,\"o\":\"https://events.courtreserve.com:443/cdn-cgi/rum\",\"t\":\"resource\"},{\"n\":\"readystatechange\",\"s\":1018,\"e\":1018,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"readystatechange\",\"s\":1018,\"e\":1018,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"progress\",\"s\":1018,\"e\":1018,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"readystatechange\",\"s\":1018,\"e\":1018,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"load\",\"s\":1018,\"e\":1018,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1018,\"e\":1018,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"fp\",\"s\":732,\"e\":732,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"fcp\",\"s\":732,\"e\":732,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"load\",\"s\":842,\"e\":842,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"Ajax\",\"s\":863,\"e\":881,\"o\":\"204 POST: events.courtreserve.com:443/cdn-cgi/rum\",\"t\":\"ajax\"},{\"n\":\"xmlhttprequest\",\"s\":870,\"e\":1018,\"o\":\"https://bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"resource\"}]"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.865Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/MemberPortal/fonts/font/Flaticon.woff2",
+      "headers": {
+        "origin": "https://events.courtreserve.com",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "if-none-match": "\"1DB83DDF5A7FD80\"",
+        "referer": "https://events.courtreserve.com/Content/MemberPortal/fonts/font/flaticon.css",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "if-modified-since": "Thu, 20 Feb 2025 21:25:27 GMT"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:34.150Z",
+      "method": "GET",
+      "url": "https://api2.courtreserve.com/Online/Utils/Member_GetDashboardData?orgId=7031&userId=5384796&checkAnnouncements=False&checkPushNotificationsCount=False&membershipId=2346339&isFamilyLevel=False&requireWaitlistInfo=False&showUnsubscribeModal=False&deviceId=&checkByLocations=False&isUsingLeagues=False&isMobileLayout=False",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "accept": "*/*",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:41.077Z",
+      "method": "POST",
+      "url": "https://events.courtreserve.com//Online/EventsApi/EventApi_SignUpToEvent_DropIn_Post/7031?uiCulture=en-US",
+      "headers": {
+        "x-newrelic-id": "VwMDWVRTDBABVFBXAgAPXl0F",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM1NDgyMDQiLCJhcCI6IjExMDMyMTUzNDAiLCJpZCI6IjgwM2VkN2M0MTRkYmQxYjAiLCJ0ciI6ImEwMGZkMjM5MTE1MDhkMWM5ZTM2OTQyMWQyNzA0MjlhIiwidGkiOjE3NzcyNDQ4NjEwNzF9fQ==",
+        "sec-ch-ua-mobile": "?0",
+        "traceparent": "00-a00fd23911508d1c9e369421d270429a-803ed7c414dbd1b0-01",
+        "x-requested-with": "XMLHttpRequest",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "tracestate": "3548204@nr=0-1-3548204-1103215340-803ed7c414dbd1b0----1777244861071"
+      },
+      "postData": "__RequestVerificationToken=EwduU--XLgKvlANAvUmT_TR1IHbP_OjKeEIue2Nn92J6QAOIuF5wyW6Gq2FNe9LpDNwZSfzmrW3T4wnemwpoHT8TxRcjXrJ-sIIn4tsWWWmkzmk57jiKeumAl45A4YTbtWGZJIjzXOXIu8_nWt_hgQ2&RequestData=SVtXlVuPvpnXO5nnRKOxzcTcYY9TzotlauPP%2FCBlLvnwXLectu6zf%2BrYsKwBsDiqeUCHE0fjR947xkWACtcZV1veqHWxsGrnNC4BH1JTO%2Fjr97n8p32Nqsd%2BaYkMm0%2FVTO0XBm8h3Ng%3D&IsMobileLayout=False&CurrentMember.IsChecked=True&CurrentMember.Id=5384796&CurrentMember.LastName=Verma&CurrentMember.FirstName=Sahil&CurrentMember.OrganizationMemberId=4093491&CurrentMember.InitialCheck=False&CurrentMember.HasDisclosureToSign=False&CurrentMember.DisclosureStatus=NoWaiverToSign&CurrentMember.AllowGuests=False&CurrentMember.MaxGuests=&CurrentMember.EntireEventGuestPrice=&CurrentMember.OccurrenceGuestPrice=&CurrentMember.GuestPriceToPay=&UpdateRegistration=False&EventId=1723437&EventName=Renton+Mixer%3A+Tuesday+6%3A30pm+--+UBR+REQUIRED&EventTypeId=19756&Type=Renton+Organized+Play&MaxMembers=24&RequiresApproval=False&SelectedReservation.Id=45283243&SelectedReservation.AvailablePlaces=1&SelectedReservation.End=5%2F12%2F2026+8%3A30%3A00+PM&SelectedReservation.Start=5%2F12%2F2026+6%3A30%3A00+PM&SelectedReservation.EventId=1723437&SelectedReservation.Number=XHHHPH57031170&SelectedReservation.MaxPlayers=24&RequireOnlinePayment=True&HoldTimeForReservation=15&OccurrenceCost=16.5&EntirePrice=&TotalReservationsCount=52&LeftReservationsCount=36&DisclosureId=&DisclosureName=&DisclosureText=&RequireEntityName=False&AllowProrationFullEventPrice=False&NoDropInRegistration=False&RegistrationByEntireCost=False&SourceReservationNumber=&DifferentMembersCostType=False&IsAvailableSignUpforEntireEvent=False&HidePricing=False&IsTaxable=True&AllowGuests=False&PreselectedNumberOfGuests=0&ShowSignUpList=True&X-Requested-With=XMLHttpRequest"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:41.904Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Online/Payments/ProcessPayment/7031?evAction=4",
+      "headers": {
+        "referer": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\""
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.478Z",
+      "method": "POST",
+      "url": "https://events.courtreserve.com/cdn-cgi/rum?",
+      "headers": {
+        "x-newrelic-id": "VwMDWVRTDBABVFBXAgAPXl0F",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM1NDgyMDQiLCJhcCI6IjExMDMyMTUzNDAiLCJpZCI6ImMxYWIzOGI4NGUyYzhjNzEiLCJ0ciI6IjU2YTJjMjdiZjQwODgyZjdlZTFiNTc4ZDZjMWYxNDcxIiwidGkiOjE3NzcyNDQ4NjY0NzF9fQ==",
+        "traceparent": "00-56a2c27bf40882f7ee1b578d6c1f1471-c1ab38b84e2c8c71-01",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "content-type": "application/json",
+        "tracestate": "3548204@nr=0-1-3548204-1103215340-c1ab38b84e2c8c71----1777244866471"
+      },
+      "postData": "{\"referrer\":\"https://events.courtreserve.com/Online/Events/Details/7031/FF4P3TK7031138?resId=45283241&tab=dates\",\"eventType\":3,\"versions\":{\"js\":\"2026.2.0\",\"fl\":\"2024.11.0\"},\"pageloadId\":\"19feece3-1c79-428d-9b54-65379c2261d5\",\"location\":\"https://events.courtreserve.com/Online/Events/SignUpToEvent/7031\",\"landingPath\":\"/Online/Events/SignUpToEvent/7031\",\"startTime\":1777244852386.1,\"nt\":\"navigate\",\"siteToken\":\"bf28f7ef2a604a24ab22c9b05cadbe62\",\"lcp\":{\"value\":1500,\"path\":\"/Online/Events/SignUpToEvent/7031\",\"element\":\"#event-signup-wrapper>div>span>span.list-inline-item.d-block>h4.no-pointer.mb-2\",\"size\":16888,\"rld\":0,\"rlt\":0,\"erd\":937,\"fp\":null},\"fid\":{\"value\":0.6000000238418579,\"path\":\"/Online/Events/SignUpToEvent/7031\",\"element\":\"button.btn.btn-primary.btn-submit.ss-p-btn.fn-btn-disabled.d-inline-flex.d-flex-inherit\",\"name\":\"pointerdown\"},\"cls\":{\"value\":0.06047237177193165,\"path\":\"/Online/Events/SignUpToEvent/7031\",\"element\":\"#footer-container>section.footer_one.home5\",\"currentRect\":{\"x\":0,\"y\":619.21875,\"width\":1280,\"height\":180.78125,\"top\":619.21875,\"right\":1280,\"bottom\":800,\"left\":0},\"previousRect\":{\"x\":0,\"y\":445,\"width\":1280,\"height\":296.2578125,\"top\":445,\"right\":1280,\"bottom\":741.2578125,\"left\":0}},\"fcp\":{\"value\":732,\"path\":\"/Online/Events/SignUpToEvent/7031\"},\"ttfb\":{\"value\":563,\"path\":\"/Online/Events/SignUpToEvent/7031\"},\"inp\":{\"value\":24,\"path\":\"/Online/Events/SignUpToEvent/7031\",\"element\":\"button.btn.btn-primary.btn-submit.ss-p-btn.fn-btn-disabled.d-inline-flex.d-flex-inherit\",\"name\":\"pointerdown\"},\"timingsV2\":{\"nextHopProtocol\":\"h2\",\"transferSize\":41064,\"decodedBodySize\":175084},\"dt\":\"\",\"st\":2}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.478Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=14086&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "bel.6;e,'lcp,15o,f;6,'timeToFirstByte,563.;6,'resourceLoadDelay,0.;6,'resourceLoadDuration,0.;6,'resourceLoadTime,0.;6,'elementRenderDelay,937.;6,'size,16888.;5,'eid;5,'elTag,'H4;5,'element,'#event-signup-wrapper>div>span>span.list-inline-item.d-block>h4.no-pointer.mb-2;5,'pageUrl,'https://events.courtreserve.com/Online/Events/SignUpToEvent/7031;5,'net-etype,'4g;6,'net-rtt,50.;6,'net-dlink,10.;6,'cls,0.06047237177193165;7,'webdriverDetected;e,'unload,av7,6;5,c,d;5,e,f;6,g,50.;6,h,10.;6,i,0.06047237177193165;7,j;e,'fi,6p4,9;5,'type,'pointerdown;5,'eventTarget,'button.btn.btn-primary.btn-submit.ss-p-btn.fn-btn-disabled.d-inline-flex.d-flex-inherit;5,'loadState,'complete;5,c,d;5,e,f;6,g,50.;6,h,10.;6,i,0.06047237177193165;7,j;e,i,1o,a;5,'metricId,'v4-1777244853256-3343040810615;5,'largestShiftTarget,'#footer-container>section.footer_one.home5;6,'largestShiftTime,1482.0999999940395;6,'largestShiftValue,0.060398101806640625;5,q,r;5,c,d;5,e,f;6,g,50.;6,h,10.;7,j;e,'pageHide,av8,6;5,c,d;5,e,f;6,g,50.;6,h,10.;6,i,0.06047237177193165;7,j;e,'inp,o,h;5,s,'v4-1777244853255-8293629178404;5,o,p;6,'eventTime,8680.199999988079;5,'interactionTarget,p;6,'interactionTime,8680.199999988079;5,'interactionType,'pointer;6,'inputDelay,0.6000000238418579;6,'nextPaintTime,8704.199999988079;6,'processingDuration,0.09999999403953552;6,'presentationDelay,23.299999982118607;5,q,r;5,c,d;5,e,f;6,g,50.;6,h,10.;6,i,0.06047237177193165;7,j"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.478Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/jserrors/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=14087&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "{\"sm\":[{\"params\":{\"name\":\"Generic/LoaderType/spa/Detected\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"Generic/DistMethod/CDN/Detected\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"Generic/Runtime/Browser/Detected\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"Framework/Jquery/Detected\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"Generic/WebDriver/Detected\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"API/logging/info/called\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"SoftNav/Interaction/InitialPageLoad/Duration/Ms\"},\"stats\":{\"t\":842}},{\"params\":{\"name\":\"Ajax/Events/Excluded/Agent\"},\"stats\":{\"c\":7}},{\"params\":{\"name\":\"session_trace/Harvest/Early/Seen\"},\"stats\":{\"t\":16037}},{\"params\":{\"name\":\"Generic/IFrame/Added\"},\"stats\":{\"t\":1}},{\"params\":{\"name\":\"audit/page_view/hasReplay/true/negative\"},\"stats\":{\"c\":1}},{\"params\":{\"name\":\"audit/page_view/hasTrace/true/positive\"},\"stats\":{\"c\":1}}]}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.479Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/jserrors/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=14087&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "{\"xhr\":[{\"params\":{\"method\":\"POST\",\"hostname\":\"bam.nr-data.net\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"bam.nr-data.net:443\",\"pathname\":\"/events/1/NRJS-9c7fecf7b5bd202ed21\",\"status\":200},\"metrics\":{\"count\":3,\"txSize\":{\"t\":766,\"min\":136,\"max\":345,\"sos\":218746,\"c\":3},\"rxSize\":{\"t\":72,\"min\":24,\"max\":24,\"sos\":1728,\"c\":3},\"duration\":{\"t\":448,\"min\":132,\"max\":170,\"sos\":67640,\"c\":3},\"cbTime\":{\"t\":0,\"min\":0,\"max\":0,\"sos\":0,\"c\":3},\"time\":{\"t\":3066,\"min\":1022,\"max\":1022,\"sos\":3133452,\"c\":3}}},{\"params\":{\"method\":\"POST\",\"hostname\":\"bam.nr-data.net\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"bam.nr-data.net:443\",\"pathname\":\"/jserrors/1/NRJS-9c7fecf7b5bd202ed21\",\"status\":200},\"metrics\":{\"count\":1,\"txSize\":{\"t\":566},\"rxSize\":{\"t\":24},\"duration\":{\"t\":137},\"cbTime\":{\"t\":0},\"time\":{\"t\":1022}}},{\"params\":{\"method\":\"POST\",\"hostname\":\"bam.nr-data.net\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"bam.nr-data.net:443\",\"pathname\":\"/browser/blobs\",\"status\":200},\"metrics\":{\"count\":2,\"txSize\":{\"t\":27625,\"min\":11408,\"max\":16217,\"sos\":393133553,\"c\":2},\"rxSize\":{\"t\":48,\"min\":24,\"max\":24,\"sos\":1152,\"c\":2},\"duration\":{\"t\":389,\"min\":184,\"max\":205,\"sos\":75881,\"c\":2},\"cbTime\":{\"t\":0,\"min\":0,\"max\":0,\"sos\":0,\"c\":2},\"time\":{\"t\":2043,\"min\":1020,\"max\":1023,\"sos\":2086929,\"c\":2}}},{\"params\":{\"method\":\"GET\",\"hostname\":\"events.courtreserve.com\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"events.courtreserve.com:443\",\"pathname\":\"/Vendor/Remodal/remodal.js\",\"status\":200},\"metrics\":{\"count\":1,\"rxSize\":{\"t\":20198},\"duration\":{\"t\":24},\"cbTime\":{\"t\":1},\"time\":{\"t\":1453}}},{\"params\":{\"method\":\"GET\",\"hostname\":\"events.courtreserve.com\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"events.courtreserve.com:443\",\"pathname\":\"/Online/EventsApi/EventApi_SignUpToEvent_Get\",\"status\":200},\"metrics\":{\"count\":1,\"rxSize\":{\"t\":27380},\"duration\":{\"t\":617},\"cbTime\":{\"t\":27},\"time\":{\"t\":862}}},{\"params\":{\"method\":\"GET\",\"hostname\":\"api2.courtreserve.com\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"api2.courtreserve.com:443\",\"pathname\":\"/Online/Utils/Member_GetDashboardData\",\"status\":200},\"metrics\":{\"count\":1,\"rxSize\":{\"t\":260},\"duration\":{\"t\":94},\"cbTime\":{\"t\":1},\"time\":{\"t\":1764}}},{\"params\":{\"method\":\"POST\",\"hostname\":\"events.courtreserve.com\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"events.courtreserve.com:443\",\"pathname\":\"//Online/EventsApi/EventApi_SignUpToEvent_DropIn_Post/7031\",\"status\":200},\"metrics\":{\"count\":1,\"txSize\":{\"t\":1796},\"rxSize\":{\"t\":4873},\"duration\":{\"t\":781},\"cbTime\":{\"t\":1},\"time\":{\"t\":8685}}}]}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.479Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=14087&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "bel.7;2,,14d,n,,,'GET,5k,'events.courtreserve.com:443,'/Vendor/Remodal/remodal.js,,fl2,,'0,'cf81bc9dec6e6712,'ed5fa42ca038f5141af60477a311bf32,mogdp5sh;2,,-gf,ge,,,0,5k,1,'/Online/EventsApi/EventApi_SignUpToEvent_Get,,l4k,,3,'590f96654238d5ea,'acd47b75d567f9fe6951aa86fdcbdd84,mogdp5c1;2,,8n,2l,,,0,5k,'api2.courtreserve.com:443,'/Online/Utils/Member_GetDashboardData,,78,,3,!!!;2,,5kw,lo,,,'POST,5k,1,'//Online/EventsApi/EventApi_SignUpToEvent_DropIn_Post/7031,1dw,3rd,,3,'803ed7c414dbd1b0,'a00fd23911508d1c9e369421d270429a,mogdpbdc"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.479Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/browser/blobs?browser_monitoring_key=NRJS-9c7fecf7b5bd202ed21&type=BrowserSessionChunk&app_id=1015518894&protocol_version=0&timestamp=1777244852475&attributes=entityGuid%3DMzU0ODIwNHxCUk9XU0VSfEFQUExJQ0FUSU9OfDExMDMyMTUzNDA%26harvestId%3Dfd5de99999d3b2f6_9205d729f4a67f60_3%26trace.firstTimestamp%3D1777244852475%26trace.lastTimestamp%3D1777244866535%26trace.nodes%3D52%26trace.originTimestamp%3D1777244852451%26agentVersion%3D1.313.1%26ptid%3D9205d729f4a67f60%26session%3Dfd5de99999d3b2f6%26currentUrl%3Dhttps://events.courtreserve.com/Online/Events/SignUpToEvent/7031",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "[{\"n\":\"load\",\"s\":1154,\"e\":1154,\"o\":\"200 POST: bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1154,\"e\":1154,\"o\":\"200 POST: bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":1022,\"e\":1153,\"o\":\"https://bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":1159,\"e\":1159,\"o\":\"200 POST: bam.nr-data.net:443/jserrors/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1159,\"e\":1159,\"o\":\"200 POST: bam.nr-data.net:443/jserrors/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":1022,\"e\":1159,\"o\":\"https://bam.nr-data.net:443/jserrors/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":1168,\"e\":1168,\"o\":\"200 POST: bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1168,\"e\":1168,\"o\":\"200 POST: bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":1022,\"e\":1168,\"o\":\"https://bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":1192,\"e\":1192,\"o\":\"200 POST: bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1192,\"e\":1192,\"o\":\"200 POST: bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":1022,\"e\":1192,\"o\":\"https://bam.nr-data.net:443/events/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":1206,\"e\":1206,\"o\":\"200 POST: bam.nr-data.net:443/browser/blobs\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1207,\"e\":1207,\"o\":\"200 POST: bam.nr-data.net:443/browser/blobs\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":1023,\"e\":1206,\"o\":\"https://bam.nr-data.net:443/browser/blobs\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":1225,\"e\":1225,\"o\":\"200 POST: bam.nr-data.net:443/browser/blobs\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":1225,\"e\":1225,\"o\":\"200 POST: bam.nr-data.net:443/browser/blobs\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":1020,\"e\":1225,\"o\":\"https://bam.nr-data.net:443/browser/blobs\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":1452,\"e\":1452,\"o\":\"200 GET: events.courtreserve.com:443/Online/EventsApi/EventApi_SignUpToEvent_Get\",\"t\":\"event\"},{\"n\":\"load\",\"s\":1476,\"e\":1476,\"o\":\"200 GET: events.courtreserve.com:443/Vendor/Remodal/remodal.js\",\"t\":\"event\"},{\"n\":\"Ajax\",\"s\":1453,\"e\":1477,\"o\":\"200 GET: events.courtreserve.com:443/Vendor/Remodal/remodal.js\",\"t\":\"ajax\"},{\"n\":\"Ajax\",\"s\":862,\"e\":1479,\"o\":\"200 GET: events.courtreserve.com:443/Online/EventsApi/EventApi_SignUpToEvent_Get\",\"t\":\"ajax\"},{\"n\":\"xmlhttprequest\",\"s\":863,\"e\":1452,\"o\":\"https://events.courtreserve.com:443/Online/EventsApi/EventApi_SignUpToEvent_Get\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":1453,\"e\":1476,\"o\":\"https://events.courtreserve.com:443/Vendor/Remodal/remodal.css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":1453,\"e\":1476,\"o\":\"https://events.courtreserve.com:443/Vendor/Remodal/remodal-default-theme.css\",\"t\":\"resource\"},{\"n\":\"xmlhttprequest\",\"s\":1454,\"e\":1476,\"o\":\"https://events.courtreserve.com:443/Vendor/Remodal/remodal.js\",\"t\":\"resource\"},{\"n\":\"mousing\",\"s\":1482,\"e\":8680,\"o\":\"div#event-signup-wrapper.fn-autoheight.fn-no-additional\",\"t\":\"event\"},{\"n\":\"load\",\"s\":1484,\"e\":1484,\"o\":\"script\",\"t\":\"event\"},{\"n\":\"css\",\"s\":1479,\"e\":1499,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/fonts/font/Flaticon.woff2\",\"t\":\"resource\"},{\"n\":\"iframe\",\"s\":1624,\"e\":1669,\"o\":\"https://js.stripe.com:443/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html\",\"t\":\"resource\"},{\"n\":\"message\",\"s\":1702,\"e\":1702,\"o\":\"window\",\"t\":\"event\"},{\"n\":\"load\",\"s\":1857,\"e\":1857,\"o\":\"200 GET: api2.courtreserve.com:443/Online/Utils/Member_GetDashboardData\",\"t\":\"event\"},{\"n\":\"Ajax\",\"s\":1764,\"e\":1858,\"o\":\"200 GET: api2.courtreserve.com:443/Online/Utils/Member_GetDashboardData\",\"t\":\"ajax\"},{\"n\":\"xmlhttprequest\",\"s\":1764,\"e\":1857,\"o\":\"https://api2.courtreserve.com:443/Online/Utils/Member_GetDashboardData\",\"t\":\"resource\"},{\"n\":\"resize\",\"s\":8622,\"e\":8623,\"o\":\"window\",\"t\":\"event\"},{\"n\":\"mousing\",\"s\":8680,\"e\":8680,\"o\":\"button.btn.btn-primary.btn-submit.ss-p-btn\",\"t\":\"event\"},{\"n\":\"focus\",\"s\":8681,\"e\":8681,\"o\":\"button.btn.btn-primary.btn-submit.ss-p-btn\",\"t\":\"event\"},{\"n\":\"click\",\"s\":8681,\"e\":8681,\"o\":\"button.btn.btn-primary.btn-submit.ss-p-btn\",\"t\":\"event\"},{\"n\":\"blur\",\"s\":8685,\"e\":8685,\"o\":\"button.btn.btn-primary.btn-submit.ss-p-btn.fn-btn-disabled\",\"t\":\"event\"},{\"n\":\"mousing\",\"s\":8690,\"e\":8690,\"o\":\"button.btn.btn-primary.btn-submit.ss-p-btn.fn-btn-disabled.d-inline-flex.d-flex-inherit\",\"t\":\"event\"},{\"n\":\"mousing\",\"s\":8691,\"e\":8691,\"o\":\"span.btn-active-spinner\",\"t\":\"event\"},{\"n\":\"lcp\",\"s\":1500,\"e\":1500,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"load\",\"s\":9465,\"e\":9465,\"o\":\"200 POST: events.courtreserve.com:443//Online/EventsApi/EventApi_SignUpToEvent_DropIn_Post/7031\",\"t\":\"event\"},{\"n\":\"beforeunload\",\"s\":9466,\"e\":9466,\"o\":\"window\",\"t\":\"event\"},{\"n\":\"Ajax\",\"s\":8685,\"e\":9466,\"o\":\"200 POST: events.courtreserve.com:443//Online/EventsApi/EventApi_SignUpToEvent_DropIn_Post/7031\",\"t\":\"ajax\"},{\"n\":\"xmlhttprequest\",\"s\":8685,\"e\":9464,\"o\":\"https://events.courtreserve.com:443//Online/EventsApi/EventApi_SignUpToEvent_DropIn_Post/7031\",\"t\":\"resource\"},{\"n\":\"unload\",\"s\":14083,\"e\":14083,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"fi\",\"s\":8680,\"e\":8680,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"visibilitychange\",\"s\":14084,\"e\":14084,\"o\":\"window\",\"t\":\"event\"},{\"n\":\"cls\",\"s\":60,\"e\":60,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"pageHide\",\"s\":14084,\"e\":14084,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"inp\",\"s\":24,\"e\":24,\"o\":\"document\",\"t\":\"timing\"}]"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.480Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/ins/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=14088&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "{\"ins\":[{\"timestamp\":1777244861131,\"pageUrl\":\"https://events.courtreserve.com/Online/Events/SignUpToEvent/7031\",\"currentUrl\":\"https://events.courtreserve.com/Online/Events/SignUpToEvent/7031\",\"eventType\":\"UserAction\",\"action\":\"click\",\"actionCount\":1,\"actionDuration\":0,\"actionMs\":\"[0]\",\"target\":\"html>body#member-portal-body>div#mm-0>div#render-body-container>div#layout-body>div>div>div#event-signUp-container>div#main-eventSignup-container>div>div>div>form#Eventsignup-form>div>div>button:nth-of-type(1)\",\"targetClass\":\"btn btn-primary btn-submit ss-p-btn fn-btn-disabled d-inline-flex d-flex-inherit\",\"targetTag\":\"BUTTON\",\"targetType\":\"button\",\"nearestId\":\"Eventsignup-form\",\"nearestClass\":\"btn btn-primary btn-submit ss-p-btn\",\"nearestTag\":\"BUTTON\",\"nearestType\":\"button\"}]}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.499Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/memberportal/lib/font-awesome/webfonts/fa-solid-900.woff2",
+      "headers": {
+        "origin": "https://events.courtreserve.com",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Payments/ProcessPayment/7031?evAction=4",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.500Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/memberportal/lib/font-awesome/webfonts/fa-regular-400.woff2",
+      "headers": {
+        "origin": "https://events.courtreserve.com",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Payments/ProcessPayment/7031?evAction=4",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.500Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/memberportal/lib/font-awesome/webfonts/fa-duotone-900.woff2",
+      "headers": {
+        "origin": "https://events.courtreserve.com",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Payments/ProcessPayment/7031?evAction=4",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.500Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/bundles/headerScripts?v=N-7CHN8Lwi12Oy3RICc_-spVWiEBuFVXGBIW3W9trTY1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Payments/ProcessPayment/7031?evAction=4",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.540Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/MemberPortal/lib/font-awesome/webfonts/fa-light-300.woff2",
+      "headers": {
+        "referer": ""
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.540Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/MemberPortal/lib/font-awesome/webfonts/fa-regular-400.woff2",
+      "headers": {
+        "referer": ""
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.540Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/MemberPortal/lib/font-awesome/webfonts/fa-solid-900.woff2",
+      "headers": {
+        "referer": ""
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.540Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/MemberPortal/lib/font-awesome/webfonts/fa-thin-100.woff2",
+      "headers": {
+        "referer": ""
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.541Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/bundles/kendoScripts?v=7Yh7PuYSTnag1tOLG0WizdnWTy6dQ-4Z5siN3sRp3VQ1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Payments/ProcessPayment/7031?evAction=4",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.575Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Content/MemberPortal/fonts/font/flaticon01.ttf?a03bb3fe787c2cb89dc234a205be100b",
+      "headers": {
+        "origin": "https://events.courtreserve.com",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Content/MemberPortal/fonts/font/flaticon.css",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.669Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/Online/Payments/ProcessPayment/7031?resId=&evAction=4&payment_intent=&payment_intent_client_secret=&redirect_status=&saveProfile=False&rmId=&rgId=&sessionId=&psId=&loadHtmlContent=true",
+      "headers": {
+        "x-newrelic-id": "VwMDWVRTDBABVFBXAgAPXl0F",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Payments/ProcessPayment/7031?evAction=4",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM1NDgyMDQiLCJhcCI6IjExMDMyMTUzNDAiLCJpZCI6IjJhZTljYjAxN2U3MGI5YzgiLCJ0ciI6ImMzZGNkNDIwYzY5YjA5NmEzNjkzNWNiNjdjZDQyYTRmIiwidGkiOjE3NzcyNDQ4NjY2Mzl9fQ==",
+        "traceparent": "00-c3dcd420c69b096a36935cb67cd42a4f-2ae9cb017e70b9c8-01",
+        "x-requested-with": "XMLHttpRequest",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "accept": "*/*",
+        "tracestate": "3548204@nr=0-1-3548204-1103215340-2ae9cb017e70b9c8----1777244866639"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.670Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/signalr/hubs",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Payments/ProcessPayment/7031?evAction=4",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.670Z",
+      "method": "GET",
+      "url": "https://events.courtreserve.com/bundles/footerScripts?v=",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Payments/ProcessPayment/7031?evAction=4",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": null
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.757Z",
+      "method": "POST",
+      "url": "https://events.courtreserve.com/cdn-cgi/rum?",
+      "headers": {
+        "x-newrelic-id": "VwMDWVRTDBABVFBXAgAPXl0F",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/Online/Payments/ProcessPayment/7031?evAction=4",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "sec-ch-ua-mobile": "?0",
+        "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM1NDgyMDQiLCJhcCI6IjExMDMyMTUzNDAiLCJpZCI6IjlhNWRhYjZmNDRkZGNlM2IiLCJ0ciI6IjJmYzAwYzk1ZmViNGIwMjIyOGQzMDk3ZDg3OGNiM2MzIiwidGkiOjE3NzcyNDQ4NjY3NDZ9fQ==",
+        "traceparent": "00-2fc00c95feb4b02228d3097d878cb3c3-9a5dab6f44ddce3b-01",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "content-type": "application/json",
+        "tracestate": "3548204@nr=0-1-3548204-1103215340-9a5dab6f44ddce3b----1777244866746"
+      },
+      "postData": "{\"memory\":{\"totalJSHeapSize\":68971703,\"usedJSHeapSize\":52944447,\"jsHeapSizeLimit\":4294967296},\"resources\":[],\"referrer\":\"https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170\",\"eventType\":1,\"firstPaint\":4744,\"firstContentfulPaint\":4808,\"startTime\":1777244861852.4,\"versions\":{\"fl\":\"2024.11.0\",\"js\":\"2026.2.0\",\"timings\":2},\"pageloadId\":\"fc08dd43-b64c-4eb6-ac2e-4b835438808f\",\"location\":\"https://events.courtreserve.com/Online/Payments/ProcessPayment/7031\",\"nt\":\"navigate\",\"timingsV2\":{\"nextHopProtocol\":\"h2\",\"domainLookupStart\":51.5,\"domainLookupEnd\":51.5,\"connectStart\":51.5,\"connectEnd\":51.5,\"requestStart\":52,\"responseStart\":4613.300000011921,\"responseEnd\":4626.800000011921,\"domInteractive\":4866.600000023842,\"domComplete\":4867.100000023842,\"loadEventStart\":4867.100000023842,\"loadEventEnd\":4867.600000023842,\"finalResponseHeadersStart\":4613.300000011921,\"firstInterimResponseStart\":0,\"transferSize\":40592,\"decodedBodySize\":171595},\"dt\":\"\",\"siteToken\":\"bf28f7ef2a604a24ab22c9b05cadbe62\",\"st\":2}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.757Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G2AAH14BW0BDdl9bQkZfDQpWFhpkQlpTUEVHYAAfXgFbQA%3D%3D&rst=4897&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Payments/ProcessPayment/7031&ptid=65449b41f40df11f&ht=1&af=err,spa,xhr,stn,ins&ap=4478&be=4613&fe=255&dc=254&fsh=0&perf=%7B%22timing%22:%7B%22of%22:1777244861852,%22n%22:0,%22u%22:4623,%22ue%22:4623,%22f%22:52,%22dn%22:52,%22dne%22:52,%22c%22:52,%22s%22:52,%22ce%22:52,%22rq%22:52,%22rp%22:4613,%22rpe%22:4627,%22di%22:4867,%22ds%22:4867,%22de%22:4867,%22dc%22:4867,%22l%22:4867,%22le%22:4868%7D,%22navigation%22:%7B%7D%7D&fp=4744&fcp=4808&timestamp=1777244866814",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "{\"ja\":{\"webdriverDetected\":true}}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.894Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/browser/blobs?browser_monitoring_key=NRJS-9c7fecf7b5bd202ed21&type=BrowserSessionChunk&app_id=1015518894&protocol_version=0&timestamp=1777244861917&attributes=entityGuid%3DMzU0ODIwNHxCUk9XU0VSfEFQUExJQ0FUSU9OfDExMDMyMTUzNDA%26harvestId%3Dfd5de99999d3b2f6_65449b41f40df11f_1%26trace.firstTimestamp%3D1777244861917%26trace.lastTimestamp%3D1777244866810%26trace.nodes%3D176%26trace.originTimestamp%3D1777244861917%26agentVersion%3D1.313.1%26ptid%3D65449b41f40df11f%26session%3Dfd5de99999d3b2f6%26currentUrl%3Dhttps://events.courtreserve.com/Online/Payments/ProcessPayment/7031",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "[{\"n\":\"unloadEventStart\",\"s\":4623,\"e\":4623,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"unloadEventEnd\",\"s\":4623,\"e\":4623,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"domInteractive\",\"s\":4867,\"e\":4867,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"domContentLoadedEventStart\",\"s\":4867,\"e\":4867,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"domContentLoadedEventEnd\",\"s\":4867,\"e\":4867,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"domComplete\",\"s\":4867,\"e\":4867,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"loadEventStart\",\"s\":4867,\"e\":4867,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"loadEventEnd\",\"s\":4868,\"e\":4868,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"redirectCount\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"criticalCHRestart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"activationStart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"workerStart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"redirectStart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"redirectEnd\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"fetchStart\",\"s\":52,\"e\":52,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"domainLookupStart\",\"s\":52,\"e\":52,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"domainLookupEnd\",\"s\":52,\"e\":52,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"connectStart\",\"s\":52,\"e\":52,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"connectEnd\",\"s\":52,\"e\":52,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"secureConnectionStart\",\"s\":52,\"e\":52,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"requestStart\",\"s\":52,\"e\":52,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"responseStart\",\"s\":4613,\"e\":4613,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"responseEnd\",\"s\":4627,\"e\":4627,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"finalResponseHeadersStart\",\"s\":4613,\"e\":4613,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"firstInterimResponseStart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"workerRouterEvaluationStart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"workerCacheLookupStart\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"startTime\",\"s\":0,\"e\":0,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"duration\",\"s\":4868,\"e\":4868,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"load\",\"s\":4641,\"e\":4641,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"load\",\"s\":4641,\"e\":4641,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"load\",\"s\":4654,\"e\":4654,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"click\",\"s\":4659,\"e\":4659,\"o\":\"span\",\"t\":\"event\"},{\"n\":\"load\",\"s\":4680,\"e\":4680,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"load\",\"s\":4681,\"e\":4681,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"load\",\"s\":4685,\"e\":4685,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"load\",\"s\":4686,\"e\":4686,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"link\",\"s\":4641,\"e\":4642,\"o\":\"https://events.courtreserve.com:443/Content/memberportal/lib/font-awesome/webfonts/fa-solid-900.woff2\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4641,\"e\":4662,\"o\":\"https://events.courtreserve.com:443/Content/memberportal/lib/font-awesome/webfonts/fa-regular-400.woff2\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4641,\"e\":4642,\"o\":\"https://events.courtreserve.com:443/Content/memberportal/lib/font-awesome/webfonts/fa-duotone-900.woff2\",\"t\":\"resource\"},{\"n\":\"mousing\",\"s\":4722,\"e\":4791,\"o\":\"body#member-portal-body.mm-wrapper\",\"t\":\"event\"},{\"n\":\"link\",\"s\":4640,\"e\":4640,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/font-awesome/css/all.min.css\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":4641,\"e\":4641,\"o\":\"https://events.courtreserve.com:443/Scripts/reactapp.js\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4641,\"e\":4641,\"o\":\"https://fonts.googleapis.com:443/css2\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":4641,\"e\":4641,\"o\":\"https://events.courtreserve.com:443/Scripts/root.js\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4641,\"e\":4641,\"o\":\"https://events.courtreserve.com:443/ClientApp/bundle.css\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":4641,\"e\":4641,\"o\":\"https://events.courtreserve.com:443/bundles/headerScripts\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4651,\"e\":4651,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/font-awesome/webfonts/fa-light-300.woff2\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4651,\"e\":4651,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/font-awesome/webfonts/fa-regular-400.woff2\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4651,\"e\":4651,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/font-awesome/webfonts/fa-solid-900.woff2\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4651,\"e\":4651,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/font-awesome/webfonts/fa-thin-100.woff2\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4651,\"e\":4651,\"o\":\"https://fonts.gstatic.com:443/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":4654,\"e\":4654,\"o\":\"https://events.courtreserve.com:443/bundles/kendoScripts\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":4681,\"e\":4681,\"o\":\"https://events.courtreserve.com:443/Scripts/kendo/2022.1.301/cultures/kendo.culture.en-US.min.js\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":4681,\"e\":4681,\"o\":\"https://js.stripe.com:443/v3/\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":4686,\"e\":4686,\"o\":\"https://cdnjs.cloudflare.com:443/ajax/libs/pdf.js/2.2.2/pdf.js\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":4787,\"e\":4787,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"mousing\",\"s\":4791,\"e\":4791,\"o\":\"div.row\",\"t\":\"event\"},{\"n\":\"css\",\"s\":4708,\"e\":4708,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/bootstrap.min.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4708,\"e\":4708,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/jquery-ui.min.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4708,\"e\":4708,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/bootstrap-select.min.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4708,\"e\":4708,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/simplebar.min.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4708,\"e\":4708,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/progressbar.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4708,\"e\":4708,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/fonts/font/flaticon.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4709,\"e\":4709,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/animate.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4709,\"e\":4709,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/slider.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4709,\"e\":4709,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/fancyBox.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4709,\"e\":4709,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/owl.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4709,\"e\":4709,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/timecounter.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4710,\"e\":4710,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/lib/sweetalert2/sweetalert2.min.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4710,\"e\":4710,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4716,\"e\":4716,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/theme.css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4716,\"e\":4716,\"o\":\"https://events.courtreserve.com:443/fonts/axiforma/stylesheet.css\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4720,\"e\":4720,\"o\":\"https://events.courtreserve.com:443/Content/MemberPortal/fonts/font/flaticon01.ttf\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4785,\"e\":4785,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"img\",\"s\":4785,\"e\":4785,\"o\":\"https://tgcstorage.blob.core.windows.net:443/court-reserve-7031/c0c48284-438e-4bae-9f1f-f62e2df2fc7e.jpg\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":4787,\"e\":4787,\"o\":\"https://events.courtreserve.com:443/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":4788,\"e\":4788,\"o\":\"https://events.courtreserve.com:443/bundles/footerScripts\",\"t\":\"resource\"},{\"n\":\"script\",\"s\":4788,\"e\":4788,\"o\":\"https://static.cloudflareinsights.com:443/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516\",\"t\":\"resource\"},{\"n\":\"css\",\"s\":4788,\"e\":4788,\"o\":\"https://fonts.gstatic.com:443/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":4866,\"e\":4866,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"script\",\"s\":4787,\"e\":4865,\"o\":\"https://events.courtreserve.com:443/signalr/hubs\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":4866,\"e\":4866,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"load\",\"s\":4866,\"e\":4866,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"DOMContentLoaded\",\"s\":4866,\"e\":4866,\"o\":\"document\",\"t\":\"event\"},{\"n\":\"pageshow\",\"s\":4867,\"e\":4867,\"o\":\"window\",\"t\":\"event\"},{\"n\":\"readystatechange\",\"s\":4893,\"e\":4893,\"o\":\"204 POST: events.courtreserve.com:443/cdn-cgi/rum\",\"t\":\"event\"},{\"n\":\"script\",\"s\":4867,\"e\":4867,\"o\":\"https://js-agent.newrelic.com:443/nr-spa-1.313.1.min.js\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4872,\"e\":4872,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4872,\"e\":4872,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4872,\"e\":4872,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4872,\"e\":4872,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4872,\"e\":4872,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4872,\"e\":4872,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4872,\"e\":4872,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4873,\"e\":4873,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4874,\"e\":4874,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4875,\"e\":4875,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4876,\"e\":4876,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4877,\"e\":4877,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"}]"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.894Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G2AAH14BW0BDdl9bQkZfDQpWFhpkQlpTUEVHYAAfXgFbQA%3D%3D&rst=5041&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Payments/ProcessPayment/7031&ptid=65449b41f40df11f&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "bel.6;e,'fp,3ns,6;5,'pageUrl,'https://events.courtreserve.com/Online/Payments/ProcessPayment/7031;5,'net-etype,'4g;6,'net-rtt,50.;6,'net-dlink,10.;6,'cls,0.;7,'webdriverDetected;e,'fcp,3pk,9;6,'timeToFirstByte,4613.300000011921;6,'firstByteToFCP,194.69999998807907;5,'loadState,'loading;5,1,2;5,3,4;6,5,50.;6,6,10.;6,7,0.;7,8;e,'load,3r7,6;5,1,2;5,3,4;6,5,50.;6,6,10.;6,7,0.;7,8"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.895Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/jserrors/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G2AAH14BW0BDdl9bQkZfDQpWFhpkQlpTUEVHYAAfXgFbQA%3D%3D&rst=5042&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Payments/ProcessPayment/7031&ptid=65449b41f40df11f&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "{\"xhr\":[{\"params\":{\"method\":\"POST\",\"hostname\":\"events.courtreserve.com\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"events.courtreserve.com:443\",\"pathname\":\"/cdn-cgi/rum\",\"status\":204},\"metrics\":{\"count\":1,\"txSize\":{\"t\":1080},\"duration\":{\"t\":18},\"cbTime\":{\"t\":0},\"time\":{\"t\":4893}}},{\"params\":{\"method\":\"POST\",\"hostname\":\"bam.nr-data.net\",\"port\":\"443\",\"protocol\":\"https\",\"host\":\"bam.nr-data.net:443\",\"pathname\":\"/1/NRJS-9c7fecf7b5bd202ed21\",\"status\":200},\"metrics\":{\"count\":1,\"txSize\":{\"t\":33},\"rxSize\":{\"t\":199},\"duration\":{\"t\":141},\"cbTime\":{\"t\":0},\"time\":{\"t\":4897}}}]}"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.895Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G2AAH14BW0BDdl9bQkZfDQpWFhpkQlpTUEVHYAAfXgFbQA%3D%3D&rst=5042&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Payments/ProcessPayment/7031&ptid=65449b41f40df11f&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "bel.7;1,1,,3r7,,,'initialPageLoad,'https://events.courtreserve.com/Online/Payments/ProcessPayment/7031,'https://events.courtreserve.com/Online/Events/SignUpToEvent/7031,1,,,,3ge,!!'e70e2242-e9a1-4082-9750-4ea2f009409f,'1,3ns,3pk;7,'webdriverDetected;b,3kf,!,!-3iz,,,,,,,3ip,e,!6o,,,,,1"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.895Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G2AAH14BW0BDdl9bQkZfDQpWFhpkQlpTUEVHYAAfXgFbQA%3D%3D&rst=5042&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Payments/ProcessPayment/7031&ptid=65449b41f40df11f&ht=1",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "bel.7;2,,3rx,i,,,'POST,5o,'events.courtreserve.com:443,'/cdn-cgi/rum,u0,,,'0,'9a5dab6f44ddce3b,'2fc00c95feb4b02228d3097d878cb3c3,mogdpfqz"
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.895Z",
+      "method": "POST",
+      "url": "https://bam.nr-data.net/browser/blobs?browser_monitoring_key=NRJS-9c7fecf7b5bd202ed21&type=BrowserSessionChunk&app_id=1015518894&protocol_version=0&timestamp=1777244866661&attributes=entityGuid%3DMzU0ODIwNHxCUk9XU0VSfEFQUExJQ0FUSU9OfDExMDMyMTUzNDA%26harvestId%3Dfd5de99999d3b2f6_65449b41f40df11f_2%26trace.firstTimestamp%3D1777244866661%26trace.lastTimestamp%3D1777244866955%26trace.nodes%3D130%26trace.originTimestamp%3D1777244861917%26agentVersion%3D1.313.1%26ptid%3D65449b41f40df11f%26session%3Dfd5de99999d3b2f6%26currentUrl%3Dhttps://events.courtreserve.com/Online/Payments/ProcessPayment/7031",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://events.courtreserve.com/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+        "content-type": "text/plain",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": "[{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4878,\"e\":4878,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4879,\"e\":4879,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4880,\"e\":4880,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4881,\"e\":4881,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4882,\"e\":4882,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4883,\"e\":4883,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4884,\"e\":4884,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4884,\"e\":4884,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4884,\"e\":4884,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"link\",\"s\":4884,\"e\":4884,\"o\":\"https://fonts.googleapis.com:443/css\",\"t\":\"resource\"},{\"n\":\"other\",\"s\":4894,\"e\":4894,\"o\":\"https://events.courtreserve.com:443/favicon.ico\",\"t\":\"resource\"},{\"n\":\"load\",\"s\":4896,\"e\":4896,\"o\":\"unknown\",\"t\":\"event\"},{\"n\":\"readystatechange\",\"s\":4897,\"e\":4897,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"other\",\"s\":4896,\"e\":4897,\"o\":\"https://events.courtreserve.com:443/favicon.ico\",\"t\":\"resource\"},{\"n\":\"readystatechange\",\"s\":4911,\"e\":4911,\"o\":\"204 POST: events.courtreserve.com:443/cdn-cgi/rum\",\"t\":\"event\"},{\"n\":\"readystatechange\",\"s\":4911,\"e\":4911,\"o\":\"204 POST: events.courtreserve.com:443/cdn-cgi/rum\",\"t\":\"event\"},{\"n\":\"load\",\"s\":4911,\"e\":4911,\"o\":\"204 POST: events.courtreserve.com:443/cdn-cgi/rum\",\"t\":\"event\"},{\"n\":\"xmlhttprequest\",\"s\":4893,\"e\":4911,\"o\":\"https://events.courtreserve.com:443/cdn-cgi/rum\",\"t\":\"resource\"},{\"n\":\"readystatechange\",\"s\":5038,\"e\":5038,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"readystatechange\",\"s\":5038,\"e\":5038,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"progress\",\"s\":5038,\"e\":5038,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"readystatechange\",\"s\":5038,\"e\":5038,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"load\",\"s\":5038,\"e\":5038,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"loadend\",\"s\":5038,\"e\":5038,\"o\":\"200 POST: bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"event\"},{\"n\":\"fp\",\"s\":4744,\"e\":4744,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"fcp\",\"s\":4808,\"e\":4808,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"load\",\"s\":4867,\"e\":4867,\"o\":\"document\",\"t\":\"timing\"},{\"n\":\"Ajax\",\"s\":4893,\"e\":4911,\"o\":\"204 POST: events.courtreserve.com:443/cdn-cgi/rum\",\"t\":\"ajax\"},{\"n\":\"xmlhttprequest\",\"s\":4897,\"e\":5038,\"o\":\"https://bam.nr-data.net:443/1/NRJS-9c7fecf7b5bd202ed21\",\"t\":\"resource\"}]"
+    }
+  ],
+  "responses": [
+    {
+      "timestamp": "2026-04-26T23:07:33.033Z",
+      "url": "https://events.courtreserve.com/bundles/headerScripts?v=N-7CHN8Lwi12Oy3RICc_-spVWiEBuFVXGBIW3W9trTY1",
+      "status": 200,
+      "bodyPreview": "/* Minification failed. Returning unminified contents.\r\n(7270,39-40): run-time error JS1195: Expected expression: .\r\n(7270,51-52): run-time error JS1003: Expected ':': )\r\n(7271,13-19): run-time error JS1009: Expected '}': window\r\n(7271,13-19): run-time error JS1006: Expected ')': window\r\n(7275,11-15): run-time error JS1033: Expected 'catch': else\r\n(7275,11-15): run-time error JS1034: Unmatched 'else'; no 'if' defined: else\r\n(7278,7-12): run-time error JS1195: Expected expression: catch\r\n(7278,16): run-time error JS1004: Expected ';'\r\n(7281,1-2): run-time error JS1002: Syntax error: }\r\n(7357,40730-40737): run-time error JS1010: Expected identifier: finally\r\n(11926,13-16): run-time error JS1009: Expected '}': ...\r\n(11926,13-16): run-time error JS1006: Expected ')': ...\r\n(11925,27): run-time error JS1004: Expected ';'\r\n(11928,10-11): run-time error JS1195: Expected expression: )\r\n(11960,9-12): run-time error JS1009: Expected '}': ...\r\n(11960,9-12): run-time error JS1006: Expected ')': ...",
+      "bodyLength": 1509086
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.114Z",
+      "url": "https://events.courtreserve.com/bundles/kendoScripts?v=7Yh7PuYSTnag1tOLG0WizdnWTy6dQ-4Z5siN3sRp3VQ1",
+      "status": 200,
+      "bodyPreview": "/* Minification failed. Returning unminified contents.\r\n(25,2818264-2818271): run-time error JS1019: Can't have 'break' outside of loop: break e\r\n(25,2898668-2898675): run-time error JS1019: Can't have 'break' outside of loop: break e\r\n */\r\n/** \r\n * Kendo UI v2022.1.301 (http://www.telerik.com/kendo-ui)                                                                                                                                               \r\n * Copyright 2022 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.                                                                                      \r\n *                                                                                                                                                                                                      \r\n * Kendo UI commercial licenses may be obtained at                                                                                                 ",
+      "bodyLength": 4815679
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.119Z",
+      "url": "https://events.courtreserve.com/Online/Events/SignUpToEvent/7031?eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170",
+      "status": 200,
+      "bodyPreview": "\r\n\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta name=\"robots\" content=\"noindex\">\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\r\n\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info = {\"beacon\":\"bam.nr-data.net\",\"errorBeacon\":\"bam.nr-data.net\",\"licenseKey\":\"NRJS-9c7fecf7b5bd202ed21\",\"applicationID\":\"1015518894\",\"transactionName\":\"Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw==\",\"queueTime\":0,\"applicationTime\":425,\"agent\":\"\",\"atts\":\"\"}</script><script type=\"text/javascript\">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:[\"bam.nr-data.net\"]},feature_flags:[\"soft_nav\"],distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:\"1103215340\",accountID:\"3548204\",trustKey:\"3548204\",xpid:\"VwMDWVRTDBABVFBXAgAPXl0F\"",
+      "bodyLength": 175077
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.126Z",
+      "url": "https://events.courtreserve.com/Content/memberportal/lib/font-awesome/webfonts/fa-solid-900.woff2",
+      "status": 200,
+      "bodyPreview": "wOF2\u0000\u0001\u0000\u0000\u0000\u0005g�\u0000\n\u0000\u0000\u0000\u000e��\u0000\u0005g�\u0003\u0007\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00016\u0002$\u0004 \u0006`\u0003�p\u0000��\u0004ʷ�l��t\u0005�a\u0007 ���� D\u00196\u000e\u0000\u0000���\u0019Ij���\b�q\u0000\u0000��y\b����jFB`��\u0006\u0000�?��O~��_��w��_�����������`�\u0001\u0000a2[�6���r{�>��?~��sk�\u0003�'�}\u001b �Ua��X�����6B�F�>($\t��gz����ަ�Dr�{��Y\u0001���\u0010Ld�x\u0015sFi_,�bs�����щ-�@zw�(�\u0000�1��@Ar�<�#�^HVq\r�\u0007\\��Ԃ��?���d�\t*�J0�3��3�#I^��v�l\u0001��\u0019y�g�|\u0015>i{\"�ܭ3s�!0��L\t�X�NNھ\t�O�$9\u0004<�~�zl�(�u�ot\u0014\"^C�����YK2#\u0005\u0018ٙQ��?��ڹ�\"�IN\u0001�%�.\u0000%EZ`�7����S�?�\u0016ܺU�Xu�Ђ�U��ZV�!N�\u0013�;��4%�\u001a�l�XC��Y�\u0010kh\u0001�Ě���/�^?�^\"��y����p�}ᾐ��z]��s���z�\u0013��\u001ef�i\u0018\u0018z���0�&\bC.D`\u0010�VD1a�\u0018@\\\u001d3�J����Ϫ��\r�\u0019�4��]u����M��[�]�P��(�H����\u001a�-2G3q\f3\u0001Ͱw��\u0003'Qx�0��^ �,�\u001f���\u0011���yK��s����J��o��3;mw��Fղ岖�\\���6�F��\u000e���&\u0018\u00105��l $N\u0017�\u0004�@�χ�?���M�w���O�R���f��|�]�\u000b$����b�)V��9��(��n���%�˛4�&)))ЁZN�%H��\u0003�\u0011�r�\u0011��6��3vfVf�\r\u0016�\u0010�\u0011\b��!iIM��J���>\u0013�W��g�\r��\u000f\u001b�V��O�{����_<\n�JUw߷?3��2��\u0001�\u0007�,��\n<����Kw�:�A�\f\n��\fB���\u0015��}�R�*탪�=��\u0017Zs\f���f?�9nT��E\u0011TbQ�9��8\u0017\\$B[\u0006!���W��?��V�\u0018�C�s��rl]tg�{�{�}�C(\u001e�\t\u00009\u0001$'\u0000\u0004\u000b��}\u0000$�\u0007Rk\u0011��\u00179��\u0015��ȉ��\u00014\u001c@IEr�CH�?�O#9���U\n��rJ���;/�������'%j\f�2�ו˺�ZzJWU��Z��OѸE4ND�q#\u0002�\u001b\u0000\u001a7\u0010\u0018�\u0011\u0000��g�",
+      "bodyLength": 335406
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.132Z",
+      "url": "https://events.courtreserve.com/Content/memberportal/lib/font-awesome/webfonts/fa-duotone-900.woff2",
+      "status": 200,
+      "bodyPreview": "wOF2\u0000\u0001\u0000\u0000\u0000\u0007$�\u0000\u000b\u0000\u0000\u0000\u0013\u001c\u001f\u0000\u0007$}\u0003\u0007\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00016\u0002$\u0004 \u0006`\u0003��\\\u0000��<�ľ\u0004ˁ�`\u0005�\u0011\u0007 \u001c��\u0018����\u0001���y\u0000\u0000����\u0011U�\u001e�D��\u0001\u0000��=\u0000����������\u0001�S5\u0000\u0000\u0000 �C?�c?�S?�s��K��k��[��{�G�g�W�w��O��o��_���%08&�\u001f�e;����\u001b�����\\KDe\"��|�����DO�,\u0019�Y�-���J���\t�pB�\u001c�\n+\u0004\u001a�zP�\u001e����$\u0005T�\\��\u0019AzK�\u000eSր���\b\u001e���\u001b\u0010+��\u0001\tL%k\u0019L�.��T�p�$\u0010`��ˁ��KZ�W���3<�;\u0004ݙ\u0007x���󹩝:�\u001f\u0000�D0��+�\u0004$K\u000e`�x\b�\u0003�\u0015�T��`��9h&\u0015\bº�����շn\u0014�\u0014�$�ɂ<|�\u0007���ۇO'DѦ\u0016\n^��5Q�\fi��\u0015����\u001cL\u000e\f<�4&�XL!�^�)ʍ�-\u0017��x\u000e�S��s�W\n\u0011�ȍ\\\u0018!\n-\"ׁZ'޻������\u0015ye�\t���ƍYy��#}|�\u001a���ƅ����\u001e�I�`���p�Q<��\b\u001d̤�\u000e��\"U��������\u0003�����+\u0018��\u001b�\u0011�ĥx8�\u000e}a����\u001b���xs�e2�}[0M�\b\u000b@\u0011�B\n�����\u0003m\u0017\u001a��MR\u0018�1��\u0011\u001d��Տ�w\u0006����rWE�ѻ\u00015��ㆂn�v�6�:� (\"\u000e���P\u001dN@�ň�{�\u0006���?�\u001d���}�<�|\u001cs��\u0002C\u0014�\u001b@�'�\u0002�@o���?.��j\u0000\u0016�*z\u001e\u001f�?��:=B�]��X�\u001bT���H<\n}҆\u001e���\u0011F�A?\"�j2?���0��I�\u001e��7!\u000e�\u000b�\u0012*��9g\"_DB^��[����b�Ԅ�\u0013��Q2JF�(��û��zg��9e�J%K%[��ܭ�l�U�I:�ǲTI�&ϗ8�y�G��]�\u0010g���\u00160K�\u0005�^�o��GK����rqQ.�\u0001p1e\u000bf�\u0003�\\\u0012w�\u0003,)J\u0002EJZI�9*�(�hd;\u0012)�͗c�%\t�ȱ�b��\u0014����t�y�Yi��8�_�q���\u0015�+~�i����ٟ}+ܺ\u0015n�\u0005P�@BD �*R\u0012E\\�@)t�nSM�#:,�<V����MgNh�ǉ�S�8E8�/��1�'�̗�^J�O�j�{3�\ff\u0006�\u0001:�H��HPn\"D\u0011�e;�c��S�=�\u0012m��",
+      "bodyLength": 444321
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.137Z",
+      "url": "https://events.courtreserve.com/Content/memberportal/lib/font-awesome/webfonts/fa-regular-400.woff2",
+      "status": 200,
+      "bodyPreview": "wOF2\u0000\u0001\u0000\u0000\u0000\u0006~�\u0000\n\u0000\u0000\u0000\u0010��\u0000\u0006~�\u0003\u0007\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00016\u0002$\u0004 \u0006`\u0003�p\u0000��\u0004���\u0018��t\u0005�y\u0007 ����I��\u001e\u0000@j\u0006\u001b\u0007\u0000��}(��Z��-\u00026\u000e\u0000\u0000��\u0010PUUUUU�̄��ڶW\u0005\u0000\u0000��~�_��7~�w~�\u000f��O��/��o��\u001f��_��?����\u0005\u0006��\u0007\bӲ\u001dN�����\r��/+=�Ό�'�M�z�$�X~��쐠���\u0001|\u000e������\u0004\u001a0�_]]�\u001e/�3(�s_�짳��\u00019�d��\n�f\u0011g�\u0001�GH�&u�ϖd��m�z^��;\u0007��\u0012oD\u0014���\u0015�C-@)��[�&�<� b�8��9�(G��If�\b�\u0002*���G\u0017%����K8:u(k&n�݄����\u0017M��\u0004��I��GЧԚ�\b\\�a�B$\u0000뢪�\u0007P?�?�3I'\u000b�`D\u000b���Uq��xy�Q�3��̲�Z�\u0005T��Iܗ�y�ӣ���}H&�>�ؙ��4\u0006�'1\u0019|CAtU��Q�\t�[�z\b�翙Vex��ds�YB�,!\u0004�����!���U�R,I\u0019\u0002�\u0002\":\f��0����O���{\u0003`\u0006\u000b`+v�\u0000\u0004A\u0002Xb�\r2\u0006�ݑ-Ɇl�V:�\u0015+\u00173����/Ig��r�k��t���:�u���\u000b�u��\n\u001c�n�73@N\u000b$'!dNh=)I�{�\u0007J���\u0013\u0011ֻ���3�y?W�+b���\\\r?OV��snuխ\u0014��0ӡj�j&�횮�Ml/�ˈ\u0005�\u0001\u000b� h%X\u0005�!<�\u0012\u001aI�췰4���8�<��1�m�\u0001�}Y~q�yy�R��,_��\u001a%5I=�3���n\u0019׭\u0019��.;�=ܻ\\6��^\b\u001d�\u000b�.\u000f\u0012v��B�!�#\u000e�󀾈�rj3\u0013XǍ'\u0019è:�l�R��>G%�ʬC�د�^�>\u0000z\u0001��^H�O8���3�fF4�\bflٱ\u001d�d7ucY��6\u00057�M�n����\\��^�%�{��>��~�'�>�|�?�\u0003���d���]�+�_�W�\t�]3]=\u001aͨ��t��J%K�F�l�\u0013���\u0005\u001b\t�\u0019���-�`q�h��0d/�%��dqg�f\u0003{��4�����3���wi�^\t���T*\u0001�c˒#�\u000eIV�e�P/&\u001b��w������܎3Ǚ#�����9�>�/`��L���S����n������l\u001b�$(Pl�HI\u0010)RP�:e\u0015C�\u001c�5���\u000eG�C��pܘNǊMw��)v",
+      "bodyLength": 403569
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.138Z",
+      "url": "https://events.courtreserve.com/bundles/footerScripts?v=",
+      "status": 200,
+      "bodyPreview": "",
+      "bodyLength": 0
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.227Z",
+      "url": "https://events.courtreserve.com/signalr/hubs",
+      "status": 200,
+      "bodyPreview": "/*!\r\n * ASP.NET SignalR JavaScript Library v2.3.0-rtm\r\n * http://signalr.net/\r\n *\r\n * Copyright (c) .NET Foundation. All rights reserved.\r\n * Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.\r\n *\r\n */\r\n\r\n/// <reference path=\"..\\..\\SignalR.Client.JS\\Scripts\\jquery-1.6.4.js\" />\r\n/// <reference path=\"jquery.signalR.js\" />\r\n(function ($, window, undefined) {\r\n    /// <param name=\"$\" type=\"jQuery\" />\r\n    \"use strict\";\r\n\r\n    if (typeof ($.signalR) !== \"function\") {\r\n        throw new Error(\"SignalR: SignalR is not loaded. Please ensure jquery.signalR-x.js is referenced before ~/signalr/js.\");\r\n    }\r\n\r\n    var signalR = $.signalR;\r\n\r\n    function makeProxyCallback(hub, callback) {\r\n        return function () {\r\n            // Call the client hub method\r\n            callback.apply(hub, $.makeArray(arguments));\r\n        };\r\n    }\r\n\r\n    function registerHubProxies(instance, shouldSubscribe) {\r\n        var key, hub, memberKey, memberV",
+      "bodyLength": 10760
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.268Z",
+      "url": "https://events.courtreserve.com/cdn-cgi/rum?",
+      "status": 204,
+      "bodyPreview": "",
+      "bodyLength": 0
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.409Z",
+      "url": "https://bam.nr-data.net/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=870&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1&af=err,spa,xhr,stn,ins&ap=425&be=563&fe=280&dc=279&fsh=0&perf=%7B%22timing%22:%7B%22of%22:1777244852386,%22n%22:0,%22u%22:566,%22ue%22:566,%22f%22:45,%22dn%22:45,%22dne%22:45,%22c%22:45,%22s%22:45,%22ce%22:45,%22rq%22:46,%22rp%22:563,%22rpe%22:580,%22di%22:842,%22ds%22:842,%22de%22:842,%22dc%22:842,%22l%22:842,%22le%22:843%7D,%22navigation%22:%7B%7D%7D&fp=732&fcp=732&timestamp=1777244853321",
+      "status": 200,
+      "bodyPreview": "{\"stn\":0,\"err\":1,\"ins\":1,\"spa\":1,\"sr\":0,\"srs\":0,\"st\":1,\"sts\":0,\"log\":0,\"logapi\":0,\"app\":{\"agents\":[{\"entityGuid\":\"MzU0ODIwNHxCUk9XU0VSfEFQUExJQ0FUSU9OfDExMDMyMTUzNDA\"}],\"nrServerTime\":1777244853379}}",
+      "bodyLength": 199
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.540Z",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=1022&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "status": 200,
+      "bodyPreview": "GIF89a\u0001\u0000\u0001\u0000\u0000\u0000\u0000,\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0002",
+      "bodyLength": 24
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.546Z",
+      "url": "https://bam.nr-data.net/jserrors/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=1022&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "status": 200,
+      "bodyPreview": "GIF89a\u0001\u0000\u0001\u0000\u0000\u0000\u0000,\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0002",
+      "bodyLength": 24
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.555Z",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=1022&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "status": 200,
+      "bodyPreview": "GIF89a\u0001\u0000\u0001\u0000\u0000\u0000\u0000,\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0002",
+      "bodyLength": 24
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.579Z",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G3UXA10QRndfW0RHWVhcBBQcN1xTXmBAYVlxRgQIRw%3D%3D&rst=1022&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Events/SignUpToEvent/7031&ptid=9205d729f4a67f60&ht=1",
+      "status": 200,
+      "bodyPreview": "GIF89a\u0001\u0000\u0001\u0000\u0000\u0000\u0000,\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0002",
+      "bodyLength": 24
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.593Z",
+      "url": "https://bam.nr-data.net/browser/blobs?browser_monitoring_key=NRJS-9c7fecf7b5bd202ed21&type=BrowserSessionChunk&app_id=1015518894&protocol_version=0&timestamp=1777244853183&attributes=entityGuid%3DMzU0ODIwNHxCUk9XU0VSfEFQUExJQ0FUSU9OfDExMDMyMTUzNDA%26harvestId%3Dfd5de99999d3b2f6_9205d729f4a67f60_2%26trace.firstTimestamp%3D1777244853183%26trace.lastTimestamp%3D1777244853469%26trace.nodes%3D129%26trace.originTimestamp%3D1777244852451%26agentVersion%3D1.313.1%26ptid%3D9205d729f4a67f60%26session%3Dfd5de99999d3b2f6%26currentUrl%3Dhttps://events.courtreserve.com/Online/Events/SignUpToEvent/7031",
+      "status": 200,
+      "bodyPreview": "GIF89a\u0001\u0000\u0001\u0000\u0000\u0000\u0000,\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0002",
+      "bodyLength": 24
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.612Z",
+      "url": "https://bam.nr-data.net/browser/blobs?browser_monitoring_key=NRJS-9c7fecf7b5bd202ed21&type=BrowserSessionChunk&app_id=1015518894&protocol_version=0&timestamp=1777244852451&attributes=entityGuid%3DMzU0ODIwNHxCUk9XU0VSfEFQUExJQ0FUSU9OfDExMDMyMTUzNDA%26harvestId%3Dfd5de99999d3b2f6_9205d729f4a67f60_1%26trace.firstTimestamp%3D1777244852451%26trace.lastTimestamp%3D1777244853314%26trace.nodes%3D179%26trace.originTimestamp%3D1777244852451%26agentVersion%3D1.313.1%26ptid%3D9205d729f4a67f60%26session%3Dfd5de99999d3b2f6%26currentUrl%3Dhttps://events.courtreserve.com/Online/Events/SignUpToEvent/7031",
+      "status": 200,
+      "bodyPreview": "GIF89a\u0001\u0000\u0001\u0000\u0000\u0000\u0000,\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0002",
+      "bodyLength": 24
+    },
+    {
+      "timestamp": "2026-04-26T23:07:33.869Z",
+      "url": "https://events.courtreserve.com/Online/EventsApi/EventApi_SignUpToEvent_Get?id=7031&uiCulture=en-US&eventId=1723437&reservationId=45283243&reservationNumber=XHHHPH57031170&ajaxCall=False&isLoginRedirect=False&isFullEventReg=False&checkedMembers=&hostEnv=https://app.courtreserve.com/&isMobileLayout=False&requestData=SVtXlVuPvpnXO5nnRKOxzcTcYY9TzotlauPP%2fCBlLvnwXLectu6zf%2brYsKwBsDiqeUCHE0fjR947xkWACtcZV1veqHWxsGrnNC4BH1JTO%2fjr97n8p32Nqsd%2baYkMm0%2fVTO0XBm8h3Ng%3d",
+      "status": 200,
+      "bodyPreview": "\r\n\r\n<script type=\"text/javascript\">\r\n    function reloadEventReservation() {\r\n        jQuery.ajax({\r\n            url: '/Online/Events/ReloadEventDetails/7031?number=XHHHPH57031170',\r\n            type: \"GET\",\r\n            success: function(data) {\r\n                jQuery(\"#event-details-container\").replaceHtml(data);\r\n            }\r\n        });\r\n    }\r\n</script>\r\n\r\n<div class=\"outer-container\" id=\"main-eventSignup-container\">\r\n    \r\n\r\n    <div class=\"outer-inner-container\">\r\n        <div class=\"container mobile-custom-container\">\r\n            <div class=\"padding-inner form-container\">\r\n                \r\n                <form action=\"https://events.courtreserve.com//Online/EventsApi/EventApi_SignUpToEvent_DropIn_Post/7031?uiCulture=en-US\"\r\n                      data-ajax=\"true\"\r\n                      data-ajax-begin=\"disableButtonsByClass('btn-submit')\"\r\n                      data-ajax-method=\"POST\"\r\n                      data-ajax-success=\"succesEventSignUp(data,this)\"\r\n                ",
+      "bodyLength": 27380
+    },
+    {
+      "timestamp": "2026-04-26T23:07:34.245Z",
+      "url": "https://api2.courtreserve.com/Online/Utils/Member_GetDashboardData?orgId=7031&userId=5384796&checkAnnouncements=False&checkPushNotificationsCount=False&membershipId=2346339&isFamilyLevel=False&requireWaitlistInfo=False&showUnsubscribeModal=False&deviceId=&checkByLocations=False&isUsingLeagues=False&isMobileLayout=False",
+      "status": 200,
+      "bodyPreview": "{\"isValid\":true,\"hasUnPaidReservations\":false,\"showMembershipButton\":false,\"MembershipBtnUrl\":null,\"MembershipBtnText\":null,\"MemebrshipBtnClass\":null,\"HasNewAnnouncements\":false,\"NewAnnouncementsCount\":0,\"unseenPushNotificationsCount\":0,\"unsubcribeModal\":null}",
+      "bodyLength": 260
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.565Z",
+      "url": "https://events.courtreserve.com/bundles/headerScripts?v=N-7CHN8Lwi12Oy3RICc_-spVWiEBuFVXGBIW3W9trTY1",
+      "status": 200,
+      "bodyPreview": "/* Minification failed. Returning unminified contents.\r\n(7270,39-40): run-time error JS1195: Expected expression: .\r\n(7270,51-52): run-time error JS1003: Expected ':': )\r\n(7271,13-19): run-time error JS1009: Expected '}': window\r\n(7271,13-19): run-time error JS1006: Expected ')': window\r\n(7275,11-15): run-time error JS1033: Expected 'catch': else\r\n(7275,11-15): run-time error JS1034: Unmatched 'else'; no 'if' defined: else\r\n(7278,7-12): run-time error JS1195: Expected expression: catch\r\n(7278,16): run-time error JS1004: Expected ';'\r\n(7281,1-2): run-time error JS1002: Syntax error: }\r\n(7357,40730-40737): run-time error JS1010: Expected identifier: finally\r\n(11926,13-16): run-time error JS1009: Expected '}': ...\r\n(11926,13-16): run-time error JS1006: Expected ')': ...\r\n(11925,27): run-time error JS1004: Expected ';'\r\n(11928,10-11): run-time error JS1195: Expected expression: )\r\n(11960,9-12): run-time error JS1009: Expected '}': ...\r\n(11960,9-12): run-time error JS1006: Expected ')': ...",
+      "bodyLength": 1509086
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.653Z",
+      "url": "https://events.courtreserve.com/bundles/kendoScripts?v=7Yh7PuYSTnag1tOLG0WizdnWTy6dQ-4Z5siN3sRp3VQ1",
+      "status": 200,
+      "bodyPreview": "/* Minification failed. Returning unminified contents.\r\n(25,2818264-2818271): run-time error JS1019: Can't have 'break' outside of loop: break e\r\n(25,2898668-2898675): run-time error JS1019: Can't have 'break' outside of loop: break e\r\n */\r\n/** \r\n * Kendo UI v2022.1.301 (http://www.telerik.com/kendo-ui)                                                                                                                                               \r\n * Copyright 2022 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved.                                                                                      \r\n *                                                                                                                                                                                                      \r\n * Kendo UI commercial licenses may be obtained at                                                                                                 ",
+      "bodyLength": 4815679
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.655Z",
+      "url": "https://events.courtreserve.com/Online/Payments/ProcessPayment/7031?evAction=4",
+      "status": 200,
+      "bodyPreview": "\r\n\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta name=\"robots\" content=\"noindex\">\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\r\n\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info = {\"beacon\":\"bam.nr-data.net\",\"errorBeacon\":\"bam.nr-data.net\",\"licenseKey\":\"NRJS-9c7fecf7b5bd202ed21\",\"applicationID\":\"1015518894\",\"transactionName\":\"Z1BSYURVXhIHUBBcW14afWN1G2AAH14BW0BDdl9bQkZfDQpWFhpkQlpTUEVHYAAfXgFbQA==\",\"queueTime\":0,\"applicationTime\":4478,\"agent\":\"\",\"atts\":\"\"}</script><script type=\"text/javascript\">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:[\"bam.nr-data.net\"]},feature_flags:[\"soft_nav\"],distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:\"1103215340\",accountID:\"3548204\",trustKey:\"3548204\",xpid:\"VwMDWVRTDBABVFBXAgAP",
+      "bodyLength": 171588
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.659Z",
+      "url": "https://events.courtreserve.com/Content/memberportal/lib/font-awesome/webfonts/fa-solid-900.woff2",
+      "status": 200,
+      "bodyPreview": "wOF2\u0000\u0001\u0000\u0000\u0000\u0005g�\u0000\n\u0000\u0000\u0000\u000e��\u0000\u0005g�\u0003\u0007\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00016\u0002$\u0004 \u0006`\u0003�p\u0000��\u0004ʷ�l��t\u0005�a\u0007 ���� D\u00196\u000e\u0000\u0000���\u0019Ij���\b�q\u0000\u0000��y\b����jFB`��\u0006\u0000�?��O~��_��w��_�����������`�\u0001\u0000a2[�6���r{�>��?~��sk�\u0003�'�}\u001b �Ua��X�����6B�F�>($\t��gz����ަ�Dr�{��Y\u0001���\u0010Ld�x\u0015sFi_,�bs�����щ-�@zw�(�\u0000�1��@Ar�<�#�^HVq\r�\u0007\\��Ԃ��?���d�\t*�J0�3��3�#I^��v�l\u0001��\u0019y�g�|\u0015>i{\"�ܭ3s�!0��L\t�X�NNھ\t�O�$9\u0004<�~�zl�(�u�ot\u0014\"^C�����YK2#\u0005\u0018ٙQ��?��ڹ�\"�IN\u0001�%�.\u0000%EZ`�7����S�?�\u0016ܺU�Xu�Ђ�U��ZV�!N�\u0013�;��4%�\u001a�l�XC��Y�\u0010kh\u0001�Ě���/�^?�^\"��y����p�}ᾐ��z]��s���z�\u0013��\u001ef�i\u0018\u0018z���0�&\bC.D`\u0010�VD1a�\u0018@\\\u001d3�J����Ϫ��\r�\u0019�4��]u����M��[�]�P��(�H����\u001a�-2G3q\f3\u0001Ͱw��\u0003'Qx�0��^ �,�\u001f���\u0011���yK��s����J��o��3;mw��Fղ岖�\\���6�F��\u000e���&\u0018\u00105��l $N\u0017�\u0004�@�χ�?���M�w���O�R���f��|�]�\u000b$����b�)V��9��(��n���%�˛4�&)))ЁZN�%H��\u0003�\u0011�r�\u0011��6��3vfVf�\r\u0016�\u0010�\u0011\b��!iIM��J���>\u0013�W��g�\r��\u000f\u001b�V��O�{����_<\n�JUw߷?3��2��\u0001�\u0007�,��\n<����Kw�:�A�\f\n��\fB���\u0015��}�R�*탪�=��\u0017Zs\f���f?�9nT��E\u0011TbQ�9��8\u0017\\$B[\u0006!���W��?��V�\u0018�C�s��rl]tg�{�{�}�C(\u001e�\t\u00009\u0001$'\u0000\u0004\u000b��}\u0000$�\u0007Rk\u0011��\u00179��\u0015��ȉ��\u00014\u001c@IEr�CH�?�O#9���U\n��rJ���;/�������'%j\f�2�ו˺�ZzJWU��Z��OѸE4ND�q#\u0002�\u001b\u0000\u001a7\u0010\u0018�\u0011\u0000��g�",
+      "bodyLength": 335406
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.664Z",
+      "url": "https://events.courtreserve.com/Content/memberportal/lib/font-awesome/webfonts/fa-duotone-900.woff2",
+      "status": 200,
+      "bodyPreview": "wOF2\u0000\u0001\u0000\u0000\u0000\u0007$�\u0000\u000b\u0000\u0000\u0000\u0013\u001c\u001f\u0000\u0007$}\u0003\u0007\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00016\u0002$\u0004 \u0006`\u0003��\\\u0000��<�ľ\u0004ˁ�`\u0005�\u0011\u0007 \u001c��\u0018����\u0001���y\u0000\u0000����\u0011U�\u001e�D��\u0001\u0000��=\u0000����������\u0001�S5\u0000\u0000\u0000 �C?�c?�S?�s��K��k��[��{�G�g�W�w��O��o��_���%08&�\u001f�e;����\u001b�����\\KDe\"��|�����DO�,\u0019�Y�-���J���\t�pB�\u001c�\n+\u0004\u001a�zP�\u001e����$\u0005T�\\��\u0019AzK�\u000eSր���\b\u001e���\u001b\u0010+��\u0001\tL%k\u0019L�.��T�p�$\u0010`��ˁ��KZ�W���3<�;\u0004ݙ\u0007x���󹩝:�\u001f\u0000�D0��+�\u0004$K\u000e`�x\b�\u0003�\u0015�T��`��9h&\u0015\bº�����շn\u0014�\u0014�$�ɂ<|�\u0007���ۇO'DѦ\u0016\n^��5Q�\fi��\u0015����\u001cL\u000e\f<�4&�XL!�^�)ʍ�-\u0017��x\u000e�S��s�W\n\u0011�ȍ\\\u0018!\n-\"ׁZ'޻������\u0015ye�\t���ƍYy��#}|�\u001a���ƅ����\u001e�I�`���p�Q<��\b\u001d̤�\u000e��\"U��������\u0003�����+\u0018��\u001b�\u0011�ĥx8�\u000e}a����\u001b���xs�e2�}[0M�\b\u000b@\u0011�B\n�����\u0003m\u0017\u001a��MR\u0018�1��\u0011\u001d��Տ�w\u0006����rWE�ѻ\u00015��ㆂn�v�6�:� (\"\u000e���P\u001dN@�ň�{�\u0006���?�\u001d���}�<�|\u001cs��\u0002C\u0014�\u001b@�'�\u0002�@o���?.��j\u0000\u0016�*z\u001e\u001f�?��:=B�]��X�\u001bT���H<\n}҆\u001e���\u0011F�A?\"�j2?���0��I�\u001e��7!\u000e�\u000b�\u0012*��9g\"_DB^��[����b�Ԅ�\u0013��Q2JF�(��û��zg��9e�J%K%[��ܭ�l�U�I:�ǲTI�&ϗ8�y�G��]�\u0010g���\u00160K�\u0005�^�o��GK����rqQ.�\u0001p1e\u000bf�\u0003�\\\u0012w�\u0003,)J\u0002EJZI�9*�(�hd;\u0012)�͗c�%\t�ȱ�b��\u0014����t�y�Yi��8�_�q���\u0015�+~�i����ٟ}+ܺ\u0015n�\u0005P�@BD �*R\u0012E\\�@)t�nSM�#:,�<V����MgNh�ǉ�S�8E8�/��1�'�̗�^J�O�j�{3�\ff\u0006�\u0001:�H��HPn\"D\u0011�e;�c��S�=�\u0012m��",
+      "bodyLength": 444321
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.669Z",
+      "url": "https://events.courtreserve.com/Content/memberportal/lib/font-awesome/webfonts/fa-regular-400.woff2",
+      "status": 200,
+      "bodyPreview": "wOF2\u0000\u0001\u0000\u0000\u0000\u0006~�\u0000\n\u0000\u0000\u0000\u0010��\u0000\u0006~�\u0003\u0007\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00016\u0002$\u0004 \u0006`\u0003�p\u0000��\u0004���\u0018��t\u0005�y\u0007 ����I��\u001e\u0000@j\u0006\u001b\u0007\u0000��}(��Z��-\u00026\u000e\u0000\u0000��\u0010PUUUUU�̄��ڶW\u0005\u0000\u0000��~�_��7~�w~�\u000f��O��/��o��\u001f��_��?����\u0005\u0006��\u0007\bӲ\u001dN�����\r��/+=�Ό�'�M�z�$�X~��쐠���\u0001|\u000e������\u0004\u001a0�_]]�\u001e/�3(�s_�짳��\u00019�d��\n�f\u0011g�\u0001�GH�&u�ϖd��m�z^��;\u0007��\u0012oD\u0014���\u0015�C-@)��[�&�<� b�8��9�(G��If�\b�\u0002*���G\u0017%����K8:u(k&n�݄����\u0017M��\u0004��I��GЧԚ�\b\\�a�B$\u0000뢪�\u0007P?�?�3I'\u000b�`D\u000b���Uq��xy�Q�3��̲�Z�\u0005T��Iܗ�y�ӣ���}H&�>�ؙ��4\u0006�'1\u0019|CAtU��Q�\t�[�z\b�翙Vex��ds�YB�,!\u0004�����!���U�R,I\u0019\u0002�\u0002\":\f��0����O���{\u0003`\u0006\u000b`+v�\u0000\u0004A\u0002Xb�\r2\u0006�ݑ-Ɇl�V:�\u0015+\u00173����/Ig��r�k��t���:�u���\u000b�u��\n\u001c�n�73@N\u000b$'!dNh=)I�{�\u0007J���\u0013\u0011ֻ���3�y?W�+b���\\\r?OV��snuխ\u0014��0ӡj�j&�횮�Ml/�ˈ\u0005�\u0001\u000b� h%X\u0005�!<�\u0012\u001aI�췰4���8�<��1�m�\u0001�}Y~q�yy�R��,_��\u001a%5I=�3���n\u0019׭\u0019��.;�=ܻ\\6��^\b\u001d�\u000b�.\u000f\u0012v��B�!�#\u000e�󀾈�rj3\u0013XǍ'\u0019è:�l�R��>G%�ʬC�د�^�>\u0000z\u0001��^H�O8���3�fF4�\bflٱ\u001d�d7ucY��6\u00057�M�n����\\��^�%�{��>��~�'�>�|�?�\u0003���d���]�+�_�W�\t�]3]=\u001aͨ��t��J%K�F�l�\u0013���\u0005\u001b\t�\u0019���-�`q�h��0d/�%��dqg�f\u0003{��4�����3���wi�^\t���T*\u0001�c˒#�\u000eIV�e�P/&\u001b��w������܎3Ǚ#�����9�>�/`��L���S����n������l\u001b�$(Pl�HI\u0010)RP�:e\u0015C�\u001c�5���\u000eG�C��pܘNǊMw��)v",
+      "bodyLength": 403569
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.670Z",
+      "url": "https://events.courtreserve.com/bundles/footerScripts?v=",
+      "status": 200,
+      "bodyPreview": "",
+      "bodyLength": 0
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.719Z",
+      "url": "https://events.courtreserve.com/signalr/hubs",
+      "status": 200,
+      "bodyPreview": "/*!\r\n * ASP.NET SignalR JavaScript Library v2.3.0-rtm\r\n * http://signalr.net/\r\n *\r\n * Copyright (c) .NET Foundation. All rights reserved.\r\n * Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.\r\n *\r\n */\r\n\r\n/// <reference path=\"..\\..\\SignalR.Client.JS\\Scripts\\jquery-1.6.4.js\" />\r\n/// <reference path=\"jquery.signalR.js\" />\r\n(function ($, window, undefined) {\r\n    /// <param name=\"$\" type=\"jQuery\" />\r\n    \"use strict\";\r\n\r\n    if (typeof ($.signalR) !== \"function\") {\r\n        throw new Error(\"SignalR: SignalR is not loaded. Please ensure jquery.signalR-x.js is referenced before ~/signalr/js.\");\r\n    }\r\n\r\n    var signalR = $.signalR;\r\n\r\n    function makeProxyCallback(hub, callback) {\r\n        return function () {\r\n            // Call the client hub method\r\n            callback.apply(hub, $.makeArray(arguments));\r\n        };\r\n    }\r\n\r\n    function registerHubProxies(instance, shouldSubscribe) {\r\n        var key, hub, memberKey, memberV",
+      "bodyLength": 10760
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.765Z",
+      "url": "https://events.courtreserve.com/cdn-cgi/rum?",
+      "status": 204,
+      "bodyPreview": "",
+      "bodyLength": 0
+    },
+    {
+      "timestamp": "2026-04-26T23:07:46.895Z",
+      "url": "https://bam.nr-data.net/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G2AAH14BW0BDdl9bQkZfDQpWFhpkQlpTUEVHYAAfXgFbQA%3D%3D&rst=4897&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Payments/ProcessPayment/7031&ptid=65449b41f40df11f&ht=1&af=err,spa,xhr,stn,ins&ap=4478&be=4613&fe=255&dc=254&fsh=0&perf=%7B%22timing%22:%7B%22of%22:1777244861852,%22n%22:0,%22u%22:4623,%22ue%22:4623,%22f%22:52,%22dn%22:52,%22dne%22:52,%22c%22:52,%22s%22:52,%22ce%22:52,%22rq%22:52,%22rp%22:4613,%22rpe%22:4627,%22di%22:4867,%22ds%22:4867,%22de%22:4867,%22dc%22:4867,%22l%22:4867,%22le%22:4868%7D,%22navigation%22:%7B%7D%7D&fp=4744&fcp=4808&timestamp=1777244866814",
+      "status": 200,
+      "bodyPreview": "{\"stn\":0,\"err\":1,\"ins\":1,\"spa\":1,\"sr\":0,\"srs\":0,\"st\":1,\"sts\":0,\"log\":0,\"logapi\":0,\"app\":{\"agents\":[{\"entityGuid\":\"MzU0ODIwNHxCUk9XU0VSfEFQUExJQ0FUSU9OfDExMDMyMTUzNDA\"}],\"nrServerTime\":1777244866864}}",
+      "bodyLength": 199
+    },
+    {
+      "timestamp": "2026-04-26T23:07:47.011Z",
+      "url": "https://bam.nr-data.net/jserrors/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G2AAH14BW0BDdl9bQkZfDQpWFhpkQlpTUEVHYAAfXgFbQA%3D%3D&rst=5042&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Payments/ProcessPayment/7031&ptid=65449b41f40df11f&ht=1",
+      "status": 200,
+      "bodyPreview": "GIF89a\u0001\u0000\u0001\u0000\u0000\u0000\u0000,\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0002",
+      "bodyLength": 24
+    },
+    {
+      "timestamp": "2026-04-26T23:07:47.019Z",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G2AAH14BW0BDdl9bQkZfDQpWFhpkQlpTUEVHYAAfXgFbQA%3D%3D&rst=5042&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Payments/ProcessPayment/7031&ptid=65449b41f40df11f&ht=1",
+      "status": 200,
+      "bodyPreview": "GIF89a\u0001\u0000\u0001\u0000\u0000\u0000\u0000,\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0002",
+      "bodyLength": 24
+    },
+    {
+      "timestamp": "2026-04-26T23:07:47.022Z",
+      "url": "https://bam.nr-data.net/browser/blobs?browser_monitoring_key=NRJS-9c7fecf7b5bd202ed21&type=BrowserSessionChunk&app_id=1015518894&protocol_version=0&timestamp=1777244861917&attributes=entityGuid%3DMzU0ODIwNHxCUk9XU0VSfEFQUExJQ0FUSU9OfDExMDMyMTUzNDA%26harvestId%3Dfd5de99999d3b2f6_65449b41f40df11f_1%26trace.firstTimestamp%3D1777244861917%26trace.lastTimestamp%3D1777244866810%26trace.nodes%3D176%26trace.originTimestamp%3D1777244861917%26agentVersion%3D1.313.1%26ptid%3D65449b41f40df11f%26session%3Dfd5de99999d3b2f6%26currentUrl%3Dhttps://events.courtreserve.com/Online/Payments/ProcessPayment/7031",
+      "status": 200,
+      "bodyPreview": "GIF89a\u0001\u0000\u0001\u0000\u0000\u0000\u0000,\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0002",
+      "bodyLength": 24
+    },
+    {
+      "timestamp": "2026-04-26T23:07:47.026Z",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G2AAH14BW0BDdl9bQkZfDQpWFhpkQlpTUEVHYAAfXgFbQA%3D%3D&rst=5042&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Payments/ProcessPayment/7031&ptid=65449b41f40df11f&ht=1",
+      "status": 200,
+      "bodyPreview": "GIF89a\u0001\u0000\u0001\u0000\u0000\u0000\u0000,\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0002",
+      "bodyLength": 24
+    },
+    {
+      "timestamp": "2026-04-26T23:07:47.033Z",
+      "url": "https://bam.nr-data.net/browser/blobs?browser_monitoring_key=NRJS-9c7fecf7b5bd202ed21&type=BrowserSessionChunk&app_id=1015518894&protocol_version=0&timestamp=1777244866661&attributes=entityGuid%3DMzU0ODIwNHxCUk9XU0VSfEFQUExJQ0FUSU9OfDExMDMyMTUzNDA%26harvestId%3Dfd5de99999d3b2f6_65449b41f40df11f_2%26trace.firstTimestamp%3D1777244866661%26trace.lastTimestamp%3D1777244866955%26trace.nodes%3D130%26trace.originTimestamp%3D1777244861917%26agentVersion%3D1.313.1%26ptid%3D65449b41f40df11f%26session%3Dfd5de99999d3b2f6%26currentUrl%3Dhttps://events.courtreserve.com/Online/Payments/ProcessPayment/7031",
+      "status": 200,
+      "bodyPreview": "GIF89a\u0001\u0000\u0001\u0000\u0000\u0000\u0000,\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0002",
+      "bodyLength": 24
+    },
+    {
+      "timestamp": "2026-04-26T23:07:47.037Z",
+      "url": "https://bam.nr-data.net/events/1/NRJS-9c7fecf7b5bd202ed21?a=1015518894&v=1.313.1&to=Z1BSYURVXhIHUBBcW14afWN1G2AAH14BW0BDdl9bQkZfDQpWFhpkQlpTUEVHYAAfXgFbQA%3D%3D&rst=5041&ck=0&s=fd5de99999d3b2f6&ref=https://events.courtreserve.com/Online/Payments/ProcessPayment/7031&ptid=65449b41f40df11f&ht=1",
+      "status": 200,
+      "bodyPreview": "GIF89a\u0001\u0000\u0001\u0000\u0000\u0000\u0000,\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0002",
+      "bodyLength": 24
+    }
+  ]
+}
