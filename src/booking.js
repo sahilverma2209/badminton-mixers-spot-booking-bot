@@ -704,6 +704,11 @@ async function run() {
       });
     } else {
       log(`No available spots found this time. (${elapsed}s)`);
+      // Build a summary of what was checked
+      const checkedSummary = Object.entries(CONFIG.eventConfigs)
+        .map(([id, days]) => `Event ${id}: ${days.join(', ')}`)
+        .join(' | ');
+      notify('No Spots Available', `Checked: ${checkedSummary}. No open spots found. (${elapsed}s)`);
     }
 
     // Save state
