@@ -47,11 +47,17 @@ const LOG_FILE = path.join(OUTPUT_DIR, 'booking.log');
 const HISTORY_FILE = path.join(OUTPUT_DIR, 'booking-history.json');
 
 // ─── Logging ─────────────────────────────────────────────────────
+let logInitialized = false;
 function log(message, level = 'INFO') {
   const timestamp = new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
   const line = `[${timestamp}] [${level}] ${message}`;
   console.log(line);
-  fs.appendFileSync(LOG_FILE, line + '\n');
+  if (!logInitialized) {
+    fs.writeFileSync(LOG_FILE, line + '\n');       // Overwrite on first log of the run
+    logInitialized = true;
+  } else {
+    fs.appendFileSync(LOG_FILE, line + '\n');
+  }
 }
 
 // ─── Notifications (macOS + Email) ───────────────────────────────
@@ -132,6 +138,13 @@ function recordBooking(eventName, dateStr, success, details = {}) {
     ...details,
   });
   saveBookingHistory(history);
+}
+
+// ─── Format email subject: "{Location} Mixer {date} Registered" ─
+function formatRegisteredSubject(eventName, dateInfo) {
+  const locMatch = eventName.match(/^(\w+)\s+Mixer/i);
+  const location = locMatch ? locMatch[1] : 'Mixer';
+  return `${location} Mixer ${dateInfo} Registered`;
 }
 
 // ─── Date Filtering ──────────────────────────────────────────────
@@ -389,7 +402,7 @@ async function checkAndBookMixers(page, intercepted) {
             // Book the first available spot
             const spot = filteredDates[0];
             log(`  🔥 ATTEMPTING TO BOOK: ${spot.date} ${spot.time}`);
-            notify('🏸 Mixer Spot Found!', `${event.title} - ${spot.date} ${spot.time}. Booking now...`);
+            // No notification here — only notify on successful registration
 
             const result = await bookSpot(page, spot, event.title, intercepted);
             if (result) bookingsMade.push(result);
@@ -471,7 +484,7 @@ async function fallbackDomCheck(page, eventName, intercepted) {
   } catch {}
 
   log(`  📅 Date info: ${dateInfo}`);
-  notify('🏸 Mixer Spot Found!', `${eventName} - Booking now...`);
+  // No notification here — only notify on successful registration
 
   await actualRegisterButtons[0].scrollIntoViewIfNeeded().catch(() => {});
   await actualRegisterButtons[0].click().catch(async () => {
@@ -563,7 +576,8 @@ async function handleSignUpAndPayment(page, eventName, dateInfo, intercepted) {
       log(`  ✅ 🎉 Registration successful! Redirected to payment page.`);
       log(`  ⏰ Complete payment manually within ~15 minutes.`);
       recordBooking(eventName, dateInfo, true);
-      notify('✅ Mixer Registered!', `Registered for ${eventName} - ${dateInfo}. Complete payment within 15 minutes!`);
+      const subj = formatRegisteredSubject(eventName, dateInfo);
+      notify(subj, `Registered for ${eventName} - ${dateInfo}. Complete payment within 15 minutes!`);
       return { eventName, dateInfo, success: true };
     }
 
@@ -585,7 +599,8 @@ async function handleSignUpAndPayment(page, eventName, dateInfo, intercepted) {
         log(`  ✅ 🎉 Registration successful! Redirected to payment page.`);
         log(`  ⏰ Complete payment manually within ~15 minutes.`);
         recordBooking(eventName, dateInfo, true);
-        notify('✅ Mixer Registered!', `Registered for ${eventName} - ${dateInfo}. Complete payment within 15 minutes!`);
+        const subj2 = formatRegisteredSubject(eventName, dateInfo);
+        notify(subj2, `Registered for ${eventName} - ${dateInfo}. Complete payment within 15 minutes!`);
         return { eventName, dateInfo, success: true };
       }
 
@@ -610,7 +625,8 @@ async function handleSignUpAndPayment(page, eventName, dateInfo, intercepted) {
     if (bodyText.includes('successfully') || bodyText.includes('Thank you')) {
       log(`  ✅ Appears to be a success page!`);
       recordBooking(eventName, dateInfo, true, { url: postFinalizeUrl });
-      notify('✅ Mixer Booked!', `Booked ${eventName} - ${dateInfo}!`);
+      const subj3 = formatRegisteredSubject(eventName, dateInfo);
+      notify(subj3, `Booked ${eventName} - ${dateInfo}!`);
       return { eventName, dateInfo, success: true };
     }
 
@@ -628,6 +644,14 @@ async function handleSignUpAndPayment(page, eventName, dateInfo, intercepted) {
 // ─── Main Run Function ───────────────────────────────────────────
 async function run() {
   const startTime = Date.now();
+
+  // Reset output files for this run (only keep last run's data)
+  saveBookingHistory({ bookings: [] });
+  // Clean up old screenshots from previous runs
+  try {
+    const oldFiles = fs.readdirSync(OUTPUT_DIR).filter(f => f.endsWith('.png'));
+    oldFiles.forEach(f => fs.unlinkSync(path.join(OUTPUT_DIR, f)));
+  } catch (e) { /* ignore */ }
 
   log('═══════════════════════════════════════════════════');
   log('🏸 Mixers Booking Script - Starting check...');
