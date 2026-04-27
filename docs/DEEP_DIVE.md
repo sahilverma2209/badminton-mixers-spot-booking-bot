@@ -4,13 +4,11 @@
 
 ## 1. Executive Summary
 
-**Mixers Booking Script** is a local-machine automation tool that monitors the [CourtReserve](https://events.courtreserve.com) event platform for available spots in **Bellevue Badminton Club Mixer** sessions and automatically books them when a cancellation opens a slot. It solves the problem that Mixer events (badminton group play sessions) fill up instantly and have no waitlist — spots only become available when someone cancels, making manual monitoring impractical.
+**Mixers Booking Script** is an automation tool that monitors the [CourtReserve](https://events.courtreserve.com) event platform for available spots in **Bellevue Badminton Club Mixer** sessions and automatically books them when a cancellation opens a slot. It solves the problem that Mixer events (badminton group play sessions) fill up instantly and have no waitlist — spots only become available when someone cancels, making manual monitoring impractical.
 
-The system uses **Playwright** (headless Chromium) to simulate a real browser session, intercepts CourtReserve's AJAX API responses to detect availability, and drives the booking flow up to registration: **Login → Browse Events → Detect Open Slot → Register → Finalize Registration**. Payment is left for the user to complete manually (~15 minute hold). A **cron-based scheduler** polls every N minutes, and notifications are delivered via **macOS desktop alerts** and **email (Gmail/nodemailer)**.
+The system uses **Playwright** (headless Chromium) to simulate a real browser session, intercepts CourtReserve's AJAX API responses to detect availability, and drives the booking flow up to registration: **Login → Browse Events → Detect Open Slot → Register → Finalize Registration**. Payment is left for the user to complete manually (~15 minute hold). Scheduling is handled by **GitHub Actions** cron workflows that run `node src/booking.js` on a recurring interval. Notifications are delivered via **email (Gmail/nodemailer)**; macOS desktop alerts are also supported when running locally.
 
-**There is no cloud infrastructure, no CDK stacks, no deployed services, no databases, and no regional topology.** This is a single-user, single-machine Node.js script designed to run on a developer's macOS laptop (or in a `screen`/`nohup` background process).
-
-> **Confidence: HIGH** — All source code has been read end-to-end. The project is small (4 JS files, ~700 LOC) with no hidden modules or generated code.
+**The primary deployment target is GitHub Actions (Ubuntu runners).** The script can also be run locally on a developer's machine for debugging. There are no custom cloud infrastructure stacks, no databases, and no deployed services beyond the GitHub Actions workflow.
 
 ---
 
@@ -18,31 +16,34 @@ The system uses **Playwright** (headless Chromium) to simulate a real browser se
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                    Developer's macOS Machine                  │
+│              GitHub Actions (ubuntu-latest)                    │
+│              .github/workflows/booking.yml                    │
 │                                                              │
-│  ┌─────────────┐     imports      ┌──────────────┐          │
-│  │ scheduler.js │ ──────────────► │  booking.js   │          │
-│  │ (node-cron)  │   run() every   │ (main logic)  │          │
-│  │              │   N minutes     │               │          │
-│  └─────────────┘                  └───────┬───────┘          │
-│                                           │                  │
-│                                    Playwright                │
-│                                    (Chromium)                │
-│                                           │                  │
-│  ┌────────────────────────────────────────┼──────────────┐   │
-│  │            Local File System           │              │   │
-│  │  .env              auth-state.json     │              │   │
-│  │  booking.log       booking-history.json│              │   │
-│  │  *.png (screenshots)                   │              │   │
-│  └────────────────────────────────────────┼──────────────┘   │
-│                                           │                  │
-│  ┌──────────────┐   ┌──────────────────┐  │                  │
-│  │ macOS osascript│  │  nodemailer      │  │                  │
-│  │ (notifications)│  │  (Gmail SMTP)    │  │                  │
-│  └──────────────┘   └──────────────────┘  │                  │
-└───────────────────────────────────────────┼──────────────────┘
-                                            │ HTTPS
-                         ┌──────────────────▼──────────────────┐
+│  ┌─────────────────────────┐                                 │
+│  │ Workflow: cron schedule  │   ┌──────────────┐             │
+│  │ (every N minutes)       │──►│  booking.js   │             │
+│  │ OR manual dispatch      │   │ (main logic)  │             │
+│  └─────────────────────────┘   └───────┬───────┘             │
+│                                        │                     │
+│  Secrets & Variables:           Playwright                    │
+│  CR_EMAIL, CR_PASSWORD,         (Chromium)                   │
+│  NOTIFY_EMAIL_*, etc.                  │                     │
+│                                        │                     │
+│  ┌─────────────────────────────────────┼─────────────────┐   │
+│  │         Ephemeral File System       │                 │   │
+│  │  output/booking.log                 │                 │   │
+│  │  output/booking-history.json        │                 │   │
+│  │  output/*.png (screenshots)         │                 │   │
+│  │  (all discarded after each run)     │                 │   │
+│  └─────────────────────────────────────┼─────────────────┘   │
+│                                        │                     │
+│  ┌──────────────────┐                  │                     │
+│  │  nodemailer       │                 │                     │
+│  │  (Gmail SMTP)     │                 │                     │
+│  └──────────────────┘                  │                     │
+└────────────────────────────────────────┼─────────────────────┘
+                                         │ HTTPS
+                         ┌───────────────▼─────────────────────┐
                          │      CourtReserve Platform          │
                          │  events.courtreserve.com            │
                          │  api2.courtreserve.com              │
@@ -50,53 +51,65 @@ The system uses **Playwright** (headless Chromium) to simulate a real browser se
                          │                                     │
                          │  ┌─────────┐  ┌──────────────┐     │
                          │  │ Stripe  │  │  New Relic    │     │
-                         │  │ (payments)│ │  (telemetry)  │     │
+                         │  │(payments)│  │  (telemetry)  │     │
                          │  └─────────┘  └──────────────┘     │
                          └─────────────────────────────────────┘
+
+                    ┌──────────────────────────────────────┐
+                    │   LOCAL (optional, for debugging)     │
+                    │                                      │
+                    │   npm run check / npm run debug       │
+                    │   → node src/booking.js               │
+                    │   → Playwright (Chromium)             │
+                    │   → macOS osascript (notifications)   │
+                    │   → .env (credentials)                │
+                    │   → output/ (persistent across runs)  │
+                    └──────────────────────────────────────┘
 ```
 
 ### Components at a Glance
 
 | Component | File | Role |
 |-----------|------|------|
-| **Scheduler** | `scheduler.js` | Cron loop that invokes `run()` every N minutes with concurrency guard |
-| **Booking Engine** | `booking.js` | Core automation: login, event discovery, availability parsing, registration, payment |
-| **API Explorer** | `explore-apis.js` | Development/debugging utility — captures all HTTP traffic during a manual booking flow |
-| **Captured Flow** | `captured-booking-flow.json` | Artifact from `explore-apis.js` — reference HTTP trace of a real booking |
-| **Configuration** | `.env` | Credentials, org/user IDs, preferred days, intervals |
+| **GitHub Actions Workflow** | `.github/workflows/booking.yml` | Cron-based scheduler: triggers `node src/booking.js` every N minutes on Ubuntu runners |
+| **Booking Engine** | `src/booking.js` | Core automation: login, event discovery, availability parsing, registration, notifications |
+| **Scheduler (deprecated)** | `src/scheduler.js` | Legacy local cron loop using `node-cron`; **not actively used** — replaced by GitHub Actions |
+| **API Explorer** | `docs/explore-apis.js` | Development/debugging utility — captures all HTTP traffic during a manual booking flow |
+| **Captured Flow** | `docs/captured-booking-flow.json` | Artifact from `explore-apis.js` — reference HTTP trace of a real booking |
+| **Configuration** | `.env` (local) / GitHub Secrets & Variables (cloud) | Credentials, org/user IDs, event configs, intervals |
 
 ---
 
 ## 3. Infrastructure Topology
 
-### 3.1 There Is No Cloud Infrastructure
+### 3.1 GitHub Actions (Primary Deployment)
 
-This project has:
-- **No CDK/CloudFormation/Terraform stacks**
-- **No AWS/GCP/Azure resources**
-- **No Lambda functions, ECS tasks, or containers**
-- **No databases (RDS, DynamoDB, etc.)**
-- **No queues (SQS, SNS, etc.)**
-- **No API Gateway or load balancers**
-- **No CI/CD pipeline**
-- **No Docker configuration**
+The script runs as a **GitHub Actions scheduled workflow** (`.github/workflows/booking.yml`):
 
-### 3.2 Local "Infrastructure"
+- **Runner**: `ubuntu-latest` (ephemeral, fresh each run)
+- **Trigger**: Cron schedule (`*/5 * * * *` — every 5 minutes, configurable) + manual `workflow_dispatch`
+- **Concurrency**: `concurrency.group: booking-check` with `cancel-in-progress: false` prevents overlapping runs
+- **Timeout**: 10 minutes per run
+- **Credentials**: Stored as encrypted GitHub Secrets (never exposed in logs)
+- **Failure artifacts**: On failure, screenshots from `output/` are uploaded as downloadable artifacts (retained 3 days)
 
-All runtime artifacts are written to the `output/` directory to keep the project root clean:
+### 3.2 Runtime Artifacts
 
-| Resource | Type | Purpose |
-|----------|------|---------|
-| `.env` | Environment file (project root) | All configuration and secrets |
-| `output/auth-state.json` | JSON file (auto-generated) | Playwright browser storage state (cookies/localStorage) for session persistence |
-| `output/booking.log` | Append-only text file | Activity log with timestamps |
-| `output/booking-history.json` | JSON file | Audit trail of all booking attempts (success/failure) |
-| `output/*.png` | Screenshot files | Diagnostic screenshots captured at each flow step and on errors |
+All runtime artifacts are written to the `output/` directory. In GitHub Actions, these are **ephemeral** (discarded after each run unless uploaded as artifacts on failure). When running locally, they persist across runs but are reset at the start of each run.
+
+| Resource | Type | Purpose | Lifecycle |
+|----------|------|---------|-----------|
+| `.env` | Environment file (local only) | All configuration and secrets | Not used in GitHub Actions (secrets/variables instead) |
+| `output/auth-state.json` | JSON file | Playwright browser storage state (cookies/localStorage) for session persistence | **Local only** — fresh login each run in GitHub Actions |
+| `output/booking.log` | Text file | Activity log with timestamps | **Overwritten** at the start of each run |
+| `output/booking-history.json` | JSON file | Audit trail of booking attempts during this run | **Reset** at the start of each run |
+| `output/*.png` | Screenshot files | Diagnostic screenshots on errors | **Cleaned up** at the start of each run; uploaded as GitHub Actions artifacts on failure |
 
 ### 3.3 External Dependencies (SaaS)
 
 | Service | Domain | Role |
 |---------|--------|------|
+| **GitHub Actions** | `github.com` | Scheduled execution of booking checks |
 | **CourtReserve** | `events.courtreserve.com` | Primary target — event management platform |
 | **CourtReserve API** | `api2.courtreserve.com` | Secondary API host for member dashboard data |
 | **Cloudflare** | CDN/WAF in front of CourtReserve | Anti-bot protection the script must bypass |
@@ -108,46 +121,45 @@ All runtime artifacts are written to the `output/` directory to keep the project
 
 ## 4. Service Components
 
-### 4.1 `booking.js` — Main Automation Engine (~550 LOC)
+### 4.1 `src/booking.js` — Main Automation Engine (~550 LOC)
 
-This is the heart of the system. It exports `{ run, CONFIG }` and can be invoked standalone (`node booking.js`) or imported by the scheduler.
+This is the heart of the system. It exports `{ run, CONFIG }` and is invoked directly as `node src/booking.js` (by GitHub Actions or local npm scripts).
 
 #### 4.1.1 Configuration Layer
 
 ```javascript
 const CONFIG = {
-  email,            // CourtReserve login email
-  password,         // CourtReserve login password
-  orgId,            // Organization ID (default: 7031 = Bellevue Badminton Club)
-  userId,           // User's CourtReserve ID (default: 5384796)
-  membershipId,     // Membership ID (default: 2346339)
-  eventTypeIds,     // Array of event category IDs to monitor
-  preferredDays,    // Array of day names (e.g., ["tuesday"])
-  headless,         // Boolean — run Chromium visibly or headless
-  enableNotifications, // Boolean — macOS + email notifications
-  maxWeeksAhead,    // Max future weeks to consider (default: 4)
-  dryRun,           // Boolean — stop before actually booking (--dry-run flag)
+  email,              // CourtReserve login email
+  password,           // CourtReserve login password
+  orgId,              // Organization ID (default: 7031 = Bellevue Badminton Club)
+  userId,             // User's CourtReserve ID (default: 5384796)
+  membershipId,       // Membership ID (default: 2346339)
+  eventConfigs,       // Object: { eventTypeId: [days] } — parsed from EVENT_CONFIGS or legacy vars
+  headless,           // Boolean — run Chromium visibly or headless
+  enableNotifications,// Boolean — macOS + email notifications
+  maxWeeksAhead,      // Max future weeks to consider (default: 4)
+  dryRun,             // Boolean — stop before actually booking (--dry-run flag)
 };
 ```
-
-Source: `.env` file via `dotenv`, with sensible defaults hardcoded.
-
 #### 4.1.2 Core Functions
 
 | Function | Purpose |
 |----------|---------|
-| `run()` | Top-level orchestrator: launches browser → login → check events → close |
+| `run()` | Top-level orchestrator: resets output files, launches browser → login → check events → close |
+| `parseEventConfigs()` | Parses `EVENT_CONFIGS` env var (or falls back to legacy `EVENT_TYPE_IDS` + `PREFERRED_DAYS`) |
 | `login(page)` | Navigates to CourtReserve, fills credentials, handles Cloudflare wait, saves auth state |
-| `checkAndBookMixers(page, intercepted)` | Iterates event type IDs, navigates to event lists, filters by preferred days, checks availability |
+| `checkAndBookMixers(page, intercepted)` | Iterates event configs, navigates to event lists, filters by preferred days, checks availability |
 | `parseEventCards(page)` | DOM scraper: extracts event card titles and "VIEW DATES" links from the events list page |
 | `parseAvailableDates(html)` | HTML parser: extracts register URLs, dates, times, and spot counts from AJAX response |
 | `bookSpot(page, spot, eventName, intercepted)` | Navigates to registration URL or clicks REGISTER button |
 | `fallbackDomCheck(page, eventName, intercepted)` | DOM-based fallback when API interception misses data |
 | `handleSignUpAndPayment(page, eventName, dateInfo, intercepted)` | **Core booking flow**: verifies SignUp page → clicks Finalize Registration → handles payment redirect |
 | `setupResponseInterceptor(page)` | Attaches Playwright response listeners to capture AJAX API responses |
-| `notify(title, message)` | Dual notification: macOS `osascript` + email via nodemailer |
+| `notify(title, message)` | Dual notification: macOS `osascript` (silently fails if not on macOS) + email via nodemailer |
 | `sendEmail(subject, body)` | Gmail SMTP email with HTML formatting |
-| `recordBooking(...)` | Appends to `booking-history.json` audit log |
+| `recordBooking(...)` | Records booking attempt to `booking-history.json` |
+| `loadBookingHistory()` / `saveBookingHistory()` | Read/write the booking history JSON file |
+| `formatRegisteredSubject(eventName, dateInfo)` | Formats email subject as `"{Location} Mixer {date} Registered"` |
 | `isDateWithinRange(dateStr)` | Filters events beyond `maxWeeksAhead` |
 
 #### 4.1.3 Browser Automation Strategy
@@ -156,20 +168,34 @@ The script uses **Playwright with Chromium** (not a simple HTTP client) because:
 
 1. **Cloudflare Protection**: CourtReserve sits behind Cloudflare's anti-bot system. A real browser with proper user-agent and JavaScript execution is needed.
 2. **AJAX-Heavy UI**: CourtReserve loads most content via AJAX calls (jQuery). The event list, dates, signup form, and payment form are all dynamically loaded.
-3. **Session Management**: Playwright's `storageState` API persists cookies/localStorage to `auth-state.json`, avoiding re-login on every run.
+3. **Session Management**: Playwright's `storageState` API persists cookies/localStorage to `auth-state.json`, avoiding re-login on subsequent local runs. In GitHub Actions, a fresh login occurs each run (no persistent state).
 
-### 4.2 `scheduler.js` — Cron Loop (~50 LOC)
+### 4.2 `.github/workflows/booking.yml` — GitHub Actions Scheduler
 
-A thin wrapper around `booking.js`:
+The **primary scheduling mechanism**. Key features:
 
+1. **Cron trigger**: `*/5 * * * *` (every 5 minutes, UTC) — configurable in the YAML
+2. **Manual trigger**: `workflow_dispatch` allows on-demand runs from the GitHub Actions tab
+3. **Concurrency guard**: `concurrency.group: booking-check` with `cancel-in-progress: false` prevents overlapping runs (equivalent to the `isRunning` flag in the deprecated scheduler.js)
+4. **Environment**: Sets up Node.js 20, installs dependencies (`npm ci`), installs Playwright Chromium, then runs `node src/booking.js`
+5. **Secrets/Variables**: Credentials from GitHub Secrets, optional config from GitHub Variables
+6. **Failure handling**: Uploads `output/*.png` screenshots as artifacts on failure (retained 3 days)
+
+### 4.3 `src/scheduler.js` — Legacy Local Scheduler (DEPRECATED, ~50 LOC)
+
+**Not actively used.** The file header explicitly states: *"Currently not used; scheduling is done via GitHub workflows."*
+
+A thin wrapper around `booking.js` that used `node-cron` for local cron-based scheduling:
 1. Imports `{ run, CONFIG }` from `booking.js`
 2. Reads `CHECK_INTERVAL_MINUTES` from environment (default: 5)
 3. Runs `run()` immediately on startup
-4. Schedules `run()` via `node-cron` at `*/N * * * *` (every N minutes)
-5. **Concurrency guard**: `isRunning` flag prevents overlapping executions if a run takes longer than the interval
+4. Schedules `run()` via `node-cron` at `*/N * * * *`
+5. **Concurrency guard**: `isRunning` flag prevents overlapping executions
 6. **Graceful shutdown**: Handles `SIGINT` and `SIGTERM`
 
-### 4.3 `explore-apis.js` — API Discovery Tool (~170 LOC)
+This file is kept in the repository in case local scheduling is needed in the future, but the `npm start` script that invokes it is a legacy command.
+
+### 4.4 `docs/explore-apis.js` — API Discovery Tool (~170 LOC)
 
 A **development-time utility** (not part of the production booking flow) that:
 
@@ -180,7 +206,7 @@ A **development-time utility** (not part of the production booking flow) that:
 4. Saves all captured requests/responses to `captured-booking-flow.json`
 5. This artifact was used to reverse-engineer CourtReserve's API contracts for building the automated `booking.js`
 
-### 4.4 `captured-booking-flow.json` — API Trace Artifact
+### 4.5 `docs/captured-booking-flow.json` — API Trace Artifact
 
 A JSON file containing the HTTP requests and responses captured during a real booking session. Key observations from the captured data:
 
@@ -198,79 +224,63 @@ A JSON file containing the HTTP requests and responses captured during a real bo
 ### 5.1 Complete Booking Sequence
 
 ```
-┌──────────┐     ┌──────────────┐     ┌───────────────────────┐
-│ scheduler │────►│  booking.js  │────►│    CourtReserve        │
-│  (cron)   │     │   run()      │     │  events.courtreserve   │
-└──────────┘     └──────┬───────┘     └───────────┬───────────┘
-                        │                         │
-  STEP 1: Launch Browser (Playwright/Chromium)    │
-                        │                         │
-  STEP 2: Login ────────┼── GET / ───────────────►│
-                        │◄─ Login page HTML ──────│
-                        │── POST credentials ────►│
-                        │◄─ Redirect to Portal ───│
-                        │── Save auth-state.json  │
-                        │                         │
-  STEP 3: Browse ───────┼── GET /Events/List/7031 │
-  Events                │   ?evTypeId=19756 ─────►│
-                        │◄─ Events list HTML ─────│
-                        │                         │
-  STEP 4: Check ────────┼── GET Event Details ───►│
-  Each Mixer            │   (click "DATES" tab)   │
-                        │                         │
-  STEP 5: Intercept ────┼◄─ AJAX: ApiLoadEvents ──│
-  API Responses         │◄─ AJAX: GetAdditional   │
-                        │   Dates (HTML w/ slots)  │
-                        │                         │
-  STEP 6: Parse ────────┤  parseAvailableDates()  │
-  Availability          │  → finds "REGISTER"     │
-                        │    links in HTML         │
-                        │                         │
-  ═══ IF SPOT FOUND ════╪══════════════════════════╪═══
-                        │                         │
-  STEP 7: Register ─────┼── GET /Events/SignUp ───►│
-                        │   ToEvent/7031?eventId   │
-                        │   =X&reservationId=Y ──►│
-                        │◄─ SignUp page HTML ──────│
-                        │                         │
-  STEP 8: Load ─────────┼◄─ AJAX: EventApi_SignUp │
-  Registration Form     │   ToEvent_Get (27KB) ───│
-                        │                         │
-  STEP 9: Finalize ─────┼── POST EventApi_SignUp  │
-  Registration          │   ToEvent_DropIn_Post ─►│
-                        │   (form data w/ CSRF    │
-                        │    token, member info,   │
-                        │    event details) ──────►│
-                        │◄─ Redirect JS ──────────│
-                        │                         │
-  STEP 10: Registered ──┤  → Redirected to payment│
-                        │    page (not automated)  │
-                        │                         │
-  STEP 11: Notify ──────┤  → macOS notification   │
-                        │  → Email notification    │
-                        │  → booking-history.json  │
-                        │  → booking.log           │
-                        │                         │
-  STEP 12: Save ────────┤  → auth-state.json      │
-  State & Close         │  → Close browser         │
+GitHub Actions          booking.js          Chromium/Playwright      CourtReserve
+(or local run)              │                       │                      │
+   │                        │                       │                      │
+   │──node src/booking.js──►│                       │                      │
+   │                        │──reset output files───│                      │
+   │                        │──launch()─────────────►│                      │
+   │                        │                       │──GET /─────────────►  │
+   │                        │                       │◄──login page──────── │
+   │                        │                       │──POST credentials──►  │
+   │                        │                       │◄──session cookie───── │
+   │                        │◄─login success────────│                      │
+   │                        │                       │                      │
+   │                        │──navigate events──────►│──GET /Events/List──►│
+   │                        │  (for each eventConfig)│◄──HTML page──────── │
+   │                        │◄─parseEventCards()─────│                      │
+   │                        │                       │                      │
+   │                        │──navigate dates────────►│──GET /Events/Details►│
+   │                        │  (for each mixer)      │◄──HTML + AJAX──────│
+   │                        │                       │                      │
+   │                        │  [response interceptor captures              │
+   │                        │   Event_GetAdditionalDates]                  │
+   │                        │                       │                      │
+   │                        │──parseAvailableDates()──│                     │
+   │                        │  → REGISTER URL found!  │                     │
+   │                        │                       │                      │
+   │                        │──navigate register──────►│──GET /SignUpToEvent►│
+   │                        │                       │◄──SignUp page HTML───│
+   │                        │                       │◄──AJAX form content──│
+   │                        │                       │                      │
+   │                        │──click Finalize─────────►│──POST DropIn_Post─►│
+   │                        │                       │◄──redirect to payment─│
+   │                        │                       │                      │
+   │                        │──recordBooking()────────│  (payment is manual)│
+   │                        │──notify("Registered!")───│                     │
+   │                        │──save auth state────────│  (local only)       │
+   │                        │──close browser──────────►│                     │
+   │◄─return bookings───────│                       │                      │
+   │                        │                       │                      │
+   │  (GitHub Actions run ends; next cron trigger)   │                      │
 ```
 
 ### 5.2 Data Lifecycle Detail
 
 | Phase | Data Source | Transform | Storage |
 |-------|-----------|-----------|---------|
-| Config Load | `.env` file | `dotenv` parsing, CSV splitting for arrays | In-memory `CONFIG` object |
-| Session Restore | `auth-state.json` | Playwright `storageState` | Browser context cookies/localStorage |
+| Config Load | `.env` file (local) or GitHub Secrets/Variables (cloud) | `dotenv` parsing, `parseEventConfigs()` | In-memory `CONFIG` object |
+| Session Restore | `auth-state.json` (local only) | Playwright `storageState` | Browser context cookies/localStorage |
 | Event Discovery | CourtReserve `/Events/List` page | `parseEventCards()` — DOM query for `.dates-list-link` elements | In-memory array |
-| Day Filtering | Event card titles | String matching against `CONFIG.preferredDays` | In-memory filtered array |
+| Day Filtering | Event card titles | String matching against per-event-type `preferredDays` from `CONFIG.eventConfigs` | In-memory filtered array |
 | Availability Detection | AJAX `Event_GetAdditionalDates` response | `parseAvailableDates()` — regex for `EventAction=Register` URLs | In-memory `available[]` |
 | Date Range Filter | Parsed date strings | `isDateWithinRange()` — compare to `maxWeeksAhead` | In-memory filtered array |
 | Registration | Form POST to `EventApi_SignUpToEvent_DropIn_Post` | Browser form submission with CSRF token | Server-side (CourtReserve) |
 | Payment | **Manual** — user completes within 15 min hold | Not automated | Server-side (Stripe + CourtReserve) |
-| Booking Record | Success/failure result | `recordBooking()` → append to JSON array | `booking-history.json` |
-| Activity Log | Every step's log message | Timestamped string formatting | `booking.log` + stdout |
-| Screenshots | Browser viewport at key moments | Playwright `.screenshot()` | `*.png` files |
-| Session Save | Browser cookies/localStorage | Playwright `storageState()` | `auth-state.json` |
+| Booking Record | Success/failure result | `recordBooking()` → write to JSON | `booking-history.json` (reset each run) |
+| Activity Log | Every step's log message | Timestamped string formatting | `booking.log` (overwritten each run) + stdout |
+| Screenshots | Browser viewport on errors | Playwright `.screenshot()` | `output/*.png` files (cleaned up at start of each run; uploaded as GitHub Actions artifacts on failure) |
+| Session Save | Browser cookies/localStorage | Playwright `storageState()` | `auth-state.json` (local only; not used in GitHub Actions) |
 
 ---
 
@@ -366,81 +376,45 @@ A JSON file containing the HTTP requests and responses captured during a real bo
 
 - **Type**: Cookie-based session (ASP.NET)
 - **Login**: Form POST with email/password to standard ASP.NET MVC login endpoint
-- **Session Persistence**: Playwright's `storageState` saves all cookies and localStorage to `auth-state.json`
-- **Session Restore**: On subsequent runs, the saved state is loaded into the browser context, avoiding re-login
+- **Session Persistence (local)**: Playwright's `storageState` saves all cookies and localStorage to `auth-state.json`; on subsequent local runs, the saved state is loaded to avoid re-login
+- **Session Persistence (GitHub Actions)**: None — each run performs a fresh login since there is no persistent storage between workflow runs
 - **CSRF Protection**: CourtReserve uses `__RequestVerificationToken` anti-forgery tokens in forms (handled automatically by Playwright's form submission)
 - **Cloudflare Challenge**: Handled by running a real Chromium browser (Playwright) rather than raw HTTP requests
 
 ---
 
-## 7. Deployment Regions
+## 7. Deployment
 
-### Not Applicable
+### 7.1 GitHub Actions (Primary)
 
-This is a **single-machine, local-execution script**. There is no:
-- Multi-region deployment
-- Active-active or active-passive architecture
-- Regional routing
-- Failover strategy
-- Data residency concerns
+The script is deployed as a **GitHub Actions scheduled workflow**:
 
-The script runs on the developer's macOS machine (evidenced by `osascript` notifications, the Bellevue/Renton WA geography of the badminton clubs, and the `America/Los_Angeles` timezone in logging).
+- **Runner**: `ubuntu-latest` (ephemeral VM)
+- **Schedule**: Cron-based (`*/5 * * * *` by default, configurable in `booking.yml`)
+- **Trigger**: Automatic (cron) + manual (`workflow_dispatch` via GitHub Actions UI)
+- **Credentials**: GitHub Encrypted Secrets (never exposed in logs or code)
+- **No persistent state**: Each run starts fresh — no `auth-state.json`, no session carry-over
+- **Failure artifacts**: Screenshots uploaded as downloadable GitHub Actions artifacts (retained 3 days)
+- **macOS notifications**: Silently skipped (not available on Ubuntu runners); email notifications are the primary alerting channel
 
-### Potential Remote Execution
+See `docs/GITHUB_ACTIONS_SETUP.md` for the full setup guide.
 
-The README mentions running in background via `nohup` or `screen`/`tmux`, implying it's designed for a single always-on machine. There's no evidence of cloud deployment (no Dockerfile, no `Procfile`, no serverless config).
+### 7.2 Local Execution (Optional, for debugging)
+
+The script can still be run locally via `npm run check`, `npm run debug`, or `npm run dry-run`. When run locally:
+
+- Reads credentials from `.env` file
+- Persists session to `output/auth-state.json` for faster subsequent runs
+- Supports macOS desktop notifications via `osascript`
+- The legacy `npm start` command invokes `src/scheduler.js` for local cron-based polling (deprecated in favor of GitHub Actions)
 
 ---
+## 8 Notifications (Alerting)
 
-## 8. Failure Handling
-
-### 8.1 Error Recovery
-
-| Scenario | Handling |
-|----------|----------|
-| **Login failure** | Throws error with "invalid credentials" message; screenshot saved |
-| **Cloudflare block** | 10-second initial wait; README suggests `HEADLESS=false` as workaround |
-| **Session expired** | Script attempts login; user can delete `auth-state.json` for fresh session |
-| **Event not found** | Logs "No Mixer events matching preferred days"; continues to next event type |
-| **No REGISTER buttons** | Logs status (N Register, N Full); moves to next event |
-| **Registration error** | Checks for `.validation-summary-errors`; logs error text; screenshots |
-| **SweetAlert modal** | Checks for `.swal2-container` text; detects "full" or "error" messages |
-| **Payment page not loading** | Dual strategy: waits for intercepted AJAX content OR spinner disappearance (20s timeout) |
-| **Fatal exception** | Caught at top level in `run()`; browser closed; error notification sent |
-
-### 8.2 Concurrency Guard
-
-The scheduler uses an `isRunning` boolean flag to prevent overlapping executions:
-
-```javascript
-if (isRunning) {
-  log('Previous check still running, skipping this cycle.');
-  return;
-}
-```
-
-### 8.3 Retry Strategy
-
-- **No automatic retries on failure** within a single run
-- **Implicit retry via scheduler**: the cron loop will retry on the next cycle (every N minutes)
-- **No exponential backoff**
-- **No circuit breaker**
-
-### 8.4 Logging & Observability
-
-| Output | Location | Format |
-|--------|----------|--------|
-| Activity log | `booking.log` + stdout | `[timestamp] [LEVEL] message` |
-| Booking audit | `booking-history.json` | JSON array of `{eventName, date, success, timestamp, ...}` |
-| Debug screenshots | `*.png` files | Full-page screenshots at: login, signup form, payment page, errors, success |
-| API traces | Intercepted in memory | Logged to console during run |
-
-### 8.5 Notifications (Alerting)
-
-| Channel | Trigger | Implementation |
-|---------|---------|----------------|
-| macOS Desktop | Spot found, booking success/failure, errors | `osascript` command (silently fails if not on macOS) |
-| Email (Gmail) | Same triggers | `nodemailer` with Gmail SMTP; requires `NOTIFY_EMAIL_USER`, `NOTIFY_EMAIL_PASS`, `NOTIFY_EMAIL_TO` in `.env` |
+| Channel | Trigger | Implementation | Availability |
+|---------|---------|----------------|--------------|
+| Email (Gmail) | Spot found & registered, booking errors, no spots found | `nodemailer` with Gmail SMTP; requires `NOTIFY_EMAIL_USER`, `NOTIFY_EMAIL_PASS`, `NOTIFY_EMAIL_TO` | GitHub Actions ✅ + Local ✅ |
+| macOS Desktop | Same triggers | `osascript` command (silently fails if not on macOS) | Local only ✅ (silently skipped in GitHub Actions) |
 
 ---
 
@@ -448,68 +422,24 @@ if (isRunning) {
 
 ### 9.1 Credential Storage
 
-| Secret | Storage | Risk |
-|--------|---------|------|
-| CourtReserve email/password | `.env` file (plaintext) | **HIGH** — no encryption; mitigated only by `.gitignore` excluding `.env` |
-| Gmail app password | `.env` file (plaintext) | **HIGH** — same as above |
-| Session cookies | `auth-state.json` (plaintext JSON) | **MEDIUM** — contains full browser session; excluded from git |
-| CSRF tokens | In-memory only | **LOW** — ephemeral |
-| Payment card info | **Not stored locally** — handled by Stripe/CourtReserve | **LOW** — card is saved server-side on CourtReserve's Stripe account |
+| Secret | Storage (GitHub Actions) | Storage (Local) | Risk |
+|--------|-------------------------|-----------------|------|
+| CourtReserve email/password | GitHub Encrypted Secrets | `.env` file (plaintext) | **LOW** (cloud) / **HIGH** (local — no encryption; mitigated only by not committing `.env`) |
+| Gmail app password | GitHub Encrypted Secrets | `.env` file (plaintext) | **LOW** (cloud) / **HIGH** (local — same as above) |
+| Session cookies | Not persisted (fresh login each run) | `auth-state.json` (plaintext JSON) | **N/A** (cloud) / **MEDIUM** (local — contains full browser session) |
+| CSRF tokens | In-memory only | In-memory only | **LOW** — ephemeral |
+| Payment card info | **Not stored locally** — handled by Stripe/CourtReserve | Same | **LOW** — card is saved server-side on CourtReserve's Stripe account |
 
 ### 9.2 `.gitignore` Protection
 
-The entire `output/` directory and secrets are excluded from version control:
+The following are excluded from version control:
 ```
-.env
+node_modules/
 output/
-captured-apis.json
 ```
 
-### 9.3 Network Security
-
-- All communication over **HTTPS** (TLS)
-- CourtReserve behind **Cloudflare** (WAF + DDoS protection)
-- The script uses a spoofed **user-agent** mimicking Chrome 120 on macOS
-- **No API keys or tokens** are used — authentication is purely cookie-based
-
-### 9.4 Access Boundaries
-
-- Script has access to **one user's account only** (the configured credentials)
-- Cannot access other users' data or bookings
-- Payment uses the user's **pre-saved card on Stripe** — script does not handle raw card numbers
 
 ---
-
-## 10. Unknowns / Risks
-
-### 10.1 Unknowns
-
-| Item | Confidence | Notes |
-|------|-----------|-------|
-| **Stripe payment flow details** | MEDIUM | The script clicks a Pay button but doesn't know the exact Stripe API calls; it relies on browser-level interaction |
-| **CourtReserve rate limiting** | LOW | No evidence the script handles HTTP 429 or IP-based rate limiting; 3-5 minute intervals may be safe but unconfirmed |
-| **Cloudflare bot detection evolution** | LOW | Cloudflare may update its bot detection, potentially blocking Playwright; the current `webdriverDetected: true` in New Relic traces suggests CourtReserve can see it's automated |
-| **CourtReserve TOS compliance** | UNKNOWN | Automated booking may violate CourtReserve's Terms of Service |
-| **Hold time behavior** | MEDIUM | The captured data shows `HoldTimeForReservation: 15` (minutes); if payment isn't completed within 15 minutes, the registration may be released |
-
-### 10.2 Risks
-
-| Risk | Severity | Mitigation |
-|------|----------|------------|
-| **Credentials in plaintext** | HIGH | Use a secrets manager or OS keychain; currently only protected by `.gitignore` |
-| **WebDriver detection** | MEDIUM | New Relic traces show `webdriverDetected: true`; CourtReserve could block automated access |
-| **DOM/API changes breaking the script** | HIGH | The script relies on specific CSS selectors, URL patterns, and HTML structure; any CourtReserve UI update could break it |
-| **Double-booking** | LOW | No deduplication check; if the script runs and a spot opens, it will book without checking if the user already has a booking for that date |
-| **Financial risk** | LOW | The script only registers; payment is manual. No automatic charges. |
-| **Screenshot disk usage** | LOW | Screenshots accumulate on disk without cleanup; each run can produce multiple PNG files |
-
-### 10.3 Dead Code / Unused Features
-
-| Item | Status |
-|------|--------|
-| `explore-apis.js` | Development utility only; not part of the production flow |
-| `captured-booking-flow.json` | Reference artifact; not read by any production code |
-| Multiple payment button selectors (20+) | Many are defensive/speculative; only a few will match in practice |
 
 ---
 
@@ -518,45 +448,44 @@ captured-apis.json
 ### A. Textual Sequence Diagram — Happy Path Booking
 
 ```
-Scheduler           booking.js          Chromium/Playwright      CourtReserve
-   │                    │                       │                      │
-   │──run()────────────►│                       │                      │
-   │                    │──launch()─────────────►│                      │
-   │                    │                       │──GET /─────────────►  │
-   │                    │                       │◄──login page──────── │
-   │                    │                       │──POST login──────►   │
-   │                    │                       │◄──session cookie──── │
-   │                    │◄─login success────────│                      │
-   │                    │                       │                      │
-   │                    │──navigate events──────►│──GET /Events/List──►│
-   │                    │                       │◄──HTML page──────── │
-   │                    │◄─parseEventCards()─────│                      │
-   │                    │                       │                      │
-   │                    │──navigate dates────────►│──GET /Events/Details►│
-   │                    │  (for each mixer)      │◄──HTML + AJAX──────│
-   │                    │                       │                      │
-   │                    │  [response interceptor captures              │
-   │                    │   Event_GetAdditionalDates]                  │
-   │                    │                       │                      │
-   │                    │──parseAvailableDates()──│                     │
-   │                    │  → REGISTER URL found!  │                     │
-   │                    │                       │                      │
-   │                    │──notify("Spot Found!")──│                     │
-   │                    │                       │                      │
-   │                    │──navigate register──────►│──GET /SignUpToEvent►│
-   │                    │                       │◄──SignUp page HTML───│
-   │                    │                       │◄──AJAX form content──│
-   │                    │                       │                      │
-   │                    │──click Finalize─────────►│──POST DropIn_Post─►│
-   │                    │                       │◄──redirect to payment─│
-   │                    │                       │                      │
-   │                    │──recordBooking()────────│  (payment is manual)│
-   │                    │──notify("Registered!")───│                     │
-   │                    │──save auth state────────│                     │
-   │                    │──close browser──────────►│                     │
-   │◄─return bookings───│                       │                      │
-   │                    │                       │                      │
-   │──schedule next─────│ (wait N minutes)       │                      │
+GitHub Actions       booking.js          Chromium/Playwright      CourtReserve
+(cron trigger)           │                       │                      │
+   │                     │                       │                      │
+   │─node src/booking.js►│                       │                      │
+   │                     │──reset output files───│                      │
+   │                     │──launch()─────────────►│                      │
+   │                     │                       │──GET /─────────────►  │
+   │                     │                       │◄──login page──────── │
+   │                     │                       │──POST login──────►   │
+   │                     │                       │◄──session cookie──── │
+   │                     │◄─login success────────│                      │
+   │                     │                       │                      │
+   │                     │──navigate events──────►│──GET /Events/List──►│
+   │                     │  (per eventConfig)    │◄──HTML page──────── │
+   │                     │◄─parseEventCards()─────│                      │
+   │                     │                       │                      │
+   │                     │──navigate dates────────►│──GET /Events/Details►│
+   │                     │  (for each mixer)      │◄──HTML + AJAX──────│
+   │                     │                       │                      │
+   │                     │  [response interceptor captures              │
+   │                     │   Event_GetAdditionalDates]                  │
+   │                     │                       │                      │
+   │                     │──parseAvailableDates()──│                     │
+   │                     │  → REGISTER URL found!  │                     │
+   │                     │                       │                      │
+   │                     │──navigate register──────►│──GET /SignUpToEvent►│
+   │                     │                       │◄──SignUp page HTML───│
+   │                     │                       │◄──AJAX form content──│
+   │                     │                       │                      │
+   │                     │──click Finalize─────────►│──POST DropIn_Post─►│
+   │                     │                       │◄──redirect to payment─│
+   │                     │                       │                      │
+   │                     │──recordBooking()────────│  (payment is manual)│
+   │                     │──notify("Registered!")───│                     │
+   │                     │──close browser──────────►│                     │
+   │◄─exit 0─────────────│                       │                      │
+   │                     │                       │                      │
+   │  (workflow ends; next cron trigger in N min) │                      │
 ```
 
 ### B. Dependency Tree
@@ -564,7 +493,7 @@ Scheduler           booking.js          Chromium/Playwright      CourtReserve
 ```
 mixers-booking-script@1.0.0
 ├── dotenv@17.4.2          — Environment variable loading from .env
-├── node-cron@4.2.1        — Cron expression scheduler
+├── node-cron@4.2.1        — Cron expression scheduler (used by deprecated scheduler.js only)
 ├── nodemailer@8.0.6       — Email sending (Gmail SMTP)
 └── playwright@1.59.1      — Browser automation (bundles Chromium)
     └── (chromium binary)   — ~150MB headless browser
@@ -574,11 +503,11 @@ mixers-booking-script@1.0.0
 
 | Script | Command | Purpose |
 |--------|---------|---------|
-| `npm run check` | `node booking.js` | Single headless check |
-| `npm run debug` | `HEADLESS=false node booking.js` | Single check with visible browser |
-| `npm run dry-run` | `HEADLESS=false node booking.js --dry-run` | Visible browser, stops before booking |
-| `npm run dry-run:headless` | `node booking.js --dry-run` | Headless, stops before booking |
-| `npm start` | `node scheduler.js` | Start continuous polling |
+| `npm run check` | `node src/booking.js` | Single headless check |
+| `npm run debug` | `HEADLESS=false node src/booking.js` | Single check with visible browser |
+| `npm run dry-run` | `HEADLESS=false node src/booking.js --dry-run` | Visible browser, stops before booking |
+| `npm run dry-run:headless` | `node src/booking.js --dry-run` | Headless, stops before booking |
+| `npm start` | `node src/scheduler.js` | Start local cron polling **(deprecated — use GitHub Actions instead)** |
 
 ### D. Environment Variables Reference
 
@@ -589,12 +518,13 @@ mixers-booking-script@1.0.0
 | `ORG_ID` | No | `7031` | Organization ID |
 | `USER_ID` | No | `5384796` | User's CourtReserve ID |
 | `MEMBERSHIP_ID` | No | `2346339` | Membership ID |
-| `EVENT_TYPE_IDS` | No | `19756` | Comma-separated event type IDs |
-| `PREFERRED_DAYS` | No | `tuesday` | Comma-separated day names |
-| `CHECK_INTERVAL_MINUTES` | No | `5` | Minutes between scheduler checks |
+| `EVENT_CONFIGS` | No | — | Per-event-type day config. Format: `19756:tuesday,thursday;54834:monday,wednesday,friday` |
+| `EVENT_TYPE_IDS` | No | `54834` | *(Legacy fallback)* Comma-separated event type IDs. Used only if `EVENT_CONFIGS` is not set. |
+| `PREFERRED_DAYS` | No | `monday` | *(Legacy fallback)* Comma-separated day names. Used only if `EVENT_CONFIGS` is not set. |
+| `CHECK_INTERVAL_MINUTES` | No | `5` | Minutes between scheduler checks (used by deprecated `scheduler.js` only; GitHub Actions uses the cron expression in `booking.yml`) |
 | `MAX_WEEKS_AHEAD` | No | `4` | Max weeks into the future to book |
 | `HEADLESS` | No | `true` | Run browser without GUI |
-| `ENABLE_NOTIFICATIONS` | No | `true` | Enable macOS + email notifications |
+| `ENABLE_NOTIFICATIONS` | No | `true` | Enable email + macOS notifications |
 | `NOTIFY_EMAIL_USER` | No | — | Gmail address for sending notifications |
 | `NOTIFY_EMAIL_PASS` | No | — | Gmail app password |
 | `NOTIFY_EMAIL_TO` | No | — | Recipient email address |
@@ -605,9 +535,24 @@ All runtime artifacts are written to the `output/` directory:
 
 | File | Created By | Lifecycle |
 |------|-----------|-----------|
-| `output/auth-state.json` | `booking.js` after login | Overwritten each run; deleted to force re-login |
-| `output/booking.log` | `booking.js` + `scheduler.js` | Appended every run; grows unbounded |
-| `output/booking-history.json` | `booking.js` on booking attempt | Appended on each booking; grows unbounded |
-| `output/error-*-{timestamp}.png` | `booking.js` on failures only | Accumulates (only created when something goes wrong) |
+| `output/auth-state.json` | `booking.js` after login | **Local only**: overwritten each run; deleted to force re-login. Not created in GitHub Actions. |
+| `output/booking.log` | `booking.js` | **Overwritten** at the start of each run (first log entry uses `writeFileSync`, subsequent use `appendFileSync`) |
+| `output/booking-history.json` | `booking.js` on booking attempt | **Reset** at the start of each run (initialized to `{ bookings: [] }`) |
+| `output/error-*-{timestamp}.png` | `booking.js` on failures only | **Cleaned up** at the start of each run. In GitHub Actions, uploaded as downloadable artifacts on failure (retained 3 days). |
 
-**Screenshot policy:** Only failure/error screenshots are saved to avoid disk accumulation over long-running scheduler sessions. Error screenshots include: `error-book-*`, `error-flow-*`, `error-no-finalize-*`, `error-no-redirect-*`, `error-registration-*`, `error-unexpected-*`, `debug-login-fail.png`, and `debug-not-signup-*`.
+### F. GitHub Actions Workflow Configuration
+
+Key settings in `.github/workflows/booking.yml`:
+
+| Setting | Value | Notes |
+|---------|-------|-------|
+| **Trigger (cron)** | `*/5 * * * *` | Every 5 minutes (UTC); adjustable |
+| **Trigger (manual)** | `workflow_dispatch` | Run on-demand from Actions tab |
+| **Runner** | `ubuntu-latest` | Ephemeral VM |
+| **Node.js** | `20` | With npm cache |
+| **Timeout** | `10 minutes` | Per job |
+| **Concurrency group** | `booking-check` | `cancel-in-progress: false` — queues, does not cancel |
+| **Required secrets** | `CR_EMAIL`, `CR_PASSWORD` | Login credentials |
+| **Optional secrets** | `NOTIFY_EMAIL_USER`, `NOTIFY_EMAIL_PASS`, `NOTIFY_EMAIL_TO` | Email notifications |
+| **Optional variables** | `ORG_ID`, `USER_ID`, `MEMBERSHIP_ID`, `EVENT_CONFIGS`, `MAX_WEEKS_AHEAD` | Config overrides |
+| **Failure artifacts** | `output/*.png` | Uploaded on failure, retained 3 days |
