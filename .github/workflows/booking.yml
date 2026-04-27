@@ -1,0 +1,76 @@
+# Mixers Booking Script - GitHub Actions Scheduler
+# This replaces scheduler.js when running in the cloud.
+# Each run does a single check (equivalent to `npm run check`).
+#
+# SETUP: Add your secrets in GitHub repo → Settings → Secrets and variables → Actions
+# See docs/GITHUB_ACTIONS_SETUP.md for detailed instructions.
+
+name: Mixer Booking Check
+
+on:
+  # Scheduled cron trigger - runs every 15 minutes
+  # GitHub Actions cron uses UTC timezone
+  # Adjust the interval as needed (note: GitHub may delay scheduled runs by a few minutes)
+  schedule:
+    - cron: '*/15 * * * *'
+
+  # Manual trigger - lets you run it on-demand from the Actions tab
+  workflow_dispatch:
+
+# Prevent multiple runs from overlapping (same as the isRunning guard in scheduler.js)
+concurrency:
+  group: booking-check
+  cancel-in-progress: false
+
+jobs:
+  check-and-book:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run booking check
+        env:
+          # ── Required secrets ──
+          CR_EMAIL: ${{ secrets.CR_EMAIL }}
+          CR_PASSWORD: ${{ secrets.CR_PASSWORD }}
+
+          # ── Optional: Email notifications ──
+          NOTIFY_EMAIL_USER: ${{ secrets.NOTIFY_EMAIL_USER }}
+          NOTIFY_EMAIL_PASS: ${{ secrets.NOTIFY_EMAIL_PASS }}
+          NOTIFY_EMAIL_TO: ${{ secrets.NOTIFY_EMAIL_TO }}
+
+          # ── Optional: Override defaults (set as secrets or repo variables) ──
+          ORG_ID: ${{ vars.ORG_ID || '' }}
+          USER_ID: ${{ vars.USER_ID || '' }}
+          MEMBERSHIP_ID: ${{ vars.MEMBERSHIP_ID || '' }}
+          EVENT_CONFIGS: ${{ vars.EVENT_CONFIGS || '' }}
+          MAX_WEEKS_AHEAD: ${{ vars.MAX_WEEKS_AHEAD || '' }}
+
+          # ── CI-specific settings ──
+          HEADLESS: 'true'
+          ENABLE_NOTIFICATIONS: 'true'
+        run: node src/booking.js
+
+      - name: Upload artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-screenshots-${{ github.run_number }}
+          path: output/*.png
+          retention-days: 3
+          if-no-files-found: ignore

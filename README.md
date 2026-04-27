@@ -87,9 +87,21 @@ EVENT_TYPE_IDS=54834,12345
 - **Session expired**: Delete `auth-state.json` and run again to force a fresh login.
 - **No spots found**: This is normal! The script will keep checking. Look at `booking.log` for history.
 
-## Running in Background
+## Running in the Cloud (GitHub Actions) ☁️
 
-To keep it running in the background:
+Don't want to keep your laptop running? Host it on GitHub Actions for **free**:
+
+1. Push this repo to a **private GitHub repo** (or upload via the GitHub web UI)
+2. Add your credentials as **encrypted GitHub Secrets** (Settings → Secrets → Actions)
+3. The included workflow (`.github/workflows/booking.yml`) runs `node src/booking.js` every 15 minutes automatically
+
+No server to manage, no Docker, no AWS. Secrets are encrypted and never exposed in logs.
+
+👉 **Full setup guide**: [docs/GITHUB_ACTIONS_SETUP.md](docs/GITHUB_ACTIONS_SETUP.md)
+
+## Running in Background (Local)
+
+To keep it running in the background on your laptop:
 
 ```bash
 # Using nohup
