@@ -8,11 +8,11 @@
 name: Mixer Booking Check
 
 on:
-  # Scheduled cron trigger - runs every 15 minutes
+  # Scheduled cron trigger - runs every 5 minutes
   # GitHub Actions cron uses UTC timezone
   # Adjust the interval as needed (note: GitHub may delay scheduled runs by a few minutes)
   schedule:
-    - cron: '*/20 * * * *'
+    - cron: '*/5 * * * *'
 
   # Manual trigger - lets you run it on-demand from the Actions tab
   workflow_dispatch:
