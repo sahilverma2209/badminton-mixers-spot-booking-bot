@@ -6,19 +6,34 @@ Automated booking script for **Bellevue Badminton Club Mixers** on CourtReserve.
 
 1. **Launches a headless browser** (Playwright + Chromium)
 2. **Logs into CourtReserve** with your credentials
-3. **Navigates to the Mixers events page** (Redmond Organized Play)
-4. **Checks each Mixer day** (Monday/Wednesday/Friday) for available dates
+3. **Navigates to the configured event pages** (e.g., Redmond Organized Play, Renton Organized Play)
+4. **Checks each Mixer day** (configurable per event type via `EVENT_CONFIGS`) for available dates
 5. **If a spot opens up** (someone cancelled), it **auto-books** immediately
-6. **Sends a macOS desktop notification** on success/failure
-7. **Repeats every 3 minutes** (configurable)
+6. **Sends an email notification** (and macOS desktop alert when running locally)
+7. **You complete payment manually** on CourtReserve within ~15 minutes
 
-## Quick Start
+Scheduling is handled by **GitHub Actions** — the workflow runs every 5 minutes (configurable) so you don't need to keep your laptop running.
+
+## Quick Start (GitHub Actions — Recommended) ☁️
+
+The easiest way to run this is on GitHub Actions for **free**:
+
+1. Push this repo to a **private GitHub repo**
+2. Add `CR_EMAIL` and `CR_PASSWORD` as **encrypted GitHub Secrets** (Settings → Secrets → Actions)
+3. Add email notification secrets (`NOTIFY_EMAIL_USER`, `NOTIFY_EMAIL_PASS`, `NOTIFY_EMAIL_TO`) so you get notified when a booking is made
+4. The included workflow (`.github/workflows/booking.yml`) runs `node src/booking.js` every 5 minutes automatically
+
+No server to manage, no Docker, no AWS. Secrets are encrypted and never exposed in logs.
+
+👉 **Full setup guide**: [docs/GITHUB_ACTIONS_SETUP.md](docs/GITHUB_ACTIONS_SETUP.md)
+
+## Quick Start (Local)
 
 ```bash
 # 1. Install dependencies
 npm install
 
-# 2. Edit .env with your credentials (already pre-filled)
+# 2. Edit .env with your credentials
 nano .env
 
 # 3. Run a single check (with visible browser for debugging)
@@ -27,24 +42,52 @@ npm run debug
 # 4. Run a single check (headless)
 npm run check
 
-# 5. Start the scheduler (runs every 3 minutes)
-npm start
+# 5. Dry run (visible browser, stops before actually booking)
+npm run dry-run
 ```
 
-## Configuration (.env)
+## Configuration
+
+### GitHub Actions (Recommended)
+
+Credentials are stored as **GitHub Secrets**, and configuration overrides as **GitHub Variables**. See [docs/GITHUB_ACTIONS_SETUP.md](docs/GITHUB_ACTIONS_SETUP.md) for details.
+
+### Local (.env)
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `CR_EMAIL` | CourtReserve login email | - |
-| `CR_PASSWORD` | CourtReserve password | - |
+| `CR_EMAIL` | CourtReserve login email | — (required) |
+| `CR_PASSWORD` | CourtReserve password | — (required) |
 | `ORG_ID` | Organization ID | `7031` |
 | `USER_ID` | Your user ID | `5384796` |
 | `MEMBERSHIP_ID` | Your membership ID | `2346339` |
-| `EVENT_TYPE_IDS` | Comma-separated event type IDs | `54834` (Redmond) |
-| `PREFERRED_DAYS` | Days to book | `monday,wednesday,friday` |
-| `CHECK_INTERVAL_MINUTES` | Minutes between checks | `3` |
+| `EVENT_CONFIGS` | Per-event-type day config (see below) | — |
+| `MAX_WEEKS_AHEAD` | Max weeks into the future to book | `8` |
 | `HEADLESS` | Run without visible browser | `true` |
-| `ENABLE_NOTIFICATIONS` | macOS desktop notifications | `true` |
+| `ENABLE_NOTIFICATIONS` | Enable email + macOS notifications | `true` |
+| `NOTIFY_EMAIL_USER` | Gmail address for sending notifications | — |
+| `NOTIFY_EMAIL_PASS` | Gmail app password ([how to create](https://support.google.com/accounts/answer/185833)) | — |
+| `NOTIFY_EMAIL_TO` | Email to receive notifications | — |
+
+**Legacy variables** (used only if `EVENT_CONFIGS` is not set):
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `EVENT_TYPE_IDS` | Comma-separated event type IDs | `54834` (Redmond) |
+| `PREFERRED_DAYS` | Days to book (shared across all event types) | `monday` |
+
+### Event Configuration
+
+Use `EVENT_CONFIGS` to set different preferred days per event type:
+
+```bash
+# Format: eventTypeId:day1,day2;eventTypeId:day3,day4
+# Redmond on Mon/Wed/Fri, Renton on Tue/Thu:
+EVENT_CONFIGS=54834:monday,wednesday,friday;19756:tuesday,thursday
+
+# Find the evTypeId from the URL when you click a category:
+# https://events.courtreserve.com/Online/Events/List/7031?evTypeId=XXXXX
+```
 
 ## Commands
 
@@ -52,59 +95,43 @@ npm start
 |---------|-------------|
 | `npm run check` | Run a single check (headless) |
 | `npm run debug` | Run with visible browser (for debugging) |
-| `npm start` | Start the scheduler (continuous polling) |
+| `npm run dry-run` | Visible browser, stops before actually booking |
+| `npm run dry-run:headless` | Headless, stops before booking |
+| `npm start` | Start local cron polling *(deprecated — use GitHub Actions)* |
 
 ## Files
 
 | File | Description |
 |------|-------------|
-| `booking.js` | Main automation script |
-| `scheduler.js` | Cron-based scheduler |
-| `.env` | Configuration (credentials, preferences) |
-| `auth-state.json` | Saved browser session (auto-generated) |
-| `booking.log` | Activity log |
-| `captured-apis.json` | Captured API calls (for debugging) |
-| `booking-*.png` | Screenshots on booking attempts |
+| `src/booking.js` | Main automation script |
+| `src/scheduler.js` | Local cron-based scheduler *(deprecated — replaced by GitHub Actions)* |
+| `.github/workflows/booking.yml` | GitHub Actions workflow (primary scheduler) |
+| `.env` | Local configuration (credentials, preferences) — **do not commit** |
+| `output/auth-state.json` | Saved browser session (auto-generated, local only) |
+| `output/booking.log` | Activity log (overwritten each run) |
+| `output/booking-history.json` | Booking audit trail (reset each run) |
+| `output/error-*.png` | Error screenshots (cleaned up each run; uploaded as GitHub Actions artifacts on failure) |
+| `docs/GITHUB_ACTIONS_SETUP.md` | Full GitHub Actions setup guide |
+| `docs/DEEP_DIVE.md` | Detailed technical deep dive |
 
 ## How Spots Become Available
 
 The Mixers fill up fast. Spots open when someone **cancels their registration**. There's no waitlist, so it's first-come-first-served. This script checks every few minutes so you can grab a spot as soon as it opens.
 
-## Adding More Locations
-
-You can monitor multiple event categories by adding their IDs to `EVENT_TYPE_IDS` in `.env`:
-
-```
-# Find the evTypeId from the URL when you click a category:
-# https://events.courtreserve.com/Online/Events/List/7031?evTypeId=XXXXX
-EVENT_TYPE_IDS=54834,12345
-```
-
 ## Troubleshooting
 
-- **Login fails**: Make sure credentials in `.env` are correct. Try `npm run debug` to see the browser.
-- **Cloudflare challenge**: The script uses a real browser so Cloudflare challenges are handled automatically. If blocked, try running with `HEADLESS=false`.
-- **Session expired**: Delete `auth-state.json` and run again to force a fresh login.
-- **No spots found**: This is normal! The script will keep checking. Look at `booking.log` for history.
+- **Login fails**: Make sure credentials in `.env` (or GitHub Secrets) are correct. Try `npm run debug` locally to see the browser.
+- **Cloudflare challenge**: The script uses a real browser so Cloudflare challenges are handled automatically. If blocked, try running locally with `HEADLESS=false`.
+- **Session expired** (local): Delete `output/auth-state.json` and run again to force a fresh login. GitHub Actions always does a fresh login.
+- **No spots found**: This is normal! The script will keep checking on the next scheduled run. Check the GitHub Actions logs or local `output/booking.log` for history.
+- **GitHub Actions workflow not running**: Make sure the workflow file is on the `main` branch. GitHub disables scheduled workflows on repos with no activity for 60 days.
 
-## Running in the Cloud (GitHub Actions) ☁️
+## Running Locally in Background
 
-Don't want to keep your laptop running? Host it on GitHub Actions for **free**:
-
-1. Push this repo to a **private GitHub repo** (or upload via the GitHub web UI)
-2. Add your credentials as **encrypted GitHub Secrets** (Settings → Secrets → Actions)
-3. The included workflow (`.github/workflows/booking.yml`) runs `node src/booking.js` every 15 minutes automatically
-
-No server to manage, no Docker, no AWS. Secrets are encrypted and never exposed in logs.
-
-👉 **Full setup guide**: [docs/GITHUB_ACTIONS_SETUP.md](docs/GITHUB_ACTIONS_SETUP.md)
-
-## Running in Background (Local)
-
-To keep it running in the background on your laptop:
+If you prefer running locally instead of GitHub Actions:
 
 ```bash
-# Using nohup
+# Using nohup (runs deprecated scheduler.js with node-cron)
 nohup npm start > /dev/null 2>&1 &
 
 # Or using screen/tmux
@@ -112,3 +139,5 @@ screen -S mixer
 npm start
 # Press Ctrl+A then D to detach
 ```
+
+> **Note**: `npm start` uses the deprecated `src/scheduler.js` with `node-cron`. GitHub Actions is the recommended approach — it's free, doesn't require your laptop to stay on, and stores credentials securely.
