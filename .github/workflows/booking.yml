@@ -2,19 +2,26 @@
 # This replaces scheduler.js when running in the cloud.
 # Each run does a single check (equivalent to `npm run check`).
 #
+# PRIMARY TRIGGER: External cron service (cron-job.org) → workflow_dispatch
+#   - GitHub's built-in cron is unreliable (delays of 30min–2hrs are common)
+#   - An external service calls the GitHub API every 5 minutes for reliable scheduling
+#   - See docs/GITHUB_ACTIONS_SETUP.md for setup instructions
+#
 # SETUP: Add your secrets in GitHub repo → Settings → Secrets and variables → Actions
 # See docs/GITHUB_ACTIONS_SETUP.md for detailed instructions.
 
 name: Mixer Booking Check
 
 on:
-  # Scheduled cron trigger - runs every 5 minutes
-  # GitHub Actions cron uses UTC timezone
-  # Adjust the interval as needed (note: GitHub may delay scheduled runs by a few minutes)
+  # Fallback cron trigger - runs every 2 hours as a safety net
+  # GitHub's built-in cron is NOT reliable for short intervals (delays of 30min–2hrs).
+  # This exists only as a backup in case the external cron service (cron-job.org) goes down.
+  # The primary trigger is workflow_dispatch, called by cron-job.org every 5 minutes.
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 */2 * * *'
 
-  # Manual trigger - lets you run it on-demand from the Actions tab
+  # Primary trigger - called by external cron service (cron-job.org) every 5 minutes
+  # Can also be triggered manually from the Actions tab
   workflow_dispatch:
 
 # Prevent multiple runs from overlapping (same as the isRunning guard in scheduler.js)

@@ -6,12 +6,15 @@ This guide explains how to run the Mixers Booking Script automatically in the cl
 
 ## How It Works
 
-- GitHub Actions runs `node src/booking.js` (a single check) every 15 minutes
-- This replaces `scheduler.js` — GitHub's cron is the scheduler now
+- A free external cron service ([cron-job.org](https://cron-job.org)) triggers the workflow every 5 minutes via GitHub's API
+- GitHub Actions runs `node src/booking.js` (a single check) each time it's triggered
+- This replaces `scheduler.js` — the external cron + GitHub Actions is the scheduler now
 - Each run spins up a fresh Ubuntu machine, installs dependencies, runs the check, and shuts down
 - Your credentials are stored as **encrypted GitHub Secrets** (never visible in logs or code)
 - If a spot is found and booked, you get an email notification
 - You have ~15 minutes to complete payment manually on CourtReserve
+
+> **Why not use GitHub's built-in cron?** GitHub's `schedule` trigger is "best effort" — for low-activity repos, runs are routinely delayed by 30 minutes to 2+ hours. An external cron service calling `workflow_dispatch` is the only way to get reliable short-interval scheduling.
 
 ---
 
@@ -84,30 +87,97 @@ If you need to override defaults, go to **Settings** → **Secrets and variables
 
 > 💡 **Secrets vs Variables**: Use **Secrets** for sensitive values (passwords, emails). Use **Variables** for non-sensitive configuration. Variables are visible in logs; Secrets are always masked.
 
-### 5. Done! ✅
+### 5. Set Up External Cron Trigger (Required for reliable 5-min intervals)
 
-The workflow will automatically start running on the cron schedule. You can also:
+GitHub's built-in cron is unreliable for short intervals. Follow these steps to set up a free external cron service that triggers your workflow reliably every 5 minutes.
+
+#### 5a. Create a GitHub Personal Access Token (PAT)
+
+You have two options:
+
+**Option A: Fine-grained token (recommended — more secure, but expires)**
+
+1. Go to [github.com/settings/tokens?type=beta](https://github.com/settings/tokens?type=beta)
+2. Click **"Generate new token"**
+3. Configure:
+   - **Token name**: `mixers-booking-cron`
+   - **Expiration**: **1 year** (maximum allowed — set a calendar reminder to rotate it)
+   - **Repository access**: Select **"Only select repositories"** → choose your repo
+   - **Permissions** → **Repository permissions** → **Actions**: **Read and write**
+4. Click **"Generate token"**
+5. **Copy the token** — you won't see it again!
+
+> 🔒 This is the most secure option — the token only has Actions access to a single repo. The downside is you need to regenerate it when it expires (max 1 year).
+
+**Option B: Classic token (no expiration — set-and-forget)**
+
+1. Go to [github.com/settings/tokens](https://github.com/settings/tokens) (classic tokens page)
+2. Click **"Generate new token"** → **"Generate new token (classic)"**
+3. Configure:
+   - **Note**: `mixers-booking-cron`
+   - **Expiration**: **No expiration**
+   - **Scopes**: Check **`repo`** (Full control of private repositories)
+4. Click **"Generate token"**
+5. **Copy the token** — you won't see it again!
+
+> ⚠️ This token has broader access (`repo` scope covers all your repos), but it never expires — good for a personal project where you don't want maintenance overhead.
+
+#### 5b. Sign Up for cron-job.org
+
+1. Go to [cron-job.org](https://cron-job.org) and create a free account
+2. No credit card required — the free tier is more than sufficient
+
+#### 5c. Create the Cron Job
+
+1. Click **"CREATE CRONJOB"** in the dashboard
+2. Fill in the fields:
+
+| Field | Value |
+|-------|-------|
+| **Title** | `Mixers Booking Trigger` |
+| **URL** | `https://api.github.com/repos/{OWNER}/{REPO}/actions/workflows/booking.yml/dispatches` |
+| **Schedule** | Every **5 minutes** (use the "Every" dropdown) |
+| **Request method** | `POST` |
+
+> Replace `{OWNER}` with your GitHub username (e.g., `sahilverma2209`) and `{REPO}` with your repo name (e.g., `badminton-mixers-spot-booking-bot`).
+
+3. Under **Advanced** → **Headers**, add these headers:
+
+| Header | Value |
+|--------|-------|
+| `Authorization` | `Bearer YOUR_GITHUB_PAT_HERE` |
+| `Accept` | `application/vnd.github.v3+json` |
+| `Content-Type` | `application/json` |
+
+4. Under **Advanced** → **Request body**, set:
+```json
+{"ref":"master"}
+```
+
+> ⚠️ Make sure this matches your repo's default branch name. Most repos use `main` or `master` — check your repo's settings if unsure.
+
+5. Click **"CREATE"**
+
+#### 5d. Test It
+
+1. In cron-job.org, click the **"Test run"** button on your new job
+2. Go to your GitHub repo → **Actions** tab
+3. You should see a new workflow run triggered within seconds
+4. If it shows a **✅ green check**, everything is working!
+
+### 6. Done! ✅
+
+The external cron will now trigger your workflow every 5 minutes reliably. You can also:
 
 - **Trigger manually**: Go to Actions tab → "Mixer Booking Check" → "Run workflow"
 - **View run logs**: Actions tab → click on any run to see full output
 - **Debug failures**: Failed runs upload screenshots as downloadable artifacts
 
+> **Fallback**: The workflow also has a built-in GitHub cron that runs every 2 hours as a safety net, in case cron-job.org is ever down.
+
 ---
 
-## Adjusting the Schedule
-
-Edit `.github/workflows/booking.yml` and change the cron expression:
-
-```yaml
-schedule:
-  - cron: '*/15 * * * *'   # Every 15 minutes (default)
-  # - cron: '*/30 * * * *' # Every 30 minutes
-  # - cron: '*/5 * * * *'  # Every 5 minutes (uses more free minutes)
-```
-
-> **Note**: GitHub Actions cron uses **UTC timezone** and may be delayed by a few minutes during peak times. This is normal and fine for checking cancellation openings.
-
-### Free Tier Budget
+## Free Tier Budget
 
 | Interval | Runs/Day | ~Minutes/Day | ~Minutes/Month | Within Free Tier (2000 min)? |
 |----------|----------|-------------|----------------|------------------------------|
@@ -136,8 +206,8 @@ Failed runs automatically upload screenshots from the `output/` directory as dow
 ## Disabling the Scheduler
 
 To stop the automated runs:
-1. Go to **Actions** tab → **Mixer Booking Check** (left sidebar)
-2. Click the **"..."** menu → **Disable workflow**
+1. **Pause the external cron**: Log into [cron-job.org](https://cron-job.org) and disable or delete the cron job
+2. **Disable the GitHub workflow** (optional): Go to **Actions** tab → **Mixer Booking Check** → **"..."** menu → **Disable workflow**
 
 Or simply delete the `booking.yml` file from the repo.
 
@@ -147,8 +217,8 @@ Or simply delete the `booking.yml` file from the repo.
 
 | Feature | Local (`npm start`) | GitHub Actions |
 |---------|-------------------|----------------|
-| Scheduler | `scheduler.js` + node-cron | GitHub cron trigger |
-| Interval | Any (default 5 min) | 5-30 min (recommend 15) |
+| Scheduler | `scheduler.js` + node-cron | External cron (cron-job.org) → `workflow_dispatch` |
+| Interval | Any (default 5 min) | Every 5 min (reliable via external cron) |
 | Session persistence | `auth-state.json` saved between runs | Fresh login each run (~10s overhead) |
 | macOS notifications | ✅ Desktop alerts | ❌ Not available (email only) |
 | Email notifications | ✅ | ✅ |
@@ -160,7 +230,19 @@ Or simply delete the `booking.yml` file from the repo.
 
 ## Troubleshooting
 
-### Workflow not running on schedule
+### Workflow not being triggered by cron-job.org
+- Log into [cron-job.org](https://cron-job.org) and check the job's **History** tab for HTTP response codes
+- **HTTP 204**: Success — the workflow was triggered
+- **HTTP 401/403**: Your GitHub PAT is invalid or expired — generate a new one (Step 5a) and update the cron job header
+- **HTTP 404**: Check the URL — make sure `{OWNER}`, `{REPO}`, and `booking.yml` are correct
+- **HTTP 422**: The `ref` in the request body doesn't match a branch — make sure `{"ref":"main"}` matches your default branch name
+
+### GitHub PAT expired
+- Fine-grained tokens expire after the period you set (e.g., 90 days)
+- Generate a new token (Step 5a) and update the `Authorization` header in cron-job.org
+- Set a calendar reminder to rotate before expiry
+
+### Workflow not running on the fallback cron schedule
 - Make sure the workflow file is on the `main` (or default) branch
 - GitHub disables scheduled workflows on repos with no activity for 60 days — push a commit or run manually to re-enable
 
