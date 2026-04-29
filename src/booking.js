@@ -39,7 +39,6 @@ const CONFIG = {
   enableNotifications: process.env.ENABLE_NOTIFICATIONS !== 'false',
   ntfyTopic: process.env.NTFY_TOPIC || '',
   ntfyServer: process.env.NTFY_SERVER || 'https://ntfy.sh',
-  notifyNoSpots: process.env.NOTIFY_NO_SPOTS || 'push', // push | email | both | none
   maxWeeksAhead: parseInt(process.env.MAX_WEEKS_AHEAD || '8', 10),
   dryRun: process.argv.includes('--dry-run'),
 };
@@ -65,9 +64,10 @@ function log(message, level = 'INFO') {
   }
 }
 
-// ─── Notifications (macOS + Email + Push) ────────────────────────
-// channel: 'all' (default) = email + push, 'no-spots' = routed by NOTIFY_NO_SPOTS config
-function notify(title, message, channel = 'all') {
+// ─── Notifications (macOS + Push) ────────────────────────────────
+// Every notify() call triggers macOS desktop + push notification.
+// Email is commented out but kept for future use.
+function notify(title, message) {
   if (!CONFIG.enableNotifications) return;
 
   // macOS desktop notification (only works locally)
@@ -79,34 +79,15 @@ function notify(title, message, channel = 'all') {
     // Silently fail - expected when running headless/remote
   }
 
-  // Determine which channels to use based on notification type
-  let sendEmailNotif = true;
-  let sendPushNotif = true;
-  let pushPriority = 3; // default priority
+  // Email notification (disabled — uncomment to re-enable)
+  // sendEmail(title, message).catch(e => {
+  //   log(`Email notification failed: ${e.message}`, 'WARN');
+  // });
 
-  if (channel === 'no-spots') {
-    // "No spots" notifications are routed by NOTIFY_NO_SPOTS config
-    const routing = CONFIG.notifyNoSpots;
-    sendEmailNotif = routing === 'email' || routing === 'both';
-    sendPushNotif = routing === 'push' || routing === 'both';
-    pushPriority = 2; // low priority for routine "no spots" checks
-    if (routing === 'none') {
-      sendEmailNotif = false;
-      sendPushNotif = false;
-    }
-  }
-
-  if (sendEmailNotif) {
-    sendEmail(title, message).catch(e => {
-      log(`Email notification failed: ${e.message}`, 'WARN');
-    });
-  }
-
-  if (sendPushNotif) {
-    sendPush(title, message, pushPriority).catch(e => {
-      log(`Push notification failed: ${e.message}`, 'WARN');
-    });
-  }
+  // Push notification via ntfy.sh
+  sendPush(title, message).catch(e => {
+    log(`Push notification failed: ${e.message}`, 'WARN');
+  });
 }
 
 // ─── Push Notifications via ntfy.sh ──────────────────────────────
@@ -719,7 +700,7 @@ async function run() {
   log(`📅 Max weeks ahead: ${CONFIG.maxWeeksAhead}`);
   log(`🖥️ Headless: ${CONFIG.headless}`);
   log(`📲 Push notifications: ${CONFIG.ntfyTopic ? `enabled (topic: ${CONFIG.ntfyTopic})` : 'disabled (set NTFY_TOPIC to enable)'}`);
-  log(`📬 "No spots" routing: ${CONFIG.notifyNoSpots}`);
+  log(`📧 Email notifications: disabled (commented out — push only)`);
   log('═══════════════════════════════════════════════════');
 
   let browser;
@@ -767,7 +748,7 @@ async function run() {
       const checkedSummary = Object.entries(CONFIG.eventConfigs)
         .map(([id, days]) => `Event ${id}: ${days.join(', ')}`)
         .join(' | ');
-      notify('No Spots Available', `Checked: ${checkedSummary}. No open spots found. (${elapsed}s)`, 'no-spots');
+      notify('No Spots Available', `Checked: ${checkedSummary}. No open spots found. (${elapsed}s)`);
     }
 
     // Save state
