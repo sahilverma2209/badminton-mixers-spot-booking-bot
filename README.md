@@ -9,7 +9,7 @@ Automated booking script for **Bellevue Badminton Club Mixers** on CourtReserve.
 3. **Navigates to the configured event pages** (e.g., Redmond Organized Play, Renton Organized Play)
 4. **Checks each Mixer day** (configurable per event type via `EVENT_CONFIGS`) for available dates
 5. **If a spot opens up** (someone cancelled), it **auto-books** immediately
-6. **Sends an email notification** (and macOS desktop alert when running locally)
+6. **Sends a push notification** to your phone via [ntfy.sh](https://ntfy.sh) (and/or email)
 7. **You complete payment manually** on CourtReserve within ~15 minutes
 
 Scheduling is handled by **GitHub Actions** — the workflow runs every 5 minutes (configurable) so you don't need to keep your laptop running.
@@ -64,7 +64,10 @@ Credentials are stored as **GitHub Secrets**, and configuration overrides as **G
 | `EVENT_CONFIGS` | Per-event-type day config (see below) | — |
 | `MAX_WEEKS_AHEAD` | Max weeks into the future to book | `8` |
 | `HEADLESS` | Run without visible browser | `true` |
-| `ENABLE_NOTIFICATIONS` | Enable email + macOS notifications | `true` |
+| `ENABLE_NOTIFICATIONS` | Enable all notifications | `true` |
+| `NTFY_TOPIC` | [ntfy.sh](https://ntfy.sh) topic for mobile push notifications | — |
+| `NTFY_SERVER` | ntfy server URL (if self-hosting) | `https://ntfy.sh` |
+| `NOTIFY_NO_SPOTS` | Where to send "no spots" alerts: `push`, `email`, `both`, `none` | `push` |
 | `NOTIFY_EMAIL_USER` | Gmail address for sending notifications | — |
 | `NOTIFY_EMAIL_PASS` | Gmail app password ([how to create](https://support.google.com/accounts/answer/185833)) | — |
 | `NOTIFY_EMAIL_TO` | Email to receive notifications | — |
@@ -88,6 +91,32 @@ EVENT_CONFIGS=54834:monday,wednesday,friday;19756:tuesday,thursday
 # Find the evTypeId from the URL when you click a category:
 # https://events.courtreserve.com/Online/Events/List/7031?evTypeId=XXXXX
 ```
+
+### Mobile Push Notifications (ntfy.sh)
+
+Get push notifications on your phone instead of email floods! Uses [ntfy.sh](https://ntfy.sh) — free, no account needed.
+
+**Setup (2 minutes):**
+
+1. Install the ntfy app: [iOS](https://apps.apple.com/us/app/ntfy/id1625396347) / [Android](https://play.google.com/store/apps/details?id=io.heckel.ntfy)
+2. Pick a unique topic name (e.g., `my-mixer-bot-x7k2`) — anyone with the name can see messages, so make it hard to guess
+3. In the app, tap **+** and subscribe to your topic
+4. Set the `NTFY_TOPIC` env var (or GitHub Secret) to your topic name
+
+**Notification routing:**
+
+| Event | Default behavior |
+|-------|-----------------|
+| ✅ Booking success | Email **+** push (high priority) |
+| ❌ Script errors | Email **+** push |
+| 🔍 No spots found | **Push only** (low priority) — keeps your inbox clean! |
+| 🏃 Dry run | Email **+** push |
+
+Control "no spots" routing with `NOTIFY_NO_SPOTS`:
+- `push` (default) — phone notification only, no email
+- `email` — email only (old behavior)
+- `both` — both email and push
+- `none` — silent (check logs in GitHub Actions instead)
 
 ## Commands
 

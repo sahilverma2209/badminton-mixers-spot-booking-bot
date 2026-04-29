@@ -65,13 +65,23 @@ Add these **required** secrets:
 | `CR_EMAIL` | Your CourtReserve login email | ✅ Yes |
 | `CR_PASSWORD` | Your CourtReserve password | ✅ Yes |
 
-Add these for **email notifications** (highly recommended — this is how you'll know a booking was made):
+Add this for **mobile push notifications** (recommended — this is how you'll know the script is running without flooding your email):
+
+| Secret Name | Value | Required? |
+|-------------|-------|-----------|
+| `NTFY_TOPIC` | Your unique [ntfy.sh](https://ntfy.sh) topic name (e.g., `my-mixer-bot-x7k2`) | Recommended |
+
+> 📲 **Setup**: Install the ntfy app ([iOS](https://apps.apple.com/us/app/ntfy/id1625396347) / [Android](https://play.google.com/store/apps/details?id=io.heckel.ntfy)), subscribe to your topic, and you'll get push notifications on your phone. No account needed, completely free.
+
+Add these for **email notifications** (recommended for booking confirmations):
 
 | Secret Name | Value | Required? |
 |-------------|-------|-----------|
 | `NOTIFY_EMAIL_USER` | Your Gmail address (sender) | Recommended |
 | `NOTIFY_EMAIL_PASS` | Gmail App Password ([how to create](https://support.google.com/accounts/answer/185833)) | Recommended |
 | `NOTIFY_EMAIL_TO` | Email to receive notifications | Recommended |
+
+> 💡 **With both configured**: Booking success and errors go to both email + push. "No spots found" goes to push only (keeps your inbox clean). Control this with the `NOTIFY_NO_SPOTS` variable.
 
 ### 4. Add Variables (Optional)
 
@@ -84,6 +94,7 @@ If you need to override defaults, go to **Settings** → **Secrets and variables
 | `MEMBERSHIP_ID` | `2346339` | Your Membership ID |
 | `EVENT_CONFIGS` | `19756:tuesday` | Event types & days (format: `19756:tuesday,thursday;54834:monday`) |
 | `MAX_WEEKS_AHEAD` | `8` | How far ahead to look for events |
+| `NOTIFY_NO_SPOTS` | `push` | Where "no spots" alerts go: `push`, `email`, `both`, `none` |
 
 > 💡 **Secrets vs Variables**: Use **Secrets** for sensitive values (passwords, emails). Use **Variables** for non-sensitive configuration. Variables are visible in logs; Secrets are always masked.
 
@@ -220,7 +231,8 @@ Or simply delete the `booking.yml` file from the repo.
 | Scheduler | `scheduler.js` + node-cron | External cron (cron-job.org) → `workflow_dispatch` |
 | Interval | Any (default 5 min) | Every 5 min (reliable via external cron) |
 | Session persistence | `auth-state.json` saved between runs | Fresh login each run (~10s overhead) |
-| macOS notifications | ✅ Desktop alerts | ❌ Not available (email only) |
+| macOS notifications | ✅ Desktop alerts | ❌ Not available |
+| Push notifications (ntfy.sh) | ✅ | ✅ |
 | Email notifications | ✅ | ✅ |
 | Secrets storage | `.env` file (plaintext) | GitHub Encrypted Secrets |
 | Screenshots | Saved to `output/` | Uploaded as artifacts on failure |

@@ -56,6 +56,11 @@ jobs:
           CR_EMAIL: ${{ secrets.CR_EMAIL }}
           CR_PASSWORD: ${{ secrets.CR_PASSWORD }}
 
+          # ── Optional: Push notifications (ntfy.sh) ──
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_SERVER: ${{ vars.NTFY_SERVER || '' }}
+          NOTIFY_NO_SPOTS: ${{ vars.NOTIFY_NO_SPOTS || '' }}
+
           # ── Optional: Email notifications ──
           NOTIFY_EMAIL_USER: ${{ secrets.NOTIFY_EMAIL_USER }}
           NOTIFY_EMAIL_PASS: ${{ secrets.NOTIFY_EMAIL_PASS }}
