@@ -436,10 +436,15 @@ async function checkAndBookMixers(page, intercepted) {
 
       // Check intercepted API response for available dates
       const eventIds = Object.keys(intercepted.eventDates);
+      const restModeActive = !!getActiveBookingAfterDate();
       if (eventIds.length === 0) {
-        log(`  No dates API response intercepted. Falling back to DOM check...`);
-        const result = await fallbackDomCheck(page, event.title, intercepted);
-        if (result) bookingsMade.push(result);
+        if (restModeActive) {
+          log(`  ⏸️ No dates API response intercepted. Skipping DOM fallback (rest mode active — cannot verify event date).`);
+        } else {
+          log(`  No dates API response intercepted. Falling back to DOM check...`);
+          const result = await fallbackDomCheck(page, event.title, intercepted);
+          if (result) bookingsMade.push(result);
+        }
       } else {
         for (const eventId of eventIds) {
           const datesHtml = intercepted.eventDates[eventId];
@@ -479,11 +484,19 @@ async function checkAndBookMixers(page, intercepted) {
             log(`  Status: ${registerCount} Register buttons, ${fullCount} Full dates`);
 
             if (registerCount > 0 && filteredDates.length === 0 && availableDates.length > 0) {
-              log(`  All available spots are outside the ${CONFIG.maxWeeksAhead}-week date range.`);
+              if (restModeActive) {
+                log(`  ⏸️ All available spots are before rest date (${CONFIG.bookingAfterDate}). Skipping.`);
+              } else {
+                log(`  All available spots are outside the ${CONFIG.maxWeeksAhead}-week date range.`);
+              }
             } else if (registerCount > 0) {
-              log(`  🎉 Found ${registerCount} REGISTER button(s) in DOM!`);
-              const result = await fallbackDomCheck(page, event.title, intercepted);
-              if (result) bookingsMade.push(result);
+              if (restModeActive) {
+                log(`  ⏸️ Found ${registerCount} REGISTER button(s) in DOM but skipping (rest mode active — cannot verify event date).`);
+              } else {
+                log(`  🎉 Found ${registerCount} REGISTER button(s) in DOM!`);
+                const result = await fallbackDomCheck(page, event.title, intercepted);
+                if (result) bookingsMade.push(result);
+              }
             } else {
               log(`  No available spots found.`);
             }

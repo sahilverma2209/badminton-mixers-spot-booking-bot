@@ -72,6 +72,7 @@ jobs:
           MEMBERSHIP_ID: ${{ vars.MEMBERSHIP_ID || '' }}
           EVENT_CONFIGS: ${{ vars.EVENT_CONFIGS || '' }}
           MAX_WEEKS_AHEAD: ${{ vars.MAX_WEEKS_AHEAD || '' }}
+          BOOKING_AFTER_DATE: ${{ vars.BOOKING_AFTER_DATE || '' }}
 
           # ── CI-specific settings ──
           HEADLESS: 'true'

@@ -99,6 +99,7 @@ If you're injured or have other commitments, you can tell the script to only boo
 
 ```bash
 # Example: Shoulder injury, resting for a week — only book events after May 11
+# YYYY-MM-DD
 BOOKING_AFTER_DATE=2026-05-11
 ```
 
