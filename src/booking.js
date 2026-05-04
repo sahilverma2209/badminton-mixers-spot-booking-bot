@@ -40,6 +40,7 @@ const CONFIG = {
   ntfyTopic: process.env.NTFY_TOPIC || '',
   ntfyServer: process.env.NTFY_SERVER || 'https://ntfy.sh',
   maxWeeksAhead: parseInt(process.env.MAX_WEEKS_AHEAD || '8', 10),
+  bookingAfterDate: process.env.BOOKING_AFTER_DATE || '',
   dryRun: process.argv.includes('--dry-run'),
 };
 
@@ -186,12 +187,34 @@ function formatRegisteredSubject(eventName, dateInfo) {
 }
 
 // ─── Date Filtering ──────────────────────────────────────────────
+
+/**
+ * Returns the active "booking after" date if BOOKING_AFTER_DATE is set and still in the future.
+ * Returns null if not set or already expired (past date → resume normal booking).
+ */
+function getActiveBookingAfterDate() {
+  if (!CONFIG.bookingAfterDate) return null;
+  const afterDate = new Date(CONFIG.bookingAfterDate);
+  if (isNaN(afterDate.getTime())) return null; // Invalid date → ignore
+  const now = new Date();
+  // If the date is in the past, the restriction has expired → book normally
+  if (afterDate <= now) return null;
+  return afterDate;
+}
+
 function isDateWithinRange(dateStr) {
   try {
     const eventDate = new Date(dateStr);
     if (isNaN(eventDate.getTime())) return true; // Can't parse → don't filter out
     const now = new Date();
     const maxDate = new Date(now.getTime() + CONFIG.maxWeeksAhead * 7 * 24 * 60 * 60 * 1000);
+
+    // Check BOOKING_AFTER_DATE restriction (injury/rest mode)
+    const bookingAfter = getActiveBookingAfterDate();
+    if (bookingAfter && eventDate < bookingAfter) {
+      return false; // Event is before the rest period ends
+    }
+
     return eventDate >= now && eventDate <= maxDate;
   } catch {
     return true; // If parsing fails, don't filter out
@@ -422,10 +445,16 @@ async function checkAndBookMixers(page, intercepted) {
           const datesHtml = intercepted.eventDates[eventId];
           const availableDates = parseAvailableDates(datesHtml);
 
-          // Filter by date range
+          // Filter by date range (respects both max weeks ahead and BOOKING_AFTER_DATE)
+          const bookingAfter = getActiveBookingAfterDate();
           const filteredDates = availableDates.filter(d => {
             if (!isDateWithinRange(d.date)) {
-              log(`    ⏭️ Skipping ${d.date} (beyond ${CONFIG.maxWeeksAhead} weeks)`);
+              const eventDate = new Date(d.date);
+              if (bookingAfter && !isNaN(eventDate.getTime()) && eventDate < bookingAfter) {
+                log(`    ⏸️ Skipping ${d.date} (rest mode — only booking after ${CONFIG.bookingAfterDate})`);
+              } else {
+                log(`    ⏭️ Skipping ${d.date} (beyond ${CONFIG.maxWeeksAhead} weeks)`);
+              }
               return false;
             }
             return true;
@@ -701,6 +730,12 @@ async function run() {
   log(`🖥️ Headless: ${CONFIG.headless}`);
   log(`📲 Push notifications: ${CONFIG.ntfyTopic ? `enabled (topic: ${CONFIG.ntfyTopic})` : 'disabled (set NTFY_TOPIC to enable)'}`);
   log(`📧 Email notifications: disabled (commented out — push only)`);
+  const activeAfterDate = getActiveBookingAfterDate();
+  if (activeAfterDate) {
+    log(`⏸️ REST MODE: Only booking events after ${activeAfterDate.toLocaleDateString('en-US', { timeZone: 'America/Los_Angeles', weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })} (BOOKING_AFTER_DATE)`);
+  } else if (CONFIG.bookingAfterDate) {
+    log(`✅ BOOKING_AFTER_DATE (${CONFIG.bookingAfterDate}) has passed — booking normally`);
+  }
   log('═══════════════════════════════════════════════════');
 
   let browser;

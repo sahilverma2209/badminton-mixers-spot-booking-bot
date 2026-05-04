@@ -63,6 +63,7 @@ Credentials are stored as **GitHub Secrets**, and configuration overrides as **G
 | `MEMBERSHIP_ID` | Your membership ID | `2346339` |
 | `EVENT_CONFIGS` | Per-event-type day config (see below) | — |
 | `MAX_WEEKS_AHEAD` | Max weeks into the future to book | `8` |
+| `BOOKING_AFTER_DATE` | Only book events after this date (injury/rest mode). Auto-expires when date passes. | — |
 | `HEADLESS` | Run without visible browser | `true` |
 | `ENABLE_NOTIFICATIONS` | Enable all notifications | `true` |
 | `NTFY_TOPIC` | [ntfy.sh](https://ntfy.sh) topic for mobile push notifications | — |
@@ -91,6 +92,20 @@ EVENT_CONFIGS=54834:monday,wednesday,friday;19756:tuesday,thursday
 # Find the evTypeId from the URL when you click a category:
 # https://events.courtreserve.com/Online/Events/List/7031?evTypeId=XXXXX
 ```
+
+### Rest / Injury Mode (`BOOKING_AFTER_DATE`)
+
+If you're injured or have other commitments, you can tell the script to only book events **after** a certain date. The script will still run and check for spots, but will skip any events that fall before your specified date.
+
+```bash
+# Example: Shoulder injury, resting for a week — only book events after May 11
+BOOKING_AFTER_DATE=2026-05-11
+```
+
+**Behavior:**
+- If `BOOKING_AFTER_DATE` is set to a **future date**: events before that date are skipped (logged as "rest mode")
+- If `BOOKING_AFTER_DATE` is **not set** or the date has **already passed**: the script books normally with no restriction
+- No need to manually remove the variable — it auto-expires once the date passes
 
 ### Mobile Push Notifications (ntfy.sh)
 
