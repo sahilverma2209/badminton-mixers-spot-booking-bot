@@ -84,6 +84,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: debug-screenshots-${{ github.run_number }}
-          path: output/*.png
+          path: |
+            output/*.png
+            output/*.html
+            output/booking.log
           retention-days: 3
           if-no-files-found: ignore

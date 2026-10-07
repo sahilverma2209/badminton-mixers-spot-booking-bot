@@ -71,13 +71,15 @@ function log(message, level = 'INFO') {
 function notify(title, message) {
   if (!CONFIG.enableNotifications) return;
 
-  // macOS desktop notification (only works locally)
-  try {
-    const { execSync } = require('child_process');
-    const sanitize = (str) => str.replace(/["\\\n\r']/g, ' ').substring(0, 200);
-    execSync(`osascript -e 'display notification "${sanitize(message)}" with title "${sanitize(title)}" sound name "Glass"'`);
-  } catch (e) {
-    // Silently fail - expected when running headless/remote
+  // macOS desktop notification (only works locally; osascript does not exist on CI runners)
+  if (process.platform === 'darwin') {
+    try {
+      const { execSync } = require('child_process');
+      const sanitize = (str) => str.replace(/["\\\n\r']/g, ' ').substring(0, 200);
+      execSync(`osascript -e 'display notification "${sanitize(message)}" with title "${sanitize(title)}" sound name "Glass"'`);
+    } catch (e) {
+      // Silently fail - expected when running headless/remote
+    }
   }
 
   // Email notification (disabled — uncomment to re-enable)
@@ -92,6 +94,11 @@ function notify(title, message) {
 }
 
 // ─── Push Notifications via ntfy.sh ──────────────────────────────
+// Drop anything outside latin-1 (emoji, etc.) so it can go in an HTTP header.
+function headerSafe(str) {
+  return String(str).replace(/[^\x20-\xFF]/g, '').replace(/\s+/g, ' ').trim() || 'Mixer Bot';
+}
+
 async function sendPush(title, message, priority = 3) {
   const topic = CONFIG.ntfyTopic;
   if (!topic) return; // Push not configured, skip silently
@@ -101,7 +108,10 @@ async function sendPush(title, message, priority = 3) {
     const response = await fetch(`${server}/${topic}`, {
       method: 'POST',
       headers: {
-        'Title': title,
+        // HTTP headers are latin-1 only: an emoji in the title throws
+        // "Cannot convert argument to a ByteString". Strip it from the header and
+        // let the (UTF-8) body carry any emoji instead.
+        'Title': headerSafe(title),
         'Priority': String(priority),
         'Tags': 'badminton,shuttle',
       },
@@ -328,15 +338,97 @@ function parseEventCards(page) {
   });
 }
 
+// ─── Browser setup (Cloudflare-tolerant) ─────────────────────────
+// Stock headless Playwright is fingerprinted and 403'd by Cloudflare. Two things
+// matter: use the full Chrome build (not chromium-headless-shell), and present a
+// UA/platform pair that matches the machine we are actually running on.
+function buildUserAgent(version) {
+  const major = (version || '').split('.')[0] || '140';
+  const platform = process.platform === 'darwin'
+    ? 'Macintosh; Intel Mac OS X 10_15_7'
+    : process.platform === 'win32'
+      ? 'Windows NT 10.0; Win64; x64'
+      : 'X11; Linux x86_64';
+  return `Mozilla/5.0 (${platform}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${major}.0.0.0 Safari/537.36`;
+}
+
+async function launchBrowser() {
+  const args = [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-blink-features=AutomationControlled',
+  ];
+
+  // channel: 'chromium' runs the full Chrome-for-Testing binary, which is far
+  // less detectable than the default headless shell. Fall back if unavailable.
+  try {
+    return await chromium.launch({ headless: CONFIG.headless, channel: 'chromium', args });
+  } catch (e) {
+    log(`Chromium channel unavailable (${e.message.split('\n')[0]}) — falling back to default build`, 'WARN');
+    return await chromium.launch({ headless: CONFIG.headless, args });
+  }
+}
+
+// ─── Cloudflare detection ────────────────────────────────────────
+// events.courtreserve.com sits behind Cloudflare bot management. A blocked
+// request comes back as an interstitial/403 page instead of CourtReserve HTML,
+// which previously surfaced as the misleading "did not navigate away" error.
+const CF_MARKERS = [
+  'Attention Required! | Cloudflare',
+  'Sorry, you have been blocked',
+  'Just a moment...',
+  'Checking your browser before accessing',
+  'cf-error-details',
+  'Enable JavaScript and cookies to continue',
+];
+
+async function detectCloudflareBlock(page) {
+  const title = await page.title().catch(() => '');
+  const bodyText = (await page.textContent('body').catch(() => '')) || '';
+  const hit = CF_MARKERS.find(m => title.includes(m) || bodyText.includes(m));
+  return hit ? { title, marker: hit } : null;
+}
+
+// Dump whatever the page actually is, so a future failure is diagnosable.
+async function dumpPage(page, name) {
+  const pngPath = path.join(OUTPUT_DIR, `${name}.png`);
+  const htmlPath = path.join(OUTPUT_DIR, `${name}.html`);
+  await page.screenshot({ path: pngPath, fullPage: true }).catch(() => {});
+  await fs.promises.writeFile(htmlPath, await page.content().catch(() => '')).catch(() => {});
+  const title = await page.title().catch(() => '');
+  const bodyText = ((await page.textContent('body').catch(() => '')) || '').replace(/\s+/g, ' ').trim();
+  log(`Page title: "${title}"`, 'WARN');
+  log(`Page text (first 400 chars): ${bodyText.slice(0, 400)}`, 'WARN');
+  log(`Saved debug files: ${pngPath}, ${htmlPath}`, 'WARN');
+}
+
+// Navigate, retrying when Cloudflare serves a challenge instead of the page.
+// The challenge script needs a beat to run, so a short wait + retry often clears it.
+async function gotoWithCloudflareRetry(page, url, { attempts = 3 } = {}) {
+  let lastStatus = null;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    lastStatus = response ? response.status() : null;
+    const blocked = await detectCloudflareBlock(page);
+    if (!blocked && lastStatus !== 403) return lastStatus;
+
+    log(`Cloudflare challenge on ${url} (HTTP ${lastStatus}${blocked ? `, "${blocked.marker}"` : ''}) — attempt ${attempt}/${attempts}`, 'WARN');
+    if (attempt < attempts) await page.waitForTimeout(5000 * attempt);
+  }
+  await dumpPage(page, 'debug-cloudflare-block');
+  throw new Error(`Blocked by Cloudflare bot protection (HTTP ${lastStatus}) on ${url}`);
+}
+
 // ─── Login ───────────────────────────────────────────────────────
 async function login(page) {
   log('Navigating to login page...');
-  await page.goto(`${BASE_URL}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
+  const status = await gotoWithCloudflareRetry(page, BASE_URL);
+  log(`Login page loaded (HTTP ${status})`);
 
   // Smart wait: look for either the login form or a portal URL (already logged in)
   log('Waiting for login form or session restore...');
   const loginFormOrPortal = await Promise.race([
-    page.waitForSelector('input[placeholder*="example"], input[placeholder*="email"], input[name="UserNameOrEmail"], input[name="Email"]', { state: 'visible', timeout: 30000 }).then(() => 'login-form'),
+    page.waitForSelector('#Username, input[name="Username"], input[placeholder*="example"], input[placeholder*="email"], input[name="UserNameOrEmail"], input[name="Email"]', { state: 'visible', timeout: 30000 }).then(() => 'login-form'),
     page.waitForURL(/\/(Portal|Announcements|Events)\//, { timeout: 30000 }).then(() => 'already-logged-in'),
   ]).catch(() => 'timeout');
 
@@ -348,34 +440,63 @@ async function login(page) {
     return true;
   }
 
+  if (loginFormOrPortal === 'timeout') {
+    await dumpPage(page, 'debug-no-login-form');
+    throw new Error('Login form never appeared (page is not the CourtReserve login page)');
+  }
+
+  if (!CONFIG.email || !CONFIG.password) {
+    throw new Error('CR_EMAIL / CR_PASSWORD are not set');
+  }
+
   log('Filling credentials...');
-  const emailLocator = page.locator('input[placeholder*="example"], input[placeholder*="email"], input[name="UserNameOrEmail"], input[name="Email"]').first();
+  const emailLocator = page.locator('#Username, input[name="Username"], input[placeholder*="example"], input[placeholder*="email"], input[name="UserNameOrEmail"], input[name="Email"]').first();
   await emailLocator.fill(CONFIG.email);
 
-  const passwordLocator = page.locator('input[type="password"]').first();
+  const passwordLocator = page.locator('#Password, input[type="password"]').first();
   await passwordLocator.waitFor({ state: 'visible', timeout: 10000 });
   await passwordLocator.fill(CONFIG.password);
 
-  const loginLocator = page.locator('button:has-text("Login"), input[type="submit"], button[type="submit"]').first();
+  // The button is type="button" with onclick="submitLoginForm()" — it is not a
+  // submit button, so match it by class first and fall back to text/submit.
+  const loginLocator = page.locator('button.btn-submit, button:has-text("Login"), input[type="submit"], button[type="submit"]').first();
   await loginLocator.waitFor({ state: 'visible', timeout: 10000 });
   log('Clicking login button...');
+
+  // Capture the status of the POST response so a Cloudflare block is visible.
+  let loginPostStatus = null;
+  const onResponse = (res) => {
+    if (res.request().method() === 'POST' && res.url().includes('/Account/Login')) loginPostStatus = res.status();
+  };
+  page.on('response', onResponse);
+
   await loginLocator.click();
 
   // Smart wait: wait for URL to change away from Login page
   log('Waiting for login to complete...');
   await page.waitForURL(url => !url.toString().includes('/Login'), { timeout: 30000 }).catch(() => {});
+  page.off('response', onResponse);
 
   const postLoginUrl = page.url();
-  log(`Post-login URL: ${postLoginUrl}`);
+  log(`Post-login URL: ${postLoginUrl}${loginPostStatus ? ` (login POST → HTTP ${loginPostStatus})` : ''}`);
 
-  const bodyText = await page.textContent('body').catch(() => '');
-  if (bodyText.includes('Invalid') || bodyText.includes('incorrect')) {
-    throw new Error('Login failed - invalid credentials');
+  const bodyText = (await page.textContent('body').catch(() => '')) || '';
+
+  const blocked = await detectCloudflareBlock(page);
+  if (blocked || loginPostStatus === 403) {
+    await dumpPage(page, 'debug-login-cloudflare');
+    throw new Error(`Login blocked by Cloudflare bot protection (POST → HTTP ${loginPostStatus || 'unknown'})`);
+  }
+
+  // Wrong credentials render the login page again with a toastr error.
+  if (/the username or password is incorrect/i.test(bodyText) || bodyText.includes('Invalid') || bodyText.includes('incorrect')) {
+    await dumpPage(page, 'debug-login-bad-credentials');
+    throw new Error('Login failed - invalid credentials (CourtReserve rejected CR_EMAIL/CR_PASSWORD)');
   }
 
   if (postLoginUrl.includes('Login') && !bodyText.includes('Sahil')) {
-    await page.screenshot({ path: path.join(OUTPUT_DIR, 'debug-login-fail.png') });
-    throw new Error('Login did not navigate away from login page');
+    await dumpPage(page, 'debug-login-fail');
+    throw new Error(`Login did not navigate away from login page (POST → HTTP ${loginPostStatus || 'unknown'})`);
   }
 
   log('Login successful!');
@@ -753,22 +874,20 @@ async function run() {
 
   let browser;
   try {
-    const launchOptions = {
-      headless: CONFIG.headless,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    };
-
     let contextOptions = {};
     if (fs.existsSync(STATE_FILE)) {
       log('Restoring previous auth session...');
       contextOptions.storageState = STATE_FILE;
     }
 
-    browser = await chromium.launch(launchOptions);
+    browser = await launchBrowser();
     const context = await browser.newContext({
       ...contextOptions,
-      userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      viewport: { width: 1280, height: 800 },
+      userAgent: buildUserAgent(browser.version()),
+      viewport: { width: 1440, height: 900 },
+      locale: 'en-US',
+      timezoneId: 'America/Los_Angeles',
+      extraHTTPHeaders: { 'Accept-Language': 'en-US,en;q=0.9' },
     });
 
     const page = await context.newPage();
@@ -809,6 +928,9 @@ async function run() {
     log(`Fatal error: ${err.message}`, 'ERROR');
     log(err.stack, 'ERROR');
     notify('❌ Mixer Script Error', `Fatal: ${err.message}`);
+    // Make CI see the failure instead of a green run. Only for one-shot runs —
+    // the long-lived scheduler should not inherit a failing exit code.
+    if (require.main === module) process.exitCode = 1;
     if (browser) await browser.close().catch(() => {});
     return [];
   }
