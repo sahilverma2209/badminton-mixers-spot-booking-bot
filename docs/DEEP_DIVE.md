@@ -409,18 +409,74 @@ The script can still be run locally via `npm run check`, `npm run debug`, or `np
 - The legacy `npm start` command invokes `src/scheduler.js` for local cron-based polling (deprecated in favor of GitHub Actions)
 
 ---
-## 8 Notifications (Alerting)
+## 8. Notifications (Alerting)
 
 | Channel | Trigger | Implementation | Availability |
 |---------|---------|----------------|--------------|
-| Email (Gmail) | Spot found & registered, booking errors, no spots found | `nodemailer` with Gmail SMTP; requires `NOTIFY_EMAIL_USER`, `NOTIFY_EMAIL_PASS`, `NOTIFY_EMAIL_TO` | GitHub Actions ✅ + Local ✅ |
-| macOS Desktop | Same triggers | `osascript` command (silently fails if not on macOS) | Local only ✅ (silently skipped in GitHub Actions) |
+| Push (ntfy.sh) | Spot found & registered, booking errors, fatal errors, no spots found | `POST {NTFY_SERVER}/{NTFY_TOPIC}`; requires `NTFY_TOPIC`. Titles are stripped to latin-1 (HTTP headers cannot carry emoji), so emoji live in the message body | GitHub Actions ✅ + Local ✅ |
+| macOS Desktop | Same triggers | `osascript`, guarded by `process.platform === 'darwin'` | Local only ✅ (skipped elsewhere) |
+| Email (Gmail) | Same triggers | `nodemailer` with Gmail SMTP; requires `NOTIFY_EMAIL_USER`, `NOTIFY_EMAIL_PASS`, `NOTIFY_EMAIL_TO` | **Currently disabled** — the `sendEmail()` call in `notify()` is commented out; the function itself is intact |
 
 ---
 
-## 9. Security Model
+## 9. Failure Handling
 
-### 9.1 Credential Storage
+### 9.1 Error Recovery
+
+| Scenario | Handling |
+|----------|----------|
+| **Cloudflare challenge on page load** | `gotoWithCloudflareRetry()` retries up to 3 times with 5s/10s backoff, then throws `Blocked by Cloudflare bot protection (HTTP 403)` after dumping the page |
+| **Cloudflare block on the login POST** | Detected via POST status 403 or interstitial markers in the page; throws a distinct "Login blocked by Cloudflare" error instead of a generic navigation failure |
+| **Login form never appears** | Dumps the page and throws "Login form never appeared" — distinguishes "wrong page" from "wrong credentials" |
+| **Wrong credentials** | CourtReserve re-renders the login page with a toastr "The username or password is incorrect"; detected and thrown as an invalid-credentials error |
+| **Missing credentials** | Fails fast with "CR_EMAIL / CR_PASSWORD are not set" before touching the browser |
+| **Session expired** | Script falls through to a fresh login; deleting `output/auth-state.json` forces one |
+| **Event not found** | Logs "No Mixer events matching preferred days"; continues to the next event type |
+| **No REGISTER buttons** | Logs status (N Register, N Full); moves to the next event |
+| **Registration error** | Checks `.validation-summary-errors`, logs the error text, screenshots |
+| **SweetAlert modal** | Reads `.swal2-container` text to detect "full" / error messages |
+| **Payment page not loading** | Dual strategy: waits for intercepted AJAX content OR spinner disappearance (20s timeout) |
+| **Fatal exception** | Caught at the top of `run()`; browser closed, error notification sent, and for one-shot runs the process exits non-zero so CI fails loudly |
+
+### 9.2 Concurrency Guard
+
+Two independent guards, depending on how the script is scheduled:
+
+- **GitHub Actions (primary)** — the workflow declares `concurrency: { group: booking-check, cancel-in-progress: false }`, so a queued run waits for the in-flight one instead of racing it.
+- **`src/scheduler.js` (deprecated local path)** — an `isRunning` boolean skips the cycle if the previous check has not finished:
+
+```javascript
+if (isRunning) {
+  log('Previous check still running, skipping this cycle.');
+  return;
+}
+```
+
+### 9.3 Retry Strategy
+
+- **Cloudflare navigation is the only retried step** (3 attempts, linear backoff)
+- **No automatic retries** for booking or registration failures within a run
+- **Implicit retry via the schedule**: the next run (every 15 minutes) tries again
+- **No exponential backoff, no circuit breaker**
+
+### 9.4 Logging & Observability
+
+| Output | Location | Notes |
+|--------|----------|-------|
+| Activity log | `output/booking.log` + stdout | `[timestamp] [LEVEL] message`; **overwritten at the start of each run** |
+| Booking audit | `output/booking-history.json` | JSON array of `{eventName, date, success, timestamp, ...details}` — the only cross-run state |
+| Failure page dumps | `output/debug-*.png` + `output/debug-*.html` | `dumpPage()` saves a full-page screenshot, the raw HTML, and logs the page title plus the first 400 chars of text |
+| Error screenshots | `output/error-*.png` | Timestamped, written at each failure point in the booking flow |
+| CI artifacts | GitHub Actions run page | On job failure, `output/*.png`, `output/*.html` and `output/booking.log` upload with 3-day retention |
+| API traces | In memory | Intercepted CourtReserve AJAX responses, logged to the console during the run |
+
+In GitHub Actions nothing in `output/` survives the run, so the uploaded artifact is the only forensic record of a failure.
+
+---
+
+## 10. Security Model
+
+### 10.1 Credential Storage
 
 | Secret | Storage (GitHub Actions) | Storage (Local) | Risk |
 |--------|-------------------------|-----------------|------|
@@ -430,7 +486,7 @@ The script can still be run locally via `npm run check`, `npm run debug`, or `np
 | CSRF tokens | In-memory only | In-memory only | **LOW** — ephemeral |
 | Payment card info | **Not stored locally** — handled by Stripe/CourtReserve | Same | **LOW** — card is saved server-side on CourtReserve's Stripe account |
 
-### 9.2 `.gitignore` Protection
+### 10.2 `.gitignore` Protection
 
 The following are excluded from version control:
 ```
@@ -438,12 +494,60 @@ node_modules/
 output/
 ```
 
+### 10.3 Network Security
+
+- All communication over **HTTPS** (TLS)
+- CourtReserve sits behind **Cloudflare** (WAF, DDoS protection, and — since October 2026 — active bot management that 403s unhardened automation)
+- The browser presents a **Chrome user-agent built from the real browser version and host platform**, with `--disable-blink-features=AutomationControlled` and the full Chrome-for-Testing build rather than the headless shell. A UA that contradicts the host (e.g. a macOS UA from a Linux runner) is itself a detection signal, so the UA is derived, not hardcoded
+- **No API keys or tokens** — authentication is purely cookie-based, plus the form's `__RequestVerificationToken`
+
+### 10.4 Access Boundaries
+
+- The script has access to **one user's account only** (the configured credentials)
+- It cannot read or modify other users' data or bookings
+- Payment uses the user's **pre-saved card on Stripe** — the script never handles raw card numbers
+- In GitHub Actions, credentials arrive as encrypted secrets and are masked in logs; nothing is written back to the repo
 
 ---
 
+## 11. Unknowns / Risks
+
+### 11.1 Unknowns
+
+| Item | Confidence | Notes |
+|------|-----------|-------|
+| **Whether Cloudflare will pass GitHub Actions runners** | LOW | The hardened browser config is verified to pass from a residential IP. Datacenter IPs are scored more harshly, and this has not yet been confirmed green in CI |
+| **Stripe payment flow details** | MEDIUM | The script clicks a Pay button but does not model the underlying Stripe API calls; it relies on browser-level interaction |
+| **CourtReserve rate limiting** | LOW | No handling for HTTP 429 or IP-based throttling; 15-minute intervals seem safe but this is unconfirmed |
+| **CourtReserve TOS compliance** | UNKNOWN | Automated booking may violate CourtReserve's Terms of Service |
+| **Hold time behavior** | MEDIUM | Captured data shows `HoldTimeForReservation: 15` (minutes); if payment is not completed in time the registration is likely released |
+
+### 11.2 Risks
+
+| Risk | Severity | Mitigation |
+|------|----------|------------|
+| **Cloudflare bot detection tightening further** | HIGH | Already materialized once (Oct 2026), breaking login for ~a day. Current mitigation is browser hardening plus retries; the fallback is running the check from a residential IP (local machine on a launchd timer) |
+| **DOM/API changes breaking the script** | HIGH | The flow depends on specific CSS selectors, URL patterns and HTML structure; any CourtReserve UI update can break it. Login now uses stable `#Username` / `#Password` / `button.btn-submit` selectors with legacy fallbacks |
+| **Credentials in plaintext locally** | MEDIUM | `.env` is uncommitted but unencrypted. GitHub Actions uses encrypted secrets, so the cloud path is not exposed |
+| **Silent failures** | MEDIUM | Previously a fatal error still exited 0, so failed runs showed green and no artifacts uploaded. One-shot runs now exit non-zero |
+| **Double-booking** | LOW | No deduplication check — the script does not verify whether a booking already exists for that date before registering |
+| **Financial risk** | LOW | The script only registers; payment is manual, so no automatic charges |
+| **Screenshot disk usage** | LOW | Error screenshots accumulate in `output/` locally with no cleanup (irrelevant on CI, where the workspace is discarded) |
+
+### 11.3 Dead Code / Unused Features
+
+| Item | Status |
+|------|--------|
+| `src/scheduler.js` | Deprecated local cron loop, superseded by GitHub Actions + cron-job.org; still invoked by `npm start` |
+| `sendEmail()` | Fully implemented but unreachable — the call site in `notify()` is commented out |
+| `NOTIFY_NO_SPOTS` | Passed as an env var by the workflow but never read in code, so "No Spots Available" pushes fire on every run and cannot be turned off without a code change |
+| `docs/explore-apis.js` | Development utility only; not part of the booking flow |
+| `docs/captured-booking-flow.json` | Reference artifact; not read by any production code |
+| Multiple payment button selectors (20+) | Largely defensive/speculative; only a few ever match |
+
 ---
 
-## 11. Appendix
+## 12. Appendix
 
 ### A. Textual Sequence Diagram — Happy Path Booking
 
