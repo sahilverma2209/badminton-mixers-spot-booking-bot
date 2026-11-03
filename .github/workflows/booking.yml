@@ -31,7 +31,8 @@ concurrency:
 
 jobs:
   check-and-book:
-    runs-on: ubuntu-latest
+    # Pinned to 24.04: ubuntu-latest moved to 26.04, which Playwright 1.59 doesn't support
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
 
     steps:
